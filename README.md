@@ -1,14 +1,14 @@
 
-# MBM Digital - Web Services Portfolio
+# CoreTech - Web Services Portfolio
 
 A modern, multilingual web application built with React, TypeScript, and Express showcasing digital services and portfolio work.
 
 ## 🚀 Quick Start
 
-### Running on Replit (Recommended)
-1. Fork this template in Replit
+### Running on  (Recommended)
+1. Fork this template in 
 2. Click the "Run" button to start the development server
-3. The application will be available at the URL shown in your Replit workspace
+3. The application will be available at the URL shown in your  workspace
 
 ### Running Locally
 1. Clone the repository
@@ -49,7 +49,7 @@ Note: The application uses Node.js 20+. Make sure you have it installed on your 
 
 ### Prerequisites
 
-The following are automatically installed in your Replit workspace:
+The following are automatically installed in your  workspace:
 
 - Node.js 20+
 - npm 10+
@@ -73,7 +73,7 @@ server/
 
 ### Running the Application
 
-The application will automatically start when you click the "Run" button in Replit.
+The application will automatically start when you click the "Run" button in .
 
 Development server runs on:
 - Frontend: Auto-assigned Replit URL
