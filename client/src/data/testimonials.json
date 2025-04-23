@@ -1,0 +1,68 @@
+[
+  {
+    "id": "testimonial1",
+    "name": "Sarah Johnson",
+    "role": "Fitness Studio Owner",
+    "image": "https://randomuser.me/api/portraits/women/42.jpg",
+    "text": "MBM Digital transformed our online presence completely. Our website traffic has increased by 150% and class bookings are up by 200% since launching our new site and marketing campaign.",
+    "rating": 5,
+    "date": "August 15, 2023",
+    "projectId": "fitness-coaching-platform",
+    "projectName": "Fitness Coaching Platform"
+  },
+  {
+    "id": "testimonial2",
+    "name": "David Chen",
+    "role": "Restaurant Owner",
+    "image": "https://randomuser.me/api/portraits/men/32.jpg",
+    "text": "The promotional video MBM created for us has over 50,000 views on social media. It's brought in countless new customers who mention they saw our video online.",
+    "rating": 5,
+    "date": "July 10, 2023",
+    "projectId": "restaurant-campaign",
+    "projectName": "Restaurant Engagement Campaign"
+  },
+  {
+    "id": "testimonial3",
+    "name": "Amina Patel",
+    "role": "E-commerce Entrepreneur",
+    "image": "https://randomuser.me/api/portraits/women/68.jpg",
+    "text": "Working with MBM Digital was seamless from start to finish. They redesigned our e-commerce store and implemented a digital marketing strategy that increased our conversion rate by 35%.",
+    "rating": 4.5,
+    "date": "September 22, 2023",
+    "projectId": "fashion-ecommerce",
+    "projectName": "Fashion E-commerce Store"
+  },
+  {
+    "id": "testimonial4",
+    "name": "Miguel Rodriguez",
+    "role": "YouTube Content Creator",
+    "image": "https://randomuser.me/api/portraits/men/75.jpg",
+    "text": "MBM's YouTube monetization strategies helped me reach the subscriber and watch hour requirements in just 3 months. Their video editing service transformed my content quality.",
+    "rating": 5,
+    "date": "June 18, 2023",
+    "projectId": "travel-vlogger-youtube",
+    "projectName": "Travel Vlogger Channel Growth"
+  },
+  {
+    "id": "testimonial5",
+    "name": "Jennifer Lee",
+    "role": "Marketing Director",
+    "image": "https://randomuser.me/api/portraits/women/28.jpg",
+    "text": "MBM Digital's team went above and beyond to deliver our tech product launch video. The quality, creativity, and attention to detail were exceptional, and the results were better than we could have imagined.",
+    "rating": 5,
+    "date": "October 5, 2023",
+    "projectId": "tech-product-launch",
+    "projectName": "Tech Product Launch Video"
+  },
+  {
+    "id": "testimonial6",
+    "name": "Thomas Baker",
+    "role": "Bakery Owner",
+    "image": "https://randomuser.me/api/portraits/men/24.jpg",
+    "text": "Our bakery's social media presence exploded thanks to MBM Digital. Their strategic approach to content creation and community engagement helped us build a loyal online following that translates to real customers in our store.",
+    "rating": 5,
+    "date": "November 12, 2023",
+    "projectId": "bakery-social-media",
+    "projectName": "Local Bakery Social Media"
+  }
+]

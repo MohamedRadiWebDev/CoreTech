@@ -1,0 +1,125 @@
+[
+  {
+    "id": "basic",
+    "name": "Basic",
+    "price": 499,
+    "popular": false,
+    "description": "Essential digital services for small businesses and startups",
+    "features": [
+      {
+        "text": "Responsive website design",
+        "included": true
+      },
+      {
+        "text": "Basic SEO optimization",
+        "included": true
+      },
+      {
+        "text": "Social media setup",
+        "included": true
+      },
+      {
+        "text": "Email support",
+        "included": true
+      },
+      {
+        "text": "Content creation (5 pages)",
+        "included": true
+      },
+      {
+        "text": "Advanced analytics",
+        "included": false
+      },
+      {
+        "text": "E-commerce functionality",
+        "included": false
+      },
+      {
+        "text": "Visual content creation",
+        "included": false
+      }
+    ]
+  },
+  {
+    "id": "professional",
+    "name": "Professional",
+    "price": 999,
+    "popular": true,
+    "description": "Comprehensive solutions for growing businesses",
+    "features": [
+      {
+        "text": "Advanced website with CMS",
+        "included": true
+      },
+      {
+        "text": "Complete SEO package",
+        "included": true
+      },
+      {
+        "text": "Social media management",
+        "included": true
+      },
+      {
+        "text": "Content marketing",
+        "included": true
+      },
+      {
+        "text": "Priority support",
+        "included": true
+      },
+      {
+        "text": "E-commerce functionality",
+        "included": true
+      },
+      {
+        "text": "Visual content creation",
+        "included": true
+      },
+      {
+        "text": "Dedicated account manager",
+        "included": false
+      }
+    ]
+  },
+  {
+    "id": "enterprise",
+    "name": "Enterprise",
+    "price": 1999,
+    "popular": false,
+    "description": "Complete digital transformation for established businesses",
+    "features": [
+      {
+        "text": "Custom web application",
+        "included": true
+      },
+      {
+        "text": "Advanced analytics",
+        "included": true
+      },
+      {
+        "text": "Brand strategy development",
+        "included": true
+      },
+      {
+        "text": "Video production",
+        "included": true
+      },
+      {
+        "text": "24/7 dedicated support",
+        "included": true
+      },
+      {
+        "text": "E-commerce functionality",
+        "included": true
+      },
+      {
+        "text": "Visual content creation",
+        "included": true
+      },
+      {
+        "text": "Dedicated account manager",
+        "included": true
+      }
+    ]
+  }
+]
