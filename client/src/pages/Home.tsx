@@ -25,7 +25,7 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>{t("meta.home_title")} | MBM Digital</title>
+        <title>{t("meta.home_title")} | CoreTech</title>
         <meta name="description" content={t("meta.home_description")} />
       </Helmet>
       
