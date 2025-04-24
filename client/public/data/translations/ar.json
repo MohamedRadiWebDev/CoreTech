@@ -30,8 +30,6 @@
     "home": "الرئيسية",
     "services": "الخدمات",
     "portfolio": "الأعمال",
-    "testimonials": "آراء العملاء",
-    "pricing": "الأسعار",
     "blog": "المدونة",
     "about": "من نحن",
     "contact": "اتصل بنا"
@@ -251,15 +249,6 @@
     "whatsapp_description": "احصل على إجابات سريعة لأسئلتك",
     "whatsapp_button": "ابدأ المحادثة"
   },
-  "services": {
-    "discuss_project": "ناقش مشروعك"
-  },
-  "pricing": {
-    "most_popular": "الأكثر شعبية",
-    "custom_solution_title": "تحتاج إلى حل مخصص؟",
-    "custom_solution_description": "نقدم حزمًا مخصصة تناسب متطلبات عملك المحددة",
-    "request_quote": "طلب عرض سعر"
-  },
   "footer": {
     "company_description": "توفر MBM الرقمية خدمات رقمية شاملة لمساعدة الشركات على الازدهار في العالم الرقمي.",
     "services": "الخدمات",
@@ -311,12 +300,6 @@
     "post3_title": "بناء حضور قوي على وسائل التواصل الاجتماعي",
     "post3_excerpt": "استراتيجيات لزيادة المتابعين وتحسين التفاعل"
   },
-  "pricing": {
-    "most_popular": "الأكثر شعبية",
-    "custom_solution_title": "تحتاج إلى حل مخصص؟",
-    "custom_solution_description": "نقدم حزمًا مخصصة تناسب متطلبات عملك المحددة",
-    "request_quote": "طلب عرض سعر"
-  },
   "contact": {
     "form_title": "أرسل لنا رسالة",
     "name_label": "الاسم",
@@ -339,9 +322,6 @@
     "whatsapp_button": "ابدأ المحادثة",
     "success_title": "تم إرسال الرسالة!",
     "success_message": "شكراً لتواصلك معنا. سنرد عليك خلال 24 ساعة."
-  },
-  "services": {
-    "discuss_project": "ناقش مشروعك"
   },
   "pricing": {
     "most_popular": "الأكثر شعبية",

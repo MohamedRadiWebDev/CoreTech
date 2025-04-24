@@ -44,12 +44,30 @@
     "discuss_project":"Contact Us to Discuss Your Project",
     "view_all": "View All Services",
     "learn_more": "Learn More",
-    "website_design": "Website Design",
-    "digital_marketing": "Digital Marketing",
-    "motion_graphics": "Motion Graphics",
-    "video_editing": "Video Editing",
-    "youtube_monetization": "YouTube Monetization",
-    "facebook_engagement": "Facebook Engagement"
+    "web-design": {
+      "title": "Web Design",
+      "description": "Custom, responsive websites that perfectly represent your brand and convert visitors into customers."
+    },
+    "digital-marketing": {
+      "title": "Digital Marketing",
+      "description": "Strategic campaigns across ads, social media, and content to increase reach and engagement."
+    },
+    "motion-graphics": {
+      "title": "Motion Graphics",
+      "description": "Captivating animations and videos that tell your story and engage your audience."
+    },
+    "video-editing": {
+      "title": "Video Editing",
+      "description": "Professional editing services that transform raw footage into polished, compelling content."
+    },
+    "youtube-marketing": {
+      "title": "YouTube Marketing",
+      "description": "Expert strategies to grow your YouTube channel and increase engagement."
+    },
+    "facebook": {
+      "title": "Facebook Marketing",
+      "description": "Targeted campaigns to boost your brand's presence on Facebook and drive conversions."
+    }
   },
   "portfolio": {
     "title": "Our Portfolio",

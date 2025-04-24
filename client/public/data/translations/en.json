@@ -275,9 +275,6 @@
     "success_title": "Message Sent!",
     "success_message": "Thank you for contacting us. We'll get back to you within 24 hours."
   },
-  "services": {
-    "discuss_project": "Discuss Your Project"
-  },
   "pricing": {
     "most_popular": "Most Popular",
     "custom_solution_title": "Need a Custom Solution?",

@@ -10,12 +10,12 @@ const ServiceOverview = () => {
   const { t } = useTranslation();
   const [services, setServices] = useState<Service[]>([]);
 
-  useEffect(() => {
-    fetch('/data/services.json')
-      .then(response => response.json())
-      .then(data => setServices(data))
-      .catch(error => console.error('Error loading services:', error));
-  }, []);
+useEffect(() => {
+  fetch('/data/services.json')
+    .then(response => response.json())
+    .then(data => setServices(data))
+    .catch(error => console.error('Error loading services:', error));
+}, []);
 
 
   // Container and item animations
@@ -73,9 +73,9 @@ const ServiceOverview = () => {
                 <div className="h-20 w-20 bg-gradient-to-br from-primary-400 to-primary-600 dark:from-primary-600 dark:to-primary-800 rounded-2xl flex items-center justify-center mb-6 shadow-lg transform hover:scale-110 transition-all duration-300 hover:shadow-xl hover:rotate-3">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 drop-shadow-md" strokeWidth="2" stroke="#0A2540" fill="none" viewBox="0 0 24 24" dangerouslySetInnerHTML={{ __html: service.icon }} />
                 </div>
-                <h3 className="text-xl font-bold mb-3">{service.title}</h3>
+                <h3 className="text-xl font-bold mb-3">{t(`services.${service.id}.title`)}</h3>
                 <p className="text-gray-600 dark:text-gray-400 mb-6">
-                  {service.description}
+                  {t(`services.${service.id}.description`)}
                 </p>
                 <Link href={`/services#${service.id}`}>
                   <a className="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium">
