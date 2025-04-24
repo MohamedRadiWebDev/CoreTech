@@ -11,12 +11,12 @@ const ServiceOverview = () => {
   const [services, setServices] = useState<Service[]>([]);
 
   useEffect(() => {
-    // Load services from JSON file
-    fetch('/src/data/services.json')
+    fetch('/data/services.json')
       .then(response => response.json())
       .then(data => setServices(data))
       .catch(error => console.error('Error loading services:', error));
   }, []);
+
 
   // Container and item animations
   const containerVariants = {
