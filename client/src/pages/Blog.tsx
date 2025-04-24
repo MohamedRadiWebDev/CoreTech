@@ -22,7 +22,7 @@ const Blog = () => {
     window.scrollTo(0, 0);
     
     // Load blog data
-    fetch('/src/data/blog.json')
+    fetch('data/blog.json')
       .then(response => response.json())
       .then(data => {
         setBlogPosts(data);
@@ -70,7 +70,7 @@ const Blog = () => {
   return (
     <>
       <Helmet>
-        <title>{t("meta.blog_title")} | MBM Digital</title>
+        <title>{t("meta.blog_title")} | Core Tech</title>
         <meta name="description" content={t("meta.blog_description")} />
       </Helmet>
       

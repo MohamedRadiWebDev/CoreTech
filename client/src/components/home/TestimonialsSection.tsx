@@ -13,7 +13,7 @@ const TestimonialsSection = () => {
 
   useEffect(() => {
     // Load testimonials from JSON file
-    fetch('/src/data/testimonials.json')
+    fetch('/data/testimonials.json')
       .then(response => response.json())
       .then(data => setTestimonials(data))
       .catch(error => console.error('Error loading testimonials:', error));

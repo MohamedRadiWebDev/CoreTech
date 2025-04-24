@@ -51,7 +51,7 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>{t("meta.contact_title")} | MBM Digital</title>
+        <title>{t("meta.contact_title")} | Core Tech</title>
         <meta name="description" content={t("meta.contact_description")} />
       </Helmet>
       
@@ -174,7 +174,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold mb-1">{t("contact.email_us")}</h4>
-                    <a href="mailto:contact@mbmdigital.com" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">contact@mbmdigital.com</a>
+                    <a href="mailto:contact@coretech.com" className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">contact@coretech.com</a>
                   </div>
                 </div>
                 
@@ -242,7 +242,7 @@ const Contact = () => {
                 <div>
                   <h4 className="text-lg font-semibold mb-1">{t("contact.whatsapp_title")}</h4>
                   <p className="text-gray-700 dark:text-gray-300 mb-2">{t("contact.whatsapp_description")}</p>
-                  <a href="https://wa.me/1234567890" className="inline-flex items-center text-green-600 dark:text-green-400 font-medium">
+                  <a href="https://wa.me/+201126923449" className="inline-flex items-center text-green-600 dark:text-green-400 font-medium">
                     {t("contact.whatsapp_button")}
                     <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
@@ -267,7 +267,7 @@ const Contact = () => {
               style={{ border: 0 }} 
               allowFullScreen={true} 
               loading="lazy"
-              title="MBM Digital Office Location"
+              title="Core Tech Office Location"
             ></iframe>
           </motion.div>
           

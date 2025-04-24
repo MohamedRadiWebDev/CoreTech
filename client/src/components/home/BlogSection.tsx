@@ -12,7 +12,7 @@ const BlogSection = () => {
 
   useEffect(() => {
     // Load blog posts from JSON file
-    fetch('/src/data/blog.json')
+    fetch('/data/blog.json')
       .then(response => response.json())
       .then(data => setBlogPosts(data))
       .catch(error => console.error('Error loading blog posts:', error));

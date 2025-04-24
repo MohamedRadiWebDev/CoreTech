@@ -23,7 +23,7 @@ const Portfolio = () => {
     window.scrollTo(0, 0);
     
     // Load portfolio data
-    fetch('/src/data/portfolio.json')
+    fetch('/data/portfolio.json')
       .then(response => response.json())
       .then(data => {
         setPortfolioItems(data);
@@ -76,7 +76,7 @@ const Portfolio = () => {
   return (
     <>
       <Helmet>
-        <title>{t("meta.portfolio_title")} | MBM Digital</title>
+        <title>{t("meta.portfolio_title")} | Core Tech</title>
         <meta name="description" content={t("meta.portfolio_description")} />
       </Helmet>
       

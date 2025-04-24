@@ -21,8 +21,6 @@
     "home": "Home",
     "services": "Services",
     "portfolio": "Portfolio",
-    "testimonials": "Testimonials",
-    "pricing": "Pricing",
     "blog": "Blog",
     "about": "About",
     "contact": "Contact"
@@ -43,6 +41,7 @@
     "title": "Our Services",
     "subtitle": "What We Do Best",
     "description": "We offer a comprehensive range of digital services to help your business grow and succeed in the digital landscape.",
+    "discuss_project":"Contact Us to Discuss Your Project",
     "view_all": "View All Services",
     "learn_more": "Learn More",
     "website_design": "Website Design",
@@ -112,9 +111,13 @@
   "about": {
     "title": "About Us",
     "subtitle": "Our Story",
-    "description": "Learn more about Core Tech, our team, our mission, and our approach to digital success.",
+    "description_1": "We are a passionate team of developers, designers, and strategists...",
+    "description_2": "With years of experience, we specialize in delivering high-quality digital solutions.",
     "mission_title": "Our Mission",
-    "mission_text": "To empower businesses with innovative digital solutions that drive growth, enhance brand visibility, and create lasting value.",
+    "mission_description": "To empower businesses through innovative tech.",
+    "projects_completed": "Projects Completed",
+    "client_satisfaction": "Client Satisfaction",
+    "contact_button": "Let's Talk",
     "vision_title": "Our Vision",
     "vision_text": "To be the leading digital agency known for creativity, innovation, and delivering exceptional results for our clients.",
     "values_title": "Our Values",
@@ -143,11 +146,32 @@
     "address": "123 Digital Avenue, Tech City, CA 90210",
     "email_title": "Email Us",
     "phone_title": "Call Us",
-    "phone": "+1 (555) 123-4567",
+    "phone": "+20 (112) 692-3449",
     "hours_title": "Business Hours",
     "hours": "Monday-Friday: 9AM-6PM",
     "form_success": "Your message has been sent successfully!",
-    "form_error": "There was an error sending your message. Please try again."
+    "form_error": "There was an error sending your message. Please try again.",
+    "form_title": "Send Us a Message",
+    "name_label": "Your Name",
+    "name_placeholder": "Enter your full name",
+    "email_label": "Email Address",
+    "email_placeholder": "Enter your email address",
+    "service_label": "Service of Interest",
+    "service_placeholder": "Select a service",
+    "message_label": "Your Message",
+    "message_placeholder": "Tell us about your project",
+    "submit_button": "Send Message",
+    "get_in_touch": "Get in Touch",
+    "get_in_touch_description": "Have a question or want to discuss a project? We're here to help!",
+    "email_us": "Email Us",
+    "call_us": "Call Us",
+    "visit_us": "Visit Us",
+    "connect_with_us": "Connect With Us",
+    "whatsapp_title": "Chat on WhatsApp",
+    "whatsapp_description": "Get quick answers to your questions",
+    "whatsapp_button": "Start Chat",
+    "success_title": "Message Sent!",
+    "success_message": "Thank you for contacting us. We'll get back to you within 24 hours."
   },
   "footer": {
     "company": "Company",
@@ -181,5 +205,113 @@
     "read_more": "Read More",
     "view_more": "View More",
     "back": "Back"
+  },
+  "services_page": {
+    "title": "Our Digital Services",
+    "description": "We offer a comprehensive range of digital services to help your business thrive online. From web design to social media management, our team of experts is ready to help you achieve your goals.",
+    "what_we_offer": "What We Offer",
+    "request_service": "Request This Service",
+    "see_work": "See Our Work",
+    "loading": "Loading Services",
+    "loading_message": "Please wait while we load our service information...",
+    "cta_title": "Not Sure What You Need?",
+    "cta_description": "Our team of experts can help you determine the best digital solutions for your business goals.",
+    "cta_button": "Get a Free Consultation"
+  },
+  "portfolio_page": {
+    "title": "Our Portfolio",
+    "description": "Explore our recent projects and see how we've helped businesses achieve their digital goals.",
+    "loading": "Loading Projects",
+    "loading_message": "Please wait while we load our portfolio...",
+    "no_results": "No Projects Found",
+    "no_results_message": "There are no projects matching your current filter. Try selecting a different category.",
+    "show_all": "Show All Projects",
+    "cta_title": "Like What You See?",
+    "cta_description": "Let's discuss how we can create something amazing for your business.",
+    "cta_button": "Start Your Project"
+  },
+  "blog_page": {
+    "title": "Digital Marketing Insights",
+    "description": "Expert tips, trends, and strategies to help your business succeed in the digital landscape.",
+    "all_categories": "All Categories",
+    "loading": "Loading Articles",
+    "loading_message": "Please wait while we load our latest blog posts...",
+    "no_results": "No Articles Found",
+    "no_results_message": "There are no articles matching your current filter. Try selecting a different category.",
+    "show_all": "Show All Articles",
+    "newsletter_title": "Subscribe to Our Newsletter",
+    "newsletter_description": "Get the latest digital marketing insights and tips delivered straight to your inbox.",
+    "email_placeholder": "Your email address",
+    "subscribe_button": "Subscribe",
+    "privacy_notice": "We respect your privacy. Unsubscribe at any time."
+  },
+  "about_page": {
+    "title": "About Core Tech",
+    "description_1": "We provide innovative digital solutions that help businesses grow",
+    "description_2": "A team of experts specialized in digital transformation",
+    "mission_description": "Our mission is to empower businesses to succeed in the digital age",
+    "projects_completed": "Projects Completed",
+    "client_satisfaction": "Client Satisfaction",
+    "contact_button": "Contact Us Today",
+    "subtitle": "A team of digital experts passionate about helping businesses succeed online.",
+    "our_story": {
+      "title": "Our Story",
+      "paragraph1": "Core Tech was founded in 2018 with a simple mission: to provide businesses with the digital tools and strategies they need to thrive in today's online landscape.",
+      "paragraph2": "What started as a small team of three passionate digital marketers has grown into a full-service digital agency with experts in web design, content creation, SEO, social media, and video production.",
+      "paragraph3": "Today, we've helped over 200 businesses across various industries establish and grow their digital presence, always staying at the forefront of digital trends and technologies."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "description": "To empower businesses of all sizes with innovative digital solutions that drive real results and sustainable growth in an ever-evolving digital landscape."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "To be the most trusted digital partner for businesses seeking to transform their online presence and achieve exceptional growth through digital excellence."
+    },
+    "team": {
+      "title": "Meet Our Team",
+      "description": "Our diverse team of digital experts brings together skills from across the digital spectrum to deliver exceptional results for our clients.",
+      "member1": {
+        "name": "Michael Brown",
+        "role": "Founder & CEO",
+        "bio": "With over 15 years in digital marketing, Michael founded Core Tech to help businesses navigate the digital landscape effectively."
+      },
+      "member2": {
+        "name": "Sarah Chen",
+        "role": "Creative Director",
+        "bio": "Sarah leads our creative team with her exceptional eye for design and passion for creating engaging visual experiences."
+      },
+      "member3": {
+        "name": "David Rodriguez",
+        "role": "Web Development Lead",
+        "bio": "David combines technical expertise with creative problem-solving to build websites that are both beautiful and functional."
+      },
+      "member4": {
+        "name": "Aisha Patel",
+        "role": "Digital Marketing Manager",
+        "bio": "Aisha's strategic approach to digital marketing helps our clients achieve measurable results across all digital channels."
+      }
+    }, 
+    "cta": {
+      "title": "Let's Work Together",
+      "description": "We bring ideas to life through creativity and technology. Get in touch with us to start your project today!",
+      "contact_button": "Contact Us",
+      "portfolio_button": "View Portfolio"
+    }
+  },
+  "contact_page": {
+    "title": "Contact Us",
+    "subtitle": "Have a question or ready to start a project? Get in touch with our team today.",
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": "How can I get in touch with you?",
+      "a1": "You can contact us via the contact form on our website or by email at support@yourdomain.com.",
+      "q2": "Do you offer free consultations?",
+      "a2": "Yes, we offer a free initial consultation to discuss your needs and how we can help.",
+      "q3": "What services do you provide?",
+      "a3": "We offer a wide range of services including web design, digital marketing, and video production.",
+      "q4": "How long does it take to complete a project?",
+      "a4": "The timeline depends on the complexity of the project, but we will provide an estimated timeline during our consultation."
+    }
   }
 }

@@ -7,18 +7,18 @@
     "portfolio_title": "Our Portfolio",
     "portfolio_description": "View our recent projects and success stories across various industries",
     "testimonials_title": "Client Testimonials",
-    "testimonials_description": "See what our clients say about working with MBM Digital",
+    "testimonials_description": "See what our clients say about working with Core Tech",
     "pricing_title": "Pricing Plans",
     "pricing_description": "Transparent pricing options for our digital services",
     "blog_title": "Digital Marketing Blog",
     "blog_description": "Insights, tips and trends in digital marketing, web design and content creation",
     "about_title": "About Us",
-    "about_description": "Learn about MBM Digital, our mission, vision and team",
+    "about_description": "Learn about Core Tech, our mission, vision and team",
     "contact_title": "Contact Us",
     "contact_description": "Get in touch with our team for inquiries, quotes or support"
   },
   "common": {
-    "company_name": "MBM Digital",
+    "company_name": "Core Tech",
     "tagline": "Transforming Ideas Into Digital Success",
     "get_started": "Get Started",
     "learn_more": "Learn More",
@@ -30,8 +30,6 @@
     "home": "Home",
     "services": "Services",
     "portfolio": "Portfolio",
-    "testimonials": "Testimonials",
-    "pricing": "Pricing",
     "blog": "Blog",
     "about": "About",
     "contact": "Contact"
@@ -42,6 +40,7 @@
     "hero_cta": "Explore Our Services",
     "services_title": "Our Services",
     "services_subtitle": "Comprehensive digital solutions tailored to your business needs",
+    "discuss_project":"Contact Us to Discuss Your Project",
     "portfolio_title": "Recent Projects",
     "portfolio_subtitle": "Our work speaks for itself - explore our recent success stories",
     "testimonials_title": "Client Feedback",
@@ -105,7 +104,7 @@
   "testimonials": {
     "person1_name": "John Smith",
     "person1_role": "CEO, Tech Solutions",
-    "quote1": "Working with MBM Digital transformed our online presence completely.",
+    "quote1": "Working with Core Tech transformed our online presence completely.",
     "person2_name": "Sarah Johnson",
     "person2_role": "Marketing Director, Retail Co",
     "quote2": "Their digital marketing expertise helped us achieve remarkable growth.",
@@ -118,7 +117,7 @@
   },
   "testimonials_page": {
     "title": "Client Testimonials",
-    "description": "Read what our clients have to say about working with MBM Digital.",
+    "description": "Read what our clients have to say about working with Core Tech.",
     "project": "Project",
     "loading": "Loading Testimonials",
     "loading_message": "Please wait while we load client testimonials...",
@@ -200,7 +199,7 @@
     "post3_excerpt": "Strategies to grow your followers and increase engagement"
   },
   "about_page": {
-    "title": "About MBM Digital",
+    "title": "About Core Tech",
     "description_1": "We provide innovative digital solutions that help businesses grow",
     "description_2": "A team of experts specialized in digital transformation",
     "mission_description": "Our mission is to empower businesses to succeed in the digital age",
@@ -210,7 +209,7 @@
     "subtitle": "A team of digital experts passionate about helping businesses succeed online.",
     "our_story": {
       "title": "Our Story",
-      "paragraph1": "MBM Digital was founded in 2018 with a simple mission: to provide businesses with the digital tools and strategies they need to thrive in today's online landscape.",
+      "paragraph1": "Core Tech was founded in 2018 with a simple mission: to provide businesses with the digital tools and strategies they need to thrive in today's online landscape.",
       "paragraph2": "What started as a small team of three passionate digital marketers has grown into a full-service digital agency with experts in web design, content creation, SEO, social media, and video production.",
       "paragraph3": "Today, we've helped over 200 businesses across various industries establish and grow their digital presence, always staying at the forefront of digital trends and technologies."
     },
@@ -228,7 +227,7 @@
       "member1": {
         "name": "Michael Brown",
         "role": "Founder & CEO",
-        "bio": "With over 15 years in digital marketing, Michael founded MBM Digital to help businesses navigate the digital landscape effectively."
+        "bio": "With over 15 years in digital marketing, Michael founded Core Tech to help businesses navigate the digital landscape effectively."
       },
       "member2": {
         "name": "Sarah Chen",
@@ -286,14 +285,14 @@
     "request_quote": "Request a Quote"
   },
   "footer": {
-    "company_description": "MBM Digital provides comprehensive digital services to help businesses thrive in the online world.",
+    "company_description": "Core Tech provides comprehensive digital services to help businesses thrive in the online world.",
     "services": "Services",
     "quick_links": "Quick Links",
     "contact_info": "Contact Information",
     "newsletter": "Subscribe to Newsletter",
     "newsletter_placeholder": "Your email address",
     "subscribe": "Subscribe",
-    "copyright": "© 2023 MBM Digital. All rights reserved.",
+    "copyright": "© 2023 Core Tech. All rights reserved.",
     "privacy_policy": "Privacy Policy",
     "terms_of_service": "Terms of Service"
   },
@@ -310,5 +309,14 @@
     "video_editing": "Video Editing",
     "youtube_monetization": "YouTube Monetization",
     "facebook_engagement": "Facebook Engagement"
+  },
+  "about": {
+    "title": "About Core Tech",
+    "description_1": "We provide innovative digital solutions that help businesses grow",
+    "description_2": "A team of experts specialized in digital transformation",
+    "mission_description": "Our mission is to empower businesses to succeed in the digital age",
+    "projects_completed": "Projects Completed",
+    "client_satisfaction": "Client Satisfaction",
+    "contact_button": "Let's Talk"
   }
 }

@@ -49,7 +49,7 @@ const Pricing = () => {
   return (
     <>
       <Helmet>
-        <title>{t("meta.pricing_title")} | MBM Digital</title>
+        <title>{t("meta.pricing_title")} | Core Tech</title>
         <meta name="description" content={t("meta.pricing_description")} />
       </Helmet>
       

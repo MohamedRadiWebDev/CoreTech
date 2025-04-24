@@ -49,7 +49,7 @@ const Testimonials = () => {
   return (
     <>
       <Helmet>
-        <title>{t("meta.testimonials_title")} | MBM Digital</title>
+        <title>{t("meta.testimonials_title")} | Core Tech</title>
         <meta name="description" content={t("meta.testimonials_description")} />
       </Helmet>
       

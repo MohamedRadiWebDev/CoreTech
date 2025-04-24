@@ -20,7 +20,7 @@ const Services = () => {
     window.scrollTo(0, 0);
     
     // Load services data
-    fetch('/src/data/services.json')
+    fetch('/data/services.json')
       .then(response => response.json())
       .then(data => setServices(data))
       .catch(error => console.error('Error loading services:', error));
@@ -49,7 +49,7 @@ const Services = () => {
   return (
     <>
       <Helmet>
-        <title>{t("meta.services_title")} | MBM Digital</title>
+        <title>{t("meta.services_title")} | Core Tech</title>
         <meta name="description" content={t("meta.services_description")} />
       </Helmet>
       

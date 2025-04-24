@@ -23,7 +23,7 @@ const AboutSection = () => {
           >
             <img 
               src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
-              alt="MBM Digital Team" 
+              alt="Core Tech Team" 
               className="w-full h-auto rounded-xl shadow-xl"
             />
           </motion.div>
