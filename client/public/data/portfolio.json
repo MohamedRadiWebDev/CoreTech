@@ -1,140 +1,136 @@
+
 [
   {
-    "id": "fashion-ecommerce",
-    "title": "Fashion E-commerce Store",
+    "id": "halal-food",
+    "title": "Halal Food Store",
     "category": "web-design",
     "categoryName": "Web Design",
-    "image": "https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    "shortDescription": "Modern online store with seamless checkout and product management.",
-    "fullDescription": "We designed and developed a comprehensive e-commerce platform for a fashion brand, featuring a modern interface, seamless checkout process, and robust product management system. The store integrates with inventory systems and provides detailed analytics to track sales performance.",
-    "client": "StyleVista Fashion",
-    "year": "2023",
-    "services": ["Web Design", "E-commerce Development", "SEO"],
-    "technologies": ["React.js", "Node.js", "MongoDB", "Stripe", "AWS"],
+    "image": "/home/ubuntu/screenshots/halalfood_coretechde_2025-05-09_06-55-20_2569.webp",
+    "shortDescription": "Online store for organic products and fresh Halal food",
+    "shortDescription_ar": "متجر إلكتروني للمنتجات العضوية والأطعمة الطازجة",
+    "fullDescription": "Online store for organic products and fresh food, offering an easy and secure shopping experience for Halal products.",
+    "fullDescription_ar": "متجر إلكتروني للمنتجات العضوية والأطعمة الطازجة، يوفر تجربة تسوق سهلة وآمنة للمنتجات الحلال.",
+    "website": "https://halalfood.coretechdevo.com/",
+    "year": "2024",
+    "services": ["Web Design", "E-commerce Development", "UI/UX Design"],
+    "technologies": ["React", "Node.js", "MongoDB", "Express"],
     "impact": {
-      "value": "+38%",
-      "label": "sales increase"
-    },
-    "testimonial": "The new e-commerce store has transformed our business. The user experience is exceptional and we've seen a significant increase in conversion rates.",
-    "images": [
-      "https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1511556820780-d912e42b4980?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1542219550-37153d387c27?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-    ]
+      "value": "5K+",
+      "label": "monthly users"
+    }
   },
   {
-    "id": "restaurant-campaign",
-    "title": "Restaurant Engagement Campaign",
-    "category": "digital-marketing",
-    "categoryName": "Digital Marketing",
-    "image": "https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    "shortDescription": "Multi-platform campaign driving foot traffic and online orders.",
-    "fullDescription": "We developed a comprehensive digital marketing campaign for a local restaurant chain looking to increase both in-store visits and online orders. The strategy included targeted social media advertising, local SEO optimization, email marketing, and influencer partnerships.",
-    "client": "Flavor Fusion Restaurants",
-    "year": "2022",
-    "services": ["Social Media Marketing", "Local SEO", "PPC Advertising"],
-    "technologies": ["Facebook Ads", "Google Ads", "Instagram", "Mailchimp"],
-    "impact": {
-      "value": "+152%",
-      "label": "engagement"
-    },
-    "testimonial": "Core Tech's marketing campaign exceeded our expectations. Their strategic approach to digital marketing resulted in a significant increase in both our online presence and in-store traffic.",
-    "images": [
-      "https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1565538810643-b5bdb714032a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-    ]
-  },
-  {
-    "id": "tech-product-launch",
-    "title": "Tech Product Launch Video",
-    "category": "video-production",
-    "categoryName": "Video Production",
-    "image": "https://images.unsplash.com/photo-1551817958-d9d86fb29431?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    "shortDescription": "Captivating product showcase with motion graphics and narrative.",
-    "fullDescription": "For a major tech company's product launch, we created a high-impact promotional video combining live action footage, 3D animations, and compelling storytelling. The video effectively communicated the product's key features and benefits while establishing an emotional connection with the target audience.",
-    "client": "TechNova Innovations",
-    "year": "2023",
-    "services": ["Video Production", "Motion Graphics", "Script Writing"],
-    "technologies": ["Adobe After Effects", "Cinema 4D", "DaVinci Resolve", "RED Cameras"],
-    "impact": {
-      "value": "500K",
-      "label": "views"
-    },
-    "testimonial": "The product launch video created by Core Tech was instrumental in our successful launch. The quality of the production and creativity of the storytelling helped us stand out in a crowded market.",
-    "images": [
-      "https://images.unsplash.com/photo-1551817958-d9d86fb29431?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1468436139062-f60a71c5c892?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-    ]
-  },
-  {
-    "id": "fitness-coaching-platform",
-    "title": "Fitness Coaching Platform",
+    "id": "oragino",
+    "title": "Oragino Grocery",
     "category": "web-design",
     "categoryName": "Web Design",
-    "image": "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    "shortDescription": "User-friendly workout app with progress tracking and coaching.",
-    "fullDescription": "We designed and developed a comprehensive fitness coaching platform that allows users to access personalized workout plans, track their progress, and connect with certified coaches. The platform includes video tutorials, nutrition guidance, and community features to keep users motivated.",
-    "client": "FitLife Coaching",
-    "year": "2023",
-    "services": ["UI/UX Design", "Web Development", "Mobile App Development"],
-    "technologies": ["React Native", "Node.js", "Firebase", "AWS"],
+    "image": "/home/ubuntu/screenshots/oragino_coretechdevo_2025-05-09_06-55-35_6008.webp",
+    "shortDescription": "Online grocery store specializing in fresh and organic products",
+    "shortDescription_ar": "متجر بقالة إلكتروني متخصص في المنتجات الطازجة والعضوية",
+    "fullDescription": "Online grocery store specializing in fresh and organic products, focusing on providing a healthy shopping experience.",
+    "fullDescription_ar": "متجر بقالة إلكتروني متخصص في المنتجات الطازجة والعضوية، يركز على توفير تجربة تسوق صحية.",
+    "website": "https://oragino.coretechdevo.com/",
+    "year": "2024",
+    "services": ["Web Design", "E-commerce Development"],
+    "technologies": ["React", "TypeScript", "Node.js"],
     "impact": {
-      "value": "20K+",
+      "value": "3K+",
+      "label": "products"
+    }
+  },
+  {
+    "id": "aroma-cafe",
+    "title": "Aroma Cafe",
+    "category": "web-design",
+    "categoryName": "Web Design",
+    "image": "/home/ubuntu/screenshots/aromacafe_coretechde_2025-05-09_06-55-46_9019.webp",
+    "shortDescription": "A cafe website showcasing beverages and desserts",
+    "shortDescription_ar": "موقع لمقهى يعرض قائمة متنوعة من المشروبات والحلويات",
+    "fullDescription": "A cafe website showcasing a diverse menu of beverages like coffee, tea, and delicious desserts.",
+    "fullDescription_ar": "موقع لمقهى يعرض قائمة متنوعة من المشروبات مثل القهوة والشاي والحلويات اللذيذة.",
+    "website": "https://aromacafe.coretechdevo.com/",
+    "year": "2024",
+    "services": ["Web Design", "UI/UX Design"],
+    "technologies": ["React", "Tailwind CSS"],
+    "impact": {
+      "value": "+45%",
+      "label": "orders"
+    }
+  },
+  {
+    "id": "restaurant",
+    "title": "Fine Dining Restaurant",
+    "category": "web-design",
+    "categoryName": "Web Design",
+    "image": "/home/ubuntu/screenshots/restaurant_coretechd_2025-05-09_06-55-57_6213.webp",
+    "shortDescription": "Elegant restaurant website with online reservations",
+    "shortDescription_ar": "موقع مطعم أنيق مع حجز الطاولات عبر الإنترنت",
+    "fullDescription": "An elegant restaurant website offering authentic cuisine and easy online table reservations.",
+    "fullDescription_ar": "موقع مطعم أنيق يقدم مأكولات أصيلة ويوفر إمكانية حجز الطاولات بسهولة عبر الإنترنت.",
+    "website": "https://restaurant.coretechdevo.com/",
+    "year": "2024",
+    "services": ["Web Design", "Reservation System"],
+    "technologies": ["React", "Node.js", "MongoDB"],
+    "impact": {
+      "value": "+60%",
+      "label": "bookings"
+    }
+  },
+  {
+    "id": "divisima",
+    "title": "Divisima Fashion",
+    "category": "web-design",
+    "categoryName": "Web Design",
+    "image": "/home/ubuntu/screenshots/divisima_coretechdev_2025-05-09_06-56-08_3316.webp",
+    "shortDescription": "E-commerce fashion template with modern design",
+    "shortDescription_ar": "قالب تجارة إلكترونية للأزياء بتصميم عصري",
+    "fullDescription": "An e-commerce fashion template showcasing the latest products and various categories for clothing and accessories.",
+    "fullDescription_ar": "قالب تجارة إلكترونية للأزياء، يعرض أحدث المنتجات وتصنيفات متنوعة للملابس والإكسسوارات.",
+    "website": "https://divisima.coretechdevo.com/",
+    "year": "2024",
+    "services": ["Web Design", "E-commerce Development"],
+    "technologies": ["React", "Redux", "Node.js"],
+    "impact": {
+      "value": "10K+",
+      "label": "products"
+    }
+  },
+  {
+    "id": "tech-fix",
+    "title": "Tech Fix",
+    "category": "web-design",
+    "categoryName": "Web Design",
+    "image": "/home/ubuntu/screenshots/tech-fix-six_vercel__2025-05-09_06-56-21_2495.webp",
+    "shortDescription": "Professional computer repair services platform",
+    "shortDescription_ar": "منصة خدمات احترافية لإصلاح أجهزة الكمبيوتر",
+    "fullDescription": "Professional computer repair services, including solutions for software, hardware issues, and data recovery.",
+    "fullDescription_ar": "خدمات احترافية لإصلاح أجهزة الكمبيوتر، تشمل حلولاً لمشاكل البرامج والأجهزة واستعادة البيانات.",
+    "website": "https://tech-fix-six.vercel.app/",
+    "year": "2024",
+    "services": ["Web Design", "Service Booking"],
+    "technologies": ["React", "Next.js", "Tailwind CSS"],
+    "impact": {
+      "value": "+80%",
+      "label": "service bookings"
+    }
+  },
+  {
+    "id": "camp-explorer",
+    "title": "Camp Explorer",
+    "category": "web-design",
+    "categoryName": "Web Design",
+    "image": "/home/ubuntu/screenshots/campexplorer_vercel__2025-05-09_06-56-33_8210.webp",
+    "shortDescription": "Camping and hiking app with offline capabilities",
+    "shortDescription_ar": "تطبيق للتخييم والمشي مع خرائط تعمل دون اتصال",
+    "fullDescription": "A camping and hiking app providing offline maps and features for scheduling adventures.",
+    "fullDescription_ar": "تطبيق للتخييم والمشي لمسافات طويلة، يوفر خرائط تعمل دون اتصال بالإنترنت وميزات لجدولة المغامرات.",
+    "website": "https://campexplorer.vercel.app/",
+    "year": "2024",
+    "services": ["Web Design", "Mobile-First Development"],
+    "technologies": ["React", "Next.js", "PWA"],
+    "impact": {
+      "value": "2K+",
       "label": "active users"
-    },
-    "testimonial": "Core Tech transformed our concept into a user-friendly platform that our clients love. The intuitive design and seamless functionality have significantly improved user engagement and retention.",
-    "images": [
-      "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-    ]
-  },
-  {
-    "id": "travel-vlogger-youtube",
-    "title": "Travel Vlogger Channel Growth",
-    "category": "digital-marketing",
-    "categoryName": "YouTube Monetization",
-    "image": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    "shortDescription": "Strategic content planning and optimization for monetization.",
-    "fullDescription": "We helped a travel vlogger grow their YouTube channel from 5,000 to over 100,000 subscribers in just eight months. Our comprehensive strategy included content optimization, thumbnail design, keyword research, posting schedule optimization, and community engagement tactics to increase watch time and subscriber growth.",
-    "client": "Wanderlust Adventures",
-    "year": "2022",
-    "services": ["YouTube Strategy", "Content Optimization", "Audience Growth"],
-    "technologies": ["YouTube Analytics", "TubeBuddy", "VidIQ", "Adobe Premiere Pro"],
-    "impact": {
-      "value": "+200%",
-      "label": "revenue"
-    },
-    "testimonial": "Core Tech's YouTube optimization strategy completely transformed my channel. Not only did I reach monetization quickly, but the sustainable growth tactics they implemented have continued to help my channel thrive.",
-    "images": [
-      "https://images.unsplash.com/photo-1611162616475-46b635cb6868?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1488841714725-bb4c32d1ac94?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-    ]
-  },
-  {
-    "id": "bakery-social-media",
-    "title": "Local Bakery Social Media",
-    "category": "digital-marketing",
-    "categoryName": "Facebook Engagement",
-    "image": "https://images.unsplash.com/photo-1566125882500-87e10f726cdc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    "shortDescription": "Community building and promotional campaigns for local business.",
-    "fullDescription": "We developed and implemented a comprehensive social media strategy for a local bakery to increase their online presence and drive foot traffic to their store. The approach included visually appealing content creation, targeted Facebook advertising, community engagement campaigns, and special promotions to build a loyal follower base.",
-    "client": "Sweet Treats Bakery",
-    "year": "2023",
-    "services": ["Social Media Management", "Content Creation", "Community Building"],
-    "technologies": ["Facebook Ads Manager", "Canva", "Later", "Hootsuite"],
-    "impact": {
-      "value": "12K",
-      "label": "new followers"
-    },
-    "testimonial": "Core Tech transformed our social media presence. Their strategic approach to content and community management has resulted in a significant increase in both online engagement and in-store visits.",
-    "images": [
-      "https://images.unsplash.com/photo-1566125882500-87e10f726cdc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1505252585461-04db1eb84625?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-    ]
+    }
   }
 ]

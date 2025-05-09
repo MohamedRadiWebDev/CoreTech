@@ -260,9 +260,19 @@ const PortfolioDetail = () => {
               
               <div className="flex justify-center">
                 <Link href="/contact">
-                  <a className="px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-                    {t("portfolio.start_project")}
-                  </a>
+                  <div className="flex gap-4">
+                    <a 
+                      href={project.website} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                    >
+                      {t("portfolio.view_website")}
+                    </a>
+                    <a className="px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                      {t("portfolio.start_project")}
+                    </a>
+                  </div>
                 </Link>
               </div>
             </div>
