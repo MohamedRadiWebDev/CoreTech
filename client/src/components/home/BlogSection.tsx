@@ -6,9 +6,9 @@ import { useState, useEffect } from "react";
 import { BlogPost } from "@/types";
 
 const BlogSection = () => {
-  const { isRTL } = useLanguage();
   const { t } = useTranslation();
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
+  const { isRTL } = useLanguage();
 
   useEffect(() => {
     // Load blog posts from JSON file
@@ -56,7 +56,7 @@ const BlogSection = () => {
             {t("blog.description")}
           </p>
         </motion.div>
-        
+
         <motion.div 
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
           variants={containerVariants}
@@ -140,7 +140,7 @@ const BlogSection = () => {
             ))
           )}
         </motion.div>
-        
+
         <div className="text-center mt-16">
           <Link href="/blog">
             <a className="px-8 py-3 bg-white dark:bg-gray-800 border border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white dark:border-primary-500 dark:text-primary-500 dark:hover:bg-primary-900 dark:hover:text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">

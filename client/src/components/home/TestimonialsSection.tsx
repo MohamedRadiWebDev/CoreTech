@@ -71,7 +71,7 @@ const TestimonialsSection = () => {
             {t("testimonials.description")}
           </p>
         </motion.div>
-        
+
         <motion.div 
           ref={sliderRef}
           className="testimonial-slider flex overflow-x-auto pb-8 gap-6 snap-x scrollbar-hide"
@@ -170,7 +170,7 @@ const TestimonialsSection = () => {
             ))
           )}
         </motion.div>
-        
+
         <div className="flex justify-center gap-2 mt-8">
           {testimonials.length > 0 ? (
             testimonials.map((_, index) => (

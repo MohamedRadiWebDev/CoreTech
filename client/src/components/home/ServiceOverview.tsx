@@ -56,7 +56,7 @@ useEffect(() => {
             {t("services.description")}
           </p>
         </motion.div>
-        
+
         <motion.div 
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
           variants={containerVariants}
@@ -116,7 +116,7 @@ useEffect(() => {
             ))
           )}
         </motion.div>
-        
+
         <div className="text-center mt-16">
           <Link href="/contact">
             <a className="px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">

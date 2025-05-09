@@ -193,30 +193,30 @@ const PortfolioSection = () => {
                   <div className="absolute inset-0 bg-primary-600 bg-opacity-0 group-hover:bg-opacity-70 flex items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100">
                     <Link href={`/portfolio/${index}`}>
                       <a className="px-6 py-2 bg-white text-primary-600 font-medium rounded-lg transform -translate-y-10 group-hover:translate-y-0 transition-all duration-300">
-                        View Project
+                        {t("portfolio.view_project")}
                       </a>
                     </Link>
                   </div>
                 </div>
                 <div className="p-6">
                   <span className="text-sm text-primary-600 dark:text-primary-400 font-semibold">
-                    {index % 3 === 0 ? "Web Development" : index % 3 === 1 ? "Digital Marketing" : "Video Production"}
+                    {t(`portfolio.category${(index % 3) + 1}`)}
                   </span>
                   <h3 className="text-xl font-bold mt-2 mb-3">
-                    Sample Project {index + 1}
+                    {t(`portfolio.project${index + 1}_title`)}
                   </h3>
                   <p className="text-gray-600 dark:text-gray-400 mb-4">
-                    A sample project description showcasing our work and expertise.
+                    {t(`portfolio.project${index + 1}_description`)}
                   </p>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                       </svg>
-                      2024
+                      {portfolioItem?.year || "2024"}
                     </div>
                     <div className="text-sm font-medium text-primary-600 dark:text-primary-400">
-                      <span className="mr-1">+30%</span> Growth
+                      <span className="mr-1">+30%</span> {t("portfolio.growth")}
                     </div>
                   </div>
                 </div>
