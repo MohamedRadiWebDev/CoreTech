@@ -18,6 +18,120 @@
       "label": "monthly users"
     }
   },
+    {
+    "id": "oragino",
+    "title": "Oragino Grocery",
+    "category": "web-design",
+    "categoryName": "Web Design",
+    "image": "/home/ubuntu/screenshots/oragino_coretechdevo_2025-05-09_06-55-35_6008.webp",
+    "shortDescription": "Online grocery store specializing in fresh and organic products",
+    "shortDescription_ar": "متجر بقالة إلكتروني متخصص في المنتجات الطازجة والعضوية",
+    "fullDescription": "Online grocery store specializing in fresh and organic products, focusing on providing a healthy shopping experience.",
+    "fullDescription_ar": "متجر بقالة إلكتروني متخصص في المنتجات الطازجة والعضوية، يركز على توفير تجربة تسوق صحية.",
+    "website": "https://oragino.coretechdevo.com/",
+    "year": "2024",
+    "services": ["Web Design", "E-commerce Development"],
+    "technologies": ["React", "TypeScript", "Node.js"],
+    "impact": {
+      "value": "3K+",
+      "label": "products"
+    }
+  },
+  {
+    "id": "aroma-cafe",
+    "title": "Aroma Cafe",
+    "category": "web-design",
+    "categoryName": "Web Design",
+    "image": "/home/ubuntu/screenshots/aromacafe_coretechde_2025-05-09_06-55-46_9019.webp",
+    "shortDescription": "A cafe website showcasing beverages and desserts",
+    "shortDescription_ar": "موقع لمقهى يعرض قائمة متنوعة من المشروبات والحلويات",
+    "fullDescription": "A cafe website showcasing a diverse menu of beverages like coffee, tea, and delicious desserts.",
+    "fullDescription_ar": "موقع لمقهى يعرض قائمة متنوعة من المشروبات مثل القهوة والشاي والحلويات اللذيذة.",
+    "website": "https://aromacafe.coretechdevo.com/",
+    "year": "2024",
+    "services": ["Web Design", "UI/UX Design"],
+    "technologies": ["React", "Tailwind CSS"],
+    "impact": {
+      "value": "+45%",
+      "label": "orders"
+    }
+  },
+  {
+    "id": "restaurant",
+    "title": "Fine Dining Restaurant",
+    "category": "web-design",
+    "categoryName": "Web Design",
+    "image": "/home/ubuntu/screenshots/restaurant_coretechd_2025-05-09_06-55-57_6213.webp",
+    "shortDescription": "Elegant restaurant website with online reservations",
+    "shortDescription_ar": "موقع مطعم أنيق مع حجز الطاولات عبر الإنترنت",
+    "fullDescription": "An elegant restaurant website offering authentic cuisine and easy online table reservations.",
+    "fullDescription_ar": "موقع مطعم أنيق يقدم مأكولات أصيلة ويوفر إمكانية حجز الطاولات بسهولة عبر الإنترنت.",
+    "website": "https://restaurant.coretechdevo.com/",
+    "year": "2024",
+    "services": ["Web Design", "Reservation System"],
+    "technologies": ["React", "Node.js", "MongoDB"],
+    "impact": {
+      "value": "+60%",
+      "label": "bookings"
+    }
+  },
+  {
+    "id": "divisima",
+    "title": "Divisima Fashion",
+    "category": "web-design",
+    "categoryName": "Web Design",
+    "image": "/home/ubuntu/screenshots/divisima_coretechdev_2025-05-09_06-56-08_3316.webp",
+    "shortDescription": "E-commerce fashion template with modern design",
+    "shortDescription_ar": "قالب تجارة إلكترونية للأزياء بتصميم عصري",
+    "fullDescription": "An e-commerce fashion template showcasing the latest products and various categories for clothing and accessories.",
+    "fullDescription_ar": "قالب تجارة إلكترونية للأزياء، يعرض أحدث المنتجات وتصنيفات متنوعة للملابس والإكسسوارات.",
+    "website": "https://divisima.coretechdevo.com/",
+    "year": "2024",
+    "services": ["Web Design", "E-commerce Development"],
+    "technologies": ["React", "Redux", "Node.js"],
+    "impact": {
+      "value": "10K+",
+      "label": "products"
+    }
+  },
+  {
+    "id": "tech-fix",
+    "title": "Tech Fix",
+    "category": "web-design",
+    "categoryName": "Web Design",
+    "image": "/home/ubuntu/screenshots/tech-fix-six_vercel__2025-05-09_06-56-21_2495.webp",
+    "shortDescription": "Professional computer repair services platform",
+    "shortDescription_ar": "منصة خدمات احترافية لإصلاح أجهزة الكمبيوتر",
+    "fullDescription": "Professional computer repair services, including solutions for software, hardware issues, and data recovery.",
+    "fullDescription_ar": "خدمات احترافية لإصلاح أجهزة الكمبيوتر، تشمل حلولاً لمشاكل البرامج والأجهزة واستعادة البيانات.",
+    "website": "https://tech-fix-six.vercel.app/",
+    "year": "2024",
+    "services": ["Web Design", "Service Booking"],
+    "technologies": ["React", "Next.js", "Tailwind CSS"],
+    "impact": {
+      "value": "+80%",
+      "label": "service bookings"
+    }
+  },
+  {
+    "id": "camp-explorer",
+    "title": "Camp Explorer",
+    "category": "web-design",
+    "categoryName": "Web Design",
+    "image": "/home/ubuntu/screenshots/campexplorer_vercel__2025-05-09_06-56-33_8210.webp",
+    "shortDescription": "Camping and hiking app with offline capabilities",
+    "shortDescription_ar": "تطبيق للتخييم والمشي مع خرائط تعمل دون اتصال",
+    "fullDescription": "A camping and hiking app providing offline maps and features for scheduling adventures.",
+    "fullDescription_ar": "تطبيق للتخييم والمشي لمسافات طويلة، يوفر خرائط تعمل دون اتصال بالإنترنت وميزات لجدولة المغامرات.",
+    "website": "https://campexplorer.vercel.app/",
+    "year": "2024",
+    "services": ["Web Design", "Mobile-First Development"],
+    "technologies": ["React", "Next.js", "PWA"],
+    "impact": {
+      "value": "2K+",
+      "label": "active users"
+    }
+  },
   {
     "id": "social-media-campaign",
     "title": "Social Media Growth Campaign",
