@@ -1,9 +1,4 @@
-` tags, while adhering to all the specified rules.
 
-Here's the merged code:
-
-```
-<replit_final_file>
 import { useEffect, useState } from "react";
 import { useRoute, Link } from "wouter";
 import { Helmet } from "react-helmet";
