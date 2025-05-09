@@ -23,7 +23,7 @@ const Portfolio = () => {
     window.scrollTo(0, 0);
     
     // Load portfolio data
-    fetch('/public/data/portfolio.json')
+    fetch('/data/portfolio.json')
       .then(response => response.json())
       .then(data => {
         setPortfolioItems(data);
