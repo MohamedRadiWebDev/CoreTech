@@ -262,7 +262,7 @@ const PortfolioDetail = () => {
                 
                   <div className="flex gap-4">
                     <a 
-                      href={project.link} 
+                      href={project.website} 
                       target="_blank" 
                       rel="noopener noreferrer" 
                       className="px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
