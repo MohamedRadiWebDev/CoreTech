@@ -14,7 +14,7 @@ const PortfolioSection = () => {
 
   useEffect(() => {
     // Load portfolio items from JSON file
-    fetch('/data/portfolio.json')
+    fetch('/public/data/portfolio.json')
       .then(response => response.json())
       .then(data => {
         setPortfolioItems(data);
