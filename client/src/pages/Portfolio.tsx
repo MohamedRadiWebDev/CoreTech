@@ -164,11 +164,13 @@ const Portfolio = () => {
                       className="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-primary-600 bg-opacity-0 group-hover:bg-opacity-70 flex items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100">
-                      <Link href={`/portfolio/${item.id}`}>
-                        <a className="px-6 py-2 bg-white text-primary-600 font-medium rounded-lg transform -translate-y-10 group-hover:translate-y-0 transition-all duration-300">
-                          {t("portfolio.view_project")}
-                        </a>
-                      </Link>
+                      <a 
+                        href={item.website}
+                        target="_blank"
+                        rel="noopener noreferrer" 
+                        className="px-6 py-2 bg-white text-primary-600 font-medium rounded-lg transform -translate-y-10 group-hover:translate-y-0 transition-all duration-300">
+                        {t("portfolio.view_project")}
+                      </a>
                     </div>
                   </div>
                   <div className="p-6">
