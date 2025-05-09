@@ -1,4 +1,3 @@
-
 [
   {
     "id": "halal-food",
@@ -20,117 +19,79 @@
     }
   },
   {
-    "id": "oragino",
-    "title": "Oragino Grocery",
-    "category": "web-design",
-    "categoryName": "Web Design",
-    "image": "/home/ubuntu/screenshots/oragino_coretechdevo_2025-05-09_06-55-35_6008.webp",
-    "shortDescription": "Online grocery store specializing in fresh and organic products",
-    "shortDescription_ar": "متجر بقالة إلكتروني متخصص في المنتجات الطازجة والعضوية",
-    "fullDescription": "Online grocery store specializing in fresh and organic products, focusing on providing a healthy shopping experience.",
-    "fullDescription_ar": "متجر بقالة إلكتروني متخصص في المنتجات الطازجة والعضوية، يركز على توفير تجربة تسوق صحية.",
-    "website": "https://oragino.coretechdevo.com/",
+    "id": "social-media-campaign",
+    "title": "Social Media Growth Campaign",
+    "category": "digital-marketing",
+    "categoryName": "Digital Marketing",
+    "image": "/images/portfolio/social-media.jpg",
+    "shortDescription": "Comprehensive social media marketing campaign",
+    "shortDescription_ar": "حملة تسويق شاملة على وسائل التواصل الاجتماعي",
+    "fullDescription": "Strategic social media campaign that increased brand engagement by 300% across multiple platforms.",
+    "fullDescription_ar": "حملة استراتيجية على وسائل التواصل الاجتماعي أدت إلى زيادة التفاعل مع العلامة التجارية بنسبة 300٪",
+    "website": "https://example.com/case-study-1",
     "year": "2024",
-    "services": ["Web Design", "E-commerce Development"],
-    "technologies": ["React", "TypeScript", "Node.js"],
+    "services": ["Social Media Marketing", "Content Strategy", "Analytics"],
+    "technologies": ["Meta Business Suite", "Google Analytics", "Hootsuite"],
     "impact": {
-      "value": "3K+",
-      "label": "products"
+      "value": "+300%",
+      "label": "engagement"
     }
   },
   {
-    "id": "aroma-cafe",
-    "title": "Aroma Cafe",
-    "category": "web-design",
-    "categoryName": "Web Design",
-    "image": "/home/ubuntu/screenshots/aromacafe_coretechde_2025-05-09_06-55-46_9019.webp",
-    "shortDescription": "A cafe website showcasing beverages and desserts",
-    "shortDescription_ar": "موقع لمقهى يعرض قائمة متنوعة من المشروبات والحلويات",
-    "fullDescription": "A cafe website showcasing a diverse menu of beverages like coffee, tea, and delicious desserts.",
-    "fullDescription_ar": "موقع لمقهى يعرض قائمة متنوعة من المشروبات مثل القهوة والشاي والحلويات اللذيذة.",
-    "website": "https://aromacafe.coretechdevo.com/",
+    "id": "seo-optimization",
+    "title": "SEO Performance Boost",
+    "category": "digital-marketing",
+    "categoryName": "Digital Marketing",
+    "image": "/images/portfolio/seo.jpg",
+    "shortDescription": "SEO optimization campaign for e-commerce",
+    "shortDescription_ar": "حملة تحسين محركات البحث للتجارة الإلكترونية",
+    "fullDescription": "Complete SEO strategy that improved organic traffic by 200% and doubled conversion rates.",
+    "fullDescription_ar": "استراتيجية شاملة لتحسين محركات البحث أدت إلى تحسين حركة المرور العضوية بنسبة 200٪",
+    "website": "https://example.com/case-study-2",
     "year": "2024",
-    "services": ["Web Design", "UI/UX Design"],
-    "technologies": ["React", "Tailwind CSS"],
+    "services": ["SEO", "Content Marketing", "Analytics"],
+    "technologies": ["SEMrush", "Ahrefs", "Google Search Console"],
     "impact": {
-      "value": "+45%",
-      "label": "orders"
+      "value": "+200%",
+      "label": "organic traffic"
     }
   },
   {
-    "id": "restaurant",
-    "title": "Fine Dining Restaurant",
-    "category": "web-design",
-    "categoryName": "Web Design",
-    "image": "/home/ubuntu/screenshots/restaurant_coretechd_2025-05-09_06-55-57_6213.webp",
-    "shortDescription": "Elegant restaurant website with online reservations",
-    "shortDescription_ar": "موقع مطعم أنيق مع حجز الطاولات عبر الإنترنت",
-    "fullDescription": "An elegant restaurant website offering authentic cuisine and easy online table reservations.",
-    "fullDescription_ar": "موقع مطعم أنيق يقدم مأكولات أصيلة ويوفر إمكانية حجز الطاولات بسهولة عبر الإنترنت.",
-    "website": "https://restaurant.coretechdevo.com/",
+    "id": "product-launch-video",
+    "title": "Product Launch Campaign",
+    "category": "video-production",
+    "categoryName": "Video Production",
+    "image": "/images/portfolio/video-production.jpg",
+    "shortDescription": "Cinematic product launch video campaign",
+    "shortDescription_ar": "حملة فيديو سينمائية لإطلاق المنتج",
+    "fullDescription": "High-end product launch video campaign that garnered over 1M views across social platforms.",
+    "fullDescription_ar": "حملة فيديو عالية الجودة لإطلاق المنتج حققت أكثر من مليون مشاهدة",
+    "website": "https://example.com/case-study-3",
     "year": "2024",
-    "services": ["Web Design", "Reservation System"],
-    "technologies": ["React", "Node.js", "MongoDB"],
+    "services": ["Video Production", "Motion Graphics", "Sound Design"],
+    "technologies": ["Adobe Premiere Pro", "After Effects", "DaVinci Resolve"],
     "impact": {
-      "value": "+60%",
-      "label": "bookings"
+      "value": "1M+",
+      "label": "views"
     }
   },
   {
-    "id": "divisima",
-    "title": "Divisima Fashion",
-    "category": "web-design",
-    "categoryName": "Web Design",
-    "image": "/home/ubuntu/screenshots/divisima_coretechdev_2025-05-09_06-56-08_3316.webp",
-    "shortDescription": "E-commerce fashion template with modern design",
-    "shortDescription_ar": "قالب تجارة إلكترونية للأزياء بتصميم عصري",
-    "fullDescription": "An e-commerce fashion template showcasing the latest products and various categories for clothing and accessories.",
-    "fullDescription_ar": "قالب تجارة إلكترونية للأزياء، يعرض أحدث المنتجات وتصنيفات متنوعة للملابس والإكسسوارات.",
-    "website": "https://divisima.coretechdevo.com/",
+    "id": "corporate-documentary",
+    "title": "Corporate Documentary",
+    "category": "video-production",
+    "categoryName": "Video Production",
+    "image": "/images/portfolio/documentary.jpg",
+    "shortDescription": "Inspiring corporate documentary series",
+    "shortDescription_ar": "سلسلة وثائقية مؤسسية ملهمة",
+    "fullDescription": "A compelling documentary series showcasing company culture and success stories.",
+    "fullDescription_ar": "سلسلة وثائقية مقنعة تعرض ثقافة الشركة وقصص النجاح",
+    "website": "https://example.com/case-study-4",
     "year": "2024",
-    "services": ["Web Design", "E-commerce Development"],
-    "technologies": ["React", "Redux", "Node.js"],
+    "services": ["Video Production", "Storytelling", "Interviewing"],
+    "technologies": ["RED Cinema Camera", "Adobe Premiere", "Pro Tools"],
     "impact": {
-      "value": "10K+",
-      "label": "products"
-    }
-  },
-  {
-    "id": "tech-fix",
-    "title": "Tech Fix",
-    "category": "web-design",
-    "categoryName": "Web Design",
-    "image": "/home/ubuntu/screenshots/tech-fix-six_vercel__2025-05-09_06-56-21_2495.webp",
-    "shortDescription": "Professional computer repair services platform",
-    "shortDescription_ar": "منصة خدمات احترافية لإصلاح أجهزة الكمبيوتر",
-    "fullDescription": "Professional computer repair services, including solutions for software, hardware issues, and data recovery.",
-    "fullDescription_ar": "خدمات احترافية لإصلاح أجهزة الكمبيوتر، تشمل حلولاً لمشاكل البرامج والأجهزة واستعادة البيانات.",
-    "website": "https://tech-fix-six.vercel.app/",
-    "year": "2024",
-    "services": ["Web Design", "Service Booking"],
-    "technologies": ["React", "Next.js", "Tailwind CSS"],
-    "impact": {
-      "value": "+80%",
-      "label": "service bookings"
-    }
-  },
-  {
-    "id": "camp-explorer",
-    "title": "Camp Explorer",
-    "category": "web-design",
-    "categoryName": "Web Design",
-    "image": "/home/ubuntu/screenshots/campexplorer_vercel__2025-05-09_06-56-33_8210.webp",
-    "shortDescription": "Camping and hiking app with offline capabilities",
-    "shortDescription_ar": "تطبيق للتخييم والمشي مع خرائط تعمل دون اتصال",
-    "fullDescription": "A camping and hiking app providing offline maps and features for scheduling adventures.",
-    "fullDescription_ar": "تطبيق للتخييم والمشي لمسافات طويلة، يوفر خرائط تعمل دون اتصال بالإنترنت وميزات لجدولة المغامرات.",
-    "website": "https://campexplorer.vercel.app/",
-    "year": "2024",
-    "services": ["Web Design", "Mobile-First Development"],
-    "technologies": ["React", "Next.js", "PWA"],
-    "impact": {
-      "value": "2K+",
-      "label": "active users"
+      "value": "500K+",
+      "label": "impressions"
     }
   }
 ]
