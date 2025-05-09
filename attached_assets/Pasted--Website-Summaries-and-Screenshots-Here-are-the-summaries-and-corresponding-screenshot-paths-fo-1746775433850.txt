@@ -1,0 +1,38 @@
+## Website Summaries and Screenshots
+
+Here are the summaries and corresponding screenshot paths for the websites you provided:
+
+1.  **Website:** https://halalfood.coretechdevo.com/
+    **Summary (Arabic):** متجر إلكتروني للمنتجات العضوية والأطعمة الطازجة، يوفر تجربة تسوق سهلة وآمنة للمنتجات الحلال.
+    **Summary (English):** Online store for organic products and fresh food, offering an easy and secure shopping experience for Halal products.
+    **Screenshot:** /home/ubuntu/screenshots/halalfood_coretechde_2025-05-09_06-55-20_2569.webp
+
+2.  **Website:** https://oragino.coretechdevo.com/
+    **Summary (Arabic):** متجر بقالة إلكتروني متخصص في المنتجات الطازجة والعضوية، يركز على توفير تجربة تسوق صحية.
+    **Summary (English):** Online grocery store specializing in fresh and organic products, focusing on providing a healthy shopping experience.
+    **Screenshot:** /home/ubuntu/screenshots/oragino_coretechdevo_2025-05-09_06-55-35_6008.webp
+
+3.  **Website:** https://aromacafe.coretechdevo.com/
+    **Summary (Arabic):** موقع لمقهى يعرض قائمة متنوعة من المشروبات مثل القهوة والشاي والحلويات اللذيذة.
+    **Summary (English):** A cafe website showcasing a diverse menu of beverages like coffee, tea, and delicious desserts.
+    **Screenshot:** /home/ubuntu/screenshots/aromacafe_coretechde_2025-05-09_06-55-46_9019.webp
+
+4.  **Website:** https://restaurant.coretechdevo.com/
+    **Summary (Arabic):** موقع مطعم أنيق يقدم مأكولات أصيلة ويوفر إمكانية حجز الطاولات بسهولة عبر الإنترنت.
+    **Summary (English):** An elegant restaurant website offering authentic cuisine and easy online table reservations.
+    **Screenshot:** /home/ubuntu/screenshots/restaurant_coretechd_2025-05-09_06-55-57_6213.webp
+
+5.  **Website:** https://divisima.coretechdevo.com/
+    **Summary (Arabic):** قالب تجارة إلكترونية للأزياء، يعرض أحدث المنتجات وتصنيفات متنوعة للملابس والإكسسوارات.
+    **Summary (English):** An e-commerce fashion template showcasing the latest products and various categories for clothing and accessories.
+    **Screenshot:** /home/ubuntu/screenshots/divisima_coretechdev_2025-05-09_06-56-08_3316.webp
+
+6.  **Website:** https://tech-fix-six.vercel.app/
+    **Summary (Arabic):** خدمات احترافية لإصلاح أجهزة الكمبيوتر، تشمل حلولاً لمشاكل البرامج والأجهزة واستعادة البيانات.
+    **Summary (English):** Professional computer repair services, including solutions for software, hardware issues, and data recovery.
+    **Screenshot:** /home/ubuntu/screenshots/tech-fix-six_vercel__2025-05-09_06-56-21_2495.webp
+
+7.  **Website:** https://campexplorer.vercel.app/
+    **Summary (Arabic):** تطبيق للتخييم والمشي لمسافات طويلة، يوفر خرائط تعمل دون اتصال بالإنترنت وميزات لجدولة المغامرات.
+    **Summary (English):** A camping and hiking app providing offline maps and features for scheduling adventures.
+    **Screenshot:** /home/ubuntu/screenshots/campexplorer_vercel__2025-05-09_06-56-33_8210.webp
