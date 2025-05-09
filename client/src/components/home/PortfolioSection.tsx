@@ -17,8 +17,14 @@ const PortfolioSection = () => {
     fetch('/data/portfolio.json')
       .then(response => response.json())
       .then(data => {
-        setPortfolioItems(data);
-        setFilteredItems(data);
+        // Filter for homepage: 3 web, 2 marketing, 1 video
+        const webProjects = data.filter(item => item.category === 'web-design').slice(0, 3);
+        const marketingProjects = data.filter(item => item.category === 'digital-marketing').slice(0, 2);
+        const videoProjects = data.filter(item => item.category === 'video-production').slice(0, 1);
+        
+        const homepageProjects = [...webProjects, ...marketingProjects, ...videoProjects];
+        setPortfolioItems(homepageProjects);
+        setFilteredItems(homepageProjects);
       })
       .catch(error => console.error('Error loading portfolio items:', error));
   }, []);
