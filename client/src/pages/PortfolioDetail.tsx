@@ -18,28 +18,28 @@ const PortfolioDetail = () => {
   useEffect(() => {
     // Initialize scroll animations
     initializeAnimations();
-    
+
     // Scroll to top on page load
     window.scrollTo(0, 0);
-    
+
     // Load portfolio data
     fetch('/src/data/portfolio.json')
       .then(response => response.json())
       .then(data => {
         // Find the project with the matching ID
         const currentProject = data.find((item: PortfolioItem) => item.id === params?.id);
-        
+
         if (currentProject) {
           setProject(currentProject);
-          
+
           // Get related projects (same category, excluding current project)
           const related = data
             .filter((p: PortfolioItem) => p.category === currentProject.category && p.id !== currentProject.id)
             .slice(0, 3);
-          
+
           setRelatedProjects(related);
         }
-        
+
         setLoading(false);
       })
       .catch(error => {
@@ -98,7 +98,7 @@ const PortfolioDetail = () => {
         <title>{project.title} | Core Tech</title>
         <meta name="description" content={project.shortDescription} />
       </Helmet>
-      
+
       <main className="pt-32 pb-20 min-h-screen" data-rtl={isRTL}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
@@ -115,13 +115,13 @@ const PortfolioDetail = () => {
                 {t("portfolio.back_to_portfolio")}
               </a>
             </Link>
-            
+
             <span className="inline-block px-4 py-1 bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 font-medium rounded-full text-sm mb-4">
               {project.categoryName}
             </span>
-            
+
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">{project.title}</h1>
-            
+
             <div className="flex flex-wrap gap-6 mb-8">
               <div className="flex items-center">
                 <div className="mr-3 w-10 h-10 bg-primary-100 dark:bg-primary-800 rounded-full flex items-center justify-center">
@@ -134,7 +134,7 @@ const PortfolioDetail = () => {
                   <p className="font-medium">{project.client}</p>
                 </div>
               </div>
-              
+
               <div className="flex items-center">
                 <div className="mr-3 w-10 h-10 bg-primary-100 dark:bg-primary-800 rounded-full flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-primary-600 dark:text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -146,7 +146,7 @@ const PortfolioDetail = () => {
                   <p className="font-medium">{project.year}</p>
                 </div>
               </div>
-              
+
               <div className="flex items-center">
                 <div className="mr-3 w-10 h-10 bg-primary-100 dark:bg-primary-800 rounded-full flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-primary-600 dark:text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -160,7 +160,7 @@ const PortfolioDetail = () => {
               </div>
             </div>
           </motion.div>
-          
+
           <motion.div 
             className="mb-16"
             initial={{ opacity: 0, y: 20 }}
@@ -175,7 +175,7 @@ const PortfolioDetail = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-70"></div>
             </div>
-            
+
             <div className="max-w-4xl mx-auto">
               <div className="mb-12">
                 {descriptionParagraphs.map((paragraph, index) => (
@@ -184,7 +184,7 @@ const PortfolioDetail = () => {
                   </p>
                 ))}
               </div>
-              
+
               <div className="grid md:grid-cols-2 gap-8 mb-12">
                 <div>
                   <h3 className="text-xl font-bold mb-4">Services Provided</h3>
@@ -199,7 +199,7 @@ const PortfolioDetail = () => {
                     ))}
                   </ul>
                 </div>
-                
+
                 <div>
                   <h3 className="text-xl font-bold mb-4">Technologies Used</h3>
                   <div className="flex flex-wrap gap-2">
@@ -211,7 +211,7 @@ const PortfolioDetail = () => {
                   </div>
                 </div>
               </div>
-              
+
               {/* Project Gallery */}
               {project.images && project.images.length > 0 && (
                 <div className="mb-12">
@@ -234,7 +234,7 @@ const PortfolioDetail = () => {
                   </div>
                 </div>
               )}
-              
+
               {/* Client Testimonial */}
               {project.testimonial && (
                 <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-8 mb-12">
@@ -257,9 +257,9 @@ const PortfolioDetail = () => {
                   </div>
                 </div>
               )}
-              
+
               <div className="flex justify-center">
-                <Link href="/contact">
+                
                   <div className="flex gap-4">
                     <a 
                       href={project.website} 
@@ -269,15 +269,17 @@ const PortfolioDetail = () => {
                     >
                       {t("portfolio.view_website")}
                     </a>
-                    <a className="px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-                      {t("portfolio.start_project")}
-                    </a>
+                    <Link href="/contact">
+                      <a className="px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                        {t("portfolio.start_project")}
+                      </a>
+                    </Link>
                   </div>
-                </Link>
+                
               </div>
             </div>
           </motion.div>
-          
+
           {/* Related Projects */}
           {relatedProjects.length > 0 && (
             <motion.div 
@@ -287,7 +289,7 @@ const PortfolioDetail = () => {
               transition={{ duration: 0.5, delay: 0.4 }}
             >
               <h2 className="text-2xl font-bold mb-8 text-center">Related Projects</h2>
-              
+
               <div className="grid md:grid-cols-3 gap-8">
                 {relatedProjects.map((relatedProject) => (
                   <motion.div 
