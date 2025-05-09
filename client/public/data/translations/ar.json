@@ -169,10 +169,18 @@
   },
   "blog": {
     "read_more": "قراءة المزيد",
-    "categories": "الفئات",
+    "categories": "التصنيفات", 
     "related_posts": "مقالات ذات صلة",
     "share": "شارك هذا المقال",
-    "back_to_blog": "العودة إلى المدونة"
+    "back_to_blog": "العودة إلى المدونة",
+    "loading": "جاري تحميل المقال",
+    "loading_message": "يرجى الانتظار بينما نقوم بتحميل المقال...",
+    "not_found": "المقال غير موجود",
+    "not_found_message": "المقال الذي تبحث عنه غير موجود أو تم حذفه",
+    "category_seo": "تحسين محركات البحث",
+    "category_social_media": "وسائل التواصل الاجتماعي",
+    "category_video": "إنتاج الفيديو",
+    "category_web_design": "تصميم المواقع"
   },
   "about_page": {
     "title": "عن MBM الرقمية",
