@@ -1,13 +1,20 @@
-import { motion } from "framer-motion";
-import { useTranslation } from "@/hooks/useTranslation";
-import { Button } from "@/components/ui/button";
+
 import { Link } from "wouter";
+import { useLanguage } from "@/context/LanguageContext";
+import { useTranslation } from "@/hooks/useTranslation";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
 
 export default function HeroSection() {
+  const { isRTL } = useLanguage();
   const { t } = useTranslation();
 
   return (
-    <section className="relative h-screen flex items-center justify-center bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 dark:from-primary/5 dark:via-primary/2 dark:to-primary/5">
+    <section 
+      id="home" 
+      className="relative h-screen flex items-center justify-center bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 dark:from-primary/5 dark:via-primary/2 dark:to-primary/5"
+      data-rtl={isRTL}
+    >
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center space-y-4 text-center">
           <motion.h1 
