@@ -1,4 +1,3 @@
-
 {
   "meta": {
     "home_title": "Digital Services & Solutions",
@@ -85,11 +84,19 @@
       "title": "Facebook Engagement",
       "description": "Effective strategies to boost engagement and interaction on social media platforms"
     },
-    "website_design": "Website Design",
-    "digital_marketing": "Digital Marketing",
-    "motion_graphics": "Motion Graphics",
-    "video_editing": "Video Editing",
-    "youtube_monetization": "YouTube Monetization",
-    "facebook_engagement": "Facebook Engagement"
-  }
+    "service1": {
+      "title": "Website Design",
+      "description": "Professional website design tailored to your business needs"
+    },
+    "service2": {
+      "title": "Digital Marketing",
+      "description": "Effective marketing strategies for business growth"
+    }
+  },
+  "website_design": "Website Design",
+  "digital_marketing": "Digital Marketing",
+  "motion_graphics": "Motion Graphics",
+  "video_editing": "Video Editing",
+  "youtube_monetization": "YouTube Monetization",
+  "facebook_engagement": "Facebook Engagement"
 }
