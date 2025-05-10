@@ -24,7 +24,9 @@
     "portfolio": "Portfolio",
     "blog": "Blog",
     "about": "About",
-    "contact": "Contact"
+    "contact": "Contact",
+    "pricing": "Pricing",
+    "testimonials": "Testimonials"
   },
   "common": {
     "company_name": "Core Tech",
@@ -58,6 +60,7 @@
     "description": "We offer a comprehensive range of digital services to help your business grow and succeed in the digital landscape",
     "discuss_project": "Contact us to discuss your project",
     "view_all": "View All Services",
+    "learn_more": "Learn More",
     "web-design": {
       "title": "Web Design & Development",
       "description": "Custom, responsive websites that perfectly represent your brand and convert visitors into customers"
@@ -69,6 +72,24 @@
     "motion-graphics": {
       "title": "Motion Graphics & Promotional Videos",
       "description": "Engaging animations and videos that tell your story and captivate your audience"
-    }
+    },
+    "video-editing": {
+      "title": "Video Editing",
+      "description": "Professional video editing services that transform raw footage into polished, engaging content"
+    },
+    "youtube": {
+      "title": "YouTube Monetization Support",
+      "description": "Strategic guidance and optimization to help creators meet monetization requirements and increase revenue"
+    },
+    "facebook": {
+      "title": "Facebook Engagement",
+      "description": "Effective strategies to boost engagement and interaction on social media platforms"
+    },
+    "website_design": "Website Design",
+    "digital_marketing": "Digital Marketing",
+    "motion_graphics": "Motion Graphics",
+    "video_editing": "Video Editing",
+    "youtube_monetization": "YouTube Monetization",
+    "facebook_engagement": "Facebook Engagement"
   }
 }
