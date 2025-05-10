@@ -1,3 +1,4 @@
+
 {
   "meta": {
     "home_title": "Digital Services & Solutions",
@@ -50,5 +51,24 @@
     "cta_title": "Ready to Get Started?",
     "cta_text": "Let's discuss how we can help your business grow in the digital landscape.",
     "cta_button": "Contact Us Today"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "What We Do Best",
+    "description": "We offer a comprehensive range of digital services to help your business grow and succeed in the digital landscape",
+    "discuss_project": "Contact us to discuss your project",
+    "view_all": "View All Services",
+    "web-design": {
+      "title": "Web Design & Development",
+      "description": "Custom, responsive websites that perfectly represent your brand and convert visitors into customers"
+    },
+    "digital-marketing": {
+      "title": "Digital Marketing",
+      "description": "Strategic campaigns across ads, social media, and content to increase reach and engagement"
+    },
+    "motion-graphics": {
+      "title": "Motion Graphics & Promotional Videos",
+      "description": "Engaging animations and videos that tell your story and captivate your audience"
+    }
   }
 }
