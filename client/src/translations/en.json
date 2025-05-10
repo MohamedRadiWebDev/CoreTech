@@ -112,6 +112,18 @@
     "youtube_monetization": "YouTube Monetization",
     "facebook_engagement": "Facebook Engagement"
   },
+  "portfolio_page": {
+    "title": "Our Portfolio",
+    "description": "Explore our recent projects and see how we've helped businesses achieve their digital goals",
+    "loading": "Loading Projects",
+    "loading_message": "Please wait while we load our portfolio projects",
+    "no_results": "No Projects Found",
+    "no_results_message": "Try changing your filter criteria",
+    "show_all": "Show All Projects",
+    "cta_title": "Ready to Start Your Project?",
+    "cta_description": "Let's create something amazing together",
+    "cta_button": "Contact Us Now"
+  },
   "portfolio": {
     "title": "Our Portfolio",
     "description": "Explore our recent projects and see how we've helped businesses achieve their digital goals",
