@@ -2,67 +2,91 @@
   {
     "id": "testimonial1",
     "name": "Sarah Johnson",
+    "name_ar": "سارة جونسون",
     "role": "Fitness Studio Owner",
+    "role_ar": "مالكة استوديو لياقة بدنية",
     "image": "https://randomuser.me/api/portraits/women/42.jpg",
     "text": "Core Tech transformed our online presence completely. Our website traffic has increased by 150% and class bookings are up by 200% since launching our new site and marketing campaign.",
+    "text_ar": "قامت كور تك بتحويل تواجدنا على الإنترنت بشكل كامل. ازدادت حركة المرور على موقعنا بنسبة 150٪ وارتفعت حجوزات الفصول بنسبة 200٪ منذ إطلاق موقعنا الجديد وحملة التسويق.",
     "rating": 5,
     "date": "August 15, 2023",
     "projectId": "fitness-coaching-platform",
-    "projectName": "Fitness Coaching Platform"
+    "projectName": "Fitness Coaching Platform",
+    "projectName_ar": "منصة تدريب اللياقة البدنية"
   },
   {
     "id": "testimonial2",
     "name": "David Chen",
+    "name_ar": "ديفيد تشين",
     "role": "Restaurant Owner",
+    "role_ar": "صاحب مطعم",
     "image": "https://randomuser.me/api/portraits/men/32.jpg",
     "text": "The promotional video MBM created for us has over 50,000 views on social media. It's brought in countless new customers who mention they saw our video online.",
+    "text_ar": "حقق الفيديو الترويجي الذي أنشأته MBM لنا أكثر من 50000 مشاهدة على وسائل التواصل الاجتماعي. لقد جلب لنا عددًا لا يحصى من العملاء الجدد الذين يذكرون أنهم شاهدوا الفيديو الخاص بنا عبر الإنترنت.",
     "rating": 5,
     "date": "July 10, 2023",
     "projectId": "restaurant-campaign",
-    "projectName": "Restaurant Engagement Campaign"
+    "projectName": "Restaurant Engagement Campaign",
+    "projectName_ar": "حملة تفاعل المطاعم"
   },
   {
     "id": "testimonial3",
     "name": "Amina Patel",
+    "name_ar": "أمينة باتيل",
     "role": "E-commerce Entrepreneur",
+    "role_ar": "رائدة أعمال التجارة الإلكترونية",
     "image": "https://randomuser.me/api/portraits/women/68.jpg",
     "text": "Working with Core Tech was seamless from start to finish. They redesigned our e-commerce store and implemented a digital marketing strategy that increased our conversion rate by 35%.",
+    "text_ar": "كان العمل مع كور تك سلسًا من البداية إلى النهاية. لقد أعادوا تصميم متجر التجارة الإلكترونية الخاص بنا ونفذوا استراتيجية تسويق رقمي زادت من معدل التحويل لدينا بنسبة 35٪.",
     "rating": 4.5,
     "date": "September 22, 2023",
     "projectId": "fashion-ecommerce",
-    "projectName": "Fashion E-commerce Store"
+    "projectName": "Fashion E-commerce Store",
+    "projectName_ar": "متجر الأزياء الإلكتروني"
   },
   {
     "id": "testimonial4",
     "name": "Miguel Rodriguez",
+    "name_ar": "ميغيل رودريغيز",
     "role": "YouTube Content Creator",
+    "role_ar": "منشئ محتوى على يوتيوب",
     "image": "https://randomuser.me/api/portraits/men/75.jpg",
     "text": "MBM's YouTube monetization strategies helped me reach the subscriber and watch hour requirements in just 3 months. Their video editing service transformed my content quality.",
+    "text_ar": "ساعدتني استراتيجيات تحقيق الدخل من يوتيوب الخاصة بـ MBM في الوصول إلى متطلبات المشتركين وساعات المشاهدة في 3 أشهر فقط. حولت خدمة تحرير الفيديو الخاصة بهم جودة المحتوى الخاص بي.",
     "rating": 5,
     "date": "June 18, 2023",
     "projectId": "travel-vlogger-youtube",
-    "projectName": "Travel Vlogger Channel Growth"
+    "projectName": "Travel Vlogger Channel Growth",
+    "projectName_ar": "نمو قناة مدون الفيديو للسفر"
   },
   {
     "id": "testimonial5",
     "name": "Jennifer Lee",
+    "name_ar": "جينيفر لي",
     "role": "Marketing Director",
+    "role_ar": "مديرة التسويق",
     "image": "https://randomuser.me/api/portraits/women/28.jpg",
     "text": "Core Tech's team went above and beyond to deliver our tech product launch video. The quality, creativity, and attention to detail were exceptional, and the results were better than we could have imagined.",
+    "text_ar": "لقد تجاوز فريق Core Tech كل التوقعات لتقديم الفيديو الخاص بإطلاق منتجنا التقني. كانت الجودة والإبداع والاهتمام بالتفاصيل استثنائية، وكانت النتائج أفضل مما كنا نتخيله.",
     "rating": 5,
     "date": "October 5, 2023",
     "projectId": "tech-product-launch",
-    "projectName": "Tech Product Launch Video"
+    "projectName": "Tech Product Launch Video",
+    "projectName_ar": "فيديو إطلاق المنتج التقني"
   },
   {
     "id": "testimonial6",
     "name": "Thomas Baker",
+    "name_ar": "توماس بيكر",
     "role": "Bakery Owner",
+    "role_ar": "صاحب مخبز",
     "image": "https://randomuser.me/api/portraits/men/24.jpg",
     "text": "Our bakery's social media presence exploded thanks to Core Tech. Their strategic approach to content creation and community engagement helped us build a loyal online following that translates to real customers in our store.",
+    "text_ar": "لقد انفجر حضور مخبزنا على وسائل التواصل الاجتماعي بفضل Core Tech. ساعدنا نهجهم الاستراتيجي في إنشاء المحتوى والمشاركة المجتمعية في بناء متابعين مخلصين عبر الإنترنت يترجمون إلى عملاء حقيقيين في متجرنا.",
     "rating": 5,
     "date": "November 12, 2023",
     "projectId": "bakery-social-media",
-    "projectName": "Local Bakery Social Media"
+    "projectName": "Local Bakery Social Media",
+    "projectName_ar": "وسائل التواصل الاجتماعي للمخبز المحلي"
   }
 ]
