@@ -86,7 +86,7 @@ const BlogSection = () => {
                       className="w-full h-48 object-cover"
                     />
                     <div className="absolute top-4 right-4 bg-primary-600 text-white text-xs font-semibold py-1 px-3 rounded-full">
-                      {t(`blog.category_${post.category.toLowerCase()}`) || post.category}
+                      {post.category}
                     </div>
                   </div>
                   <div className="p-6">
