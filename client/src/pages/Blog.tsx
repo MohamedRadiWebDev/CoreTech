@@ -22,7 +22,7 @@ const Blog = () => {
     window.scrollTo(0, 0);
 
     // Load blog data
-    fetch('/data/blog.json')
+    fetch(`${window.location.origin}/data/blog.json`)
       .then(response => response.json())
       .then(data => {
         const translatedPosts = data.map((post: BlogPost) => ({
