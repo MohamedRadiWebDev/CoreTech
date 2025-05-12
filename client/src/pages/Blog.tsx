@@ -162,6 +162,32 @@ const Blog = () => {
                       </a>
                     </Link>
                   </div>
+                  <div className="p-6">
+                    <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-2">
+                     {/* Tags */}
+              {post.tags.length > 0 && (
+                <div className="flex items-center space-x-2 mt-4">
+                  {post.tags.map((tag, index) => (
+                    <span key={index} className="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm py-1 px-3 rounded-full">
+                      #{t(`blog.tag_${tag.toLowerCase()}`)}
+                    </span>
+                  ))}
+                </div>
+              )}
+                    </div>
+                    <h3 className="text-xl font-bold mb-3">{post.title}</h3>
+                    <p className="text-gray-600 dark:text-gray-400 mb-6">
+                      {post.excerpt}
+                    </p>
+                    <Link href={`/blog/${post.id}`}>
+                      <a className="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium">
+                        {t("blog.read_more")}
+                        <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                      </a>
+                    </Link>
+                  </div>
                 </motion.article>
               ))
             ) : (
