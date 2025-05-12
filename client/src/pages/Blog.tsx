@@ -25,8 +25,22 @@ const Blog = () => {
     fetch('data/blog.json')
       .then(response => response.json())
       .then(data => {
-        setBlogPosts(data);
-        setFilteredPosts(data);
+        const translatedPosts = data.map((post: BlogPost) => {
+          try {
+            return {
+              ...post,
+              title: t(`blog.${post.id}_title`) || post.title,
+              excerpt: t(`blog.${post.id}_excerpt`) || post.excerpt,
+              content: t(`blog.${post.id}_content`) || post.content,
+              category: t(`blog.category_${post.category.toLowerCase()}`) || post.category,
+              tags: post.tags
+            };
+          } catch (error) {
+            return post; // Fallback to original content if translation fails
+          }
+        });
+        setBlogPosts(translatedPosts);
+        setFilteredPosts(translatedPosts);
       })
       .catch(error => console.error('Error loading blog posts:', error));
   }, []);
