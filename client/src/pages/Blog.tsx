@@ -82,8 +82,8 @@ const Blog = () => {
         <meta name="description" content={t("meta.blog_description")} />
       </Helmet>
 
-      <main className="pt-32 pb-20" data-rtl={isRTL}>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <main className="pt-32 pb-20 overflow-visible" data-rtl={isRTL}>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 overflow-visible">
           <motion.div 
             className="text-center mb-16"
             initial={{ opacity: 0, y: 20 }}
