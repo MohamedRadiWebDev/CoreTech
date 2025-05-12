@@ -22,22 +22,14 @@ const Blog = () => {
     window.scrollTo(0, 0);
 
     // Load blog data
-    fetch('/data/blog.json')
+    fetch('data/blog.json')
       .then(response => response.json())
       .then(data => {
-        const translatedPosts = data.map((post: BlogPost) => ({
-          ...post,
-          title: t(`blog.${post.id}_title`) || post.title,
-          excerpt: t(`blog.${post.id}_excerpt`) || post.excerpt,
-          content: t(`blog.${post.id}_content`) || post.content,
-          category: post.category,
-          tags: post.tags
-        }));
-        setBlogPosts(translatedPosts);
-        setFilteredPosts(translatedPosts);
+        setBlogPosts(data);
+        setFilteredPosts(data);
       })
       .catch(error => console.error('Error loading blog posts:', error));
-  }, [t]);
+  }, []);
 
   // Get unique categories
   const categories = blogPosts.length > 0 
