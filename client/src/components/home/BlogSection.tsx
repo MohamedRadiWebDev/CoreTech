@@ -19,7 +19,7 @@ const BlogSection = () => {
           ...post,
           title: t(`blog.${post.id}_title`) || post.title,
           excerpt: t(`blog.${post.id}_excerpt`) || post.excerpt,
-          category: t(`blog.category_${post.category.toLowerCase()}`) || post.category
+          category: t(`blog.category_${post.category.toLowerCase()}`),
         }));
         setBlogPosts(posts);
       })

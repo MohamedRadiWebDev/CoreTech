@@ -51,7 +51,10 @@ const Blog = () => {
     if (category === 'all') {
       setFilteredPosts(blogPosts);
     } else {
-      setFilteredPosts(blogPosts.filter(post => post.category.toLowerCase() === category));
+      setFilteredPosts(blogPosts.filter(post => {
+        const postCategory = t(`blog.category_${post.category.toLowerCase()}`);
+        return postCategory === category;
+      }));
     }
   };
 
