@@ -82,7 +82,7 @@ const Blog = () => {
         <meta name="description" content={t("meta.blog_description")} />
       </Helmet>
 
-      <main className="pt-32 pb-20 min-h-screen" data-rtl={isRTL}>
+      <main className="pt-32 pb-20" data-rtl={isRTL}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center mb-16"
