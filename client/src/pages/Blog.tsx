@@ -17,19 +17,27 @@ const Blog = () => {
   useEffect(() => {
     // Initialize scroll animations
     initializeAnimations();
-    
+
     // Scroll to top on page load
     window.scrollTo(0, 0);
-    
+
     // Load blog data
     fetch('data/blog.json')
       .then(response => response.json())
       .then(data => {
-        setBlogPosts(data);
-        setFilteredPosts(data);
+        const translatedPosts = data.map((post: BlogPost) => ({
+          ...post,
+          title: t(`blog.${post.id}_title`) || post.title,
+          excerpt: t(`blog.${post.id}_excerpt`) || post.excerpt,
+          content: t(`blog.${post.id}_content`) || post.content,
+          category: t(`blog.category_${post.category.toLowerCase()}`) || post.category,
+          tags: post.tags.map(tag => t(`blog.tag_${tag.toLowerCase()}`) || tag)
+        }));
+        setBlogPosts(translatedPosts);
+        setFilteredPosts(translatedPosts);
       })
       .catch(error => console.error('Error loading blog posts:', error));
-  }, []);
+  }, [t]);
 
   // Get unique categories
   const categories = blogPosts.length > 0 
@@ -39,7 +47,7 @@ const Blog = () => {
   // Handle category filter
   const handleCategoryChange = (category: string) => {
     setActiveCategory(category);
-    
+
     if (category === 'all') {
       setFilteredPosts(blogPosts);
     } else {
@@ -73,7 +81,7 @@ const Blog = () => {
         <title>{t("meta.blog_title")} | Core Tech</title>
         <meta name="description" content={t("meta.blog_description")} />
       </Helmet>
-      
+
       <main className="pt-32 pb-20 min-h-screen" data-rtl={isRTL}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
@@ -87,7 +95,7 @@ const Blog = () => {
               {t("blog_page.description")}
             </p>
           </motion.div>
-          
+
           {/* Category Filter */}
           <motion.div 
             className="flex flex-wrap justify-center gap-4 mb-12"
@@ -109,7 +117,7 @@ const Blog = () => {
               </button>
             ))}
           </motion.div>
-          
+
           {/* Blog Posts Grid */}
           <motion.div 
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
@@ -192,7 +200,7 @@ const Blog = () => {
               </div>
             )}
           </motion.div>
-          
+
           {/* Newsletter Subscription */}
           <motion.div 
             className="mt-20 bg-gray-100 dark:bg-gray-800 rounded-xl p-8"
@@ -207,7 +215,7 @@ const Blog = () => {
                   {t("blog_page.newsletter_description")}
                 </p>
               </div>
-              
+
               <div>
                 <form className="flex flex-col sm:flex-row gap-4">
                   <input 

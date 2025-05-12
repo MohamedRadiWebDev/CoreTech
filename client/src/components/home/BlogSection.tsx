@@ -14,9 +14,17 @@ const BlogSection = () => {
     // Load blog posts from JSON file
     fetch('/data/blog.json')
       .then(response => response.json())
-      .then(data => setBlogPosts(data.slice(0, 3))) // Only show first 3 posts
+      .then(data => {
+        const posts = data.slice(0, 3).map((post: BlogPost) => ({
+          ...post,
+          title: t(`blog.${post.id}_title`) || post.title,
+          excerpt: t(`blog.${post.id}_excerpt`) || post.excerpt,
+          category: t(`blog.category_${post.category.toLowerCase()}`) || post.category
+        }));
+        setBlogPosts(posts);
+      })
       .catch(error => console.error('Error loading blog posts:', error));
-  }, []);
+  }, [t]);
 
   // Animation variants
   const containerVariants = {
