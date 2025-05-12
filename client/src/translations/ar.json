@@ -199,7 +199,12 @@
     "read_more": "اقرأ المزيد",
     "view_all": "عرض جميع المقالات",
     "back_to_blog": "العودة إلى المدونة",
-    "related_posts": "مقالات ذات صلة"
+    "related_posts": "مقالات ذات صلة",
+    "social-media-strategies_content": "Your content for social media strategies here.",
+    "video-production-secrets_content": "Your content for video production secrets here.",
+    "website-conversion-optimization_content": "Your content for website conversion optimization here.",
+    "youtube-monetization-guide_content": "Your content for YouTube monetization guide here.",
+    "facebook-engagement-techniques_content": "Your content for Facebook engagement techniques here."
   },
   "about": {
     "title": "من نحن",
