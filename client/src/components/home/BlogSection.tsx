@@ -12,7 +12,7 @@ const BlogSection = () => {
 
   useEffect(() => {
     // Load blog posts from JSON file
-    fetch('./data/blog.json')
+    fetch('/data/blog.json')
       .then(response => response.json())
       .then(data => {
         const posts = data.slice(0, 3).map((post: BlogPost) => ({
