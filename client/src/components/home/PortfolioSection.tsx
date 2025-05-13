@@ -22,7 +22,12 @@ const PortfolioSection = () => {
         const marketingProjects = data.filter(item => item.category === 'digital-marketing').slice(0, 2);
         const videoProjects = data.filter(item => item.category === 'video-production').slice(0, 1);
         
-        const homepageProjects = [...webProjects, ...marketingProjects, ...videoProjects];
+        const homepageProjects = [...webProjects, ...marketingProjects, ...videoProjects].map(item => ({
+          ...item,
+          shortDescription: isRTL ? item.shortDescription_ar : item.shortDescription,
+          categoryName: t(`portfolio.category_${item.category}`),
+        }));
+        
         setPortfolioItems(homepageProjects);
         setFilteredItems(homepageProjects);
       })

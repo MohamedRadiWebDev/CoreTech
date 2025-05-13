@@ -126,6 +126,9 @@
   "portfolio": {
     "title": "معرض أعمالنا",
     "description": "استكشف مشاريعنا الأخيرة وكيف ساعدنا الشركات في تحقيق أهدافها الرقمية",
+    "category_web-design": "تصميم المواقع",
+    "category_digital-marketing": "التسويق الرقمي",
+    "category_video-production": "إنتاج الفيديو",ا الشركات في تحقيق أهدافها الرقمية",
     "filter_all": "الكل",
     "filter_web": "تصميم الويب",
     "filter_marketing": "التسويق",
