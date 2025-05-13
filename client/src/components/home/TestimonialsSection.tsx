@@ -15,9 +15,19 @@ const TestimonialsSection = () => {
     // Load testimonials from JSON file
     fetch('/data/testimonials.json')
       .then(response => response.json())
-      .then(data => setTestimonials(data))
+      .then(data => {
+        // Transform testimonials to use translations
+        const translatedTestimonials = data.map(testimonial => ({
+          ...testimonial,
+          name: t(`testimonials.${testimonial.id}_name`, testimonial.name),
+          role: t(`testimonials.${testimonial.id}_role`, testimonial.role),
+          text: t(`testimonials.${testimonial.id}_text`, testimonial.text),
+          projectName: t(`testimonials.${testimonial.id}_project`, testimonial.projectName)
+        }));
+        setTestimonials(translatedTestimonials);
+      })
       .catch(error => console.error('Error loading testimonials:', error));
-  }, []);
+  }, [t]);
 
   // Handle dot navigation
   const handleDotClick = (index: number) => {
