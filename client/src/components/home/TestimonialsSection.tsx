@@ -19,10 +19,10 @@ const TestimonialsSection = () => {
         // Transform testimonials to use translations
         const translatedTestimonials = data.map(testimonial => ({
           ...testimonial,
-          name: t(`testimonials.${testimonial.id}_name`, testimonial.name),
-          role: t(`testimonials.${testimonial.id}_role`, testimonial.role),
-          text: t(`testimonials.${testimonial.id}_text`, testimonial.text),
-          projectName: t(`testimonials.${testimonial.id}_project`, testimonial.projectName)
+          name: t(`testimonials.testimonial${testimonial.id}_name`),
+          role: t(`testimonials.testimonial${testimonial.id}_role`),
+          text: t(`testimonials.testimonial${testimonial.id}_text`),
+          projectName: t(`testimonials.testimonial${testimonial.id}_project`)
         }));
         setTestimonials(translatedTestimonials);
       })
