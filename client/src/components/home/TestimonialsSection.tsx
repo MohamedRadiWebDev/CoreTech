@@ -126,7 +126,7 @@ const TestimonialsSection = () => {
                     ))}
                   </div>
                   <p className="text-gray-700 dark:text-gray-300 italic">
-                    "{t(`testimonials.${testimonial.id}_text`, testimonial.text)}"
+                    "{testimonial.text}"
                   </p>
                 </div>
               </motion.div>
