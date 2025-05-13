@@ -143,22 +143,6 @@ const Header = () => {
               {t("nav.portfolio")}
             </a>
           </Link>
-          <Link href="/pricing">
-            <a 
-              className={`block py-2 font-medium ${isActive("/pricing") ? "text-primary-600 dark:text-primary-400" : "text-gray-700 hover:text-primary-600 dark:text-gray-300 dark:hover:text-white"}`}
-              onClick={handleMenuItemClick}
-            >
-              {t("nav.pricing")}
-            </a>
-          </Link>
-          <Link href="/testimonials">
-            <a 
-              className={`block py-2 font-medium ${isActive("/testimonials") ? "text-primary-600 dark:text-primary-400" : "text-gray-700 hover:text-primary-600 dark:text-gray-300 dark:hover:text-white"}`}
-              onClick={handleMenuItemClick}
-            >
-              {t("nav.testimonials")}
-            </a>
-          </Link>
           <Link href="/blog">
             <a 
               className={`block py-2 font-medium ${isActive("/blog") ? "text-primary-600 dark:text-primary-400" : "text-gray-700 hover:text-primary-600 dark:text-gray-300 dark:hover:text-white"}`}
