@@ -20,7 +20,7 @@ const Pricing = () => {
     window.scrollTo(0, 0);
     
     // Load pricing data
-    fetch('/src/data/pricing.json')
+    fetch('/data/pricing.json')
       .then(response => response.json())
       .then(data => setPricingPlans(data))
       .catch(error => console.error('Error loading pricing plans:', error));
