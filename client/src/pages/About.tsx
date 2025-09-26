@@ -5,6 +5,11 @@ import { useLanguage } from "@/context/LanguageContext";
 import { useTranslation } from "@/hooks/useTranslation";
 import { initializeAnimations } from "@/lib/animate";
 import { Link } from "wouter";
+import teamImage from "@assets/stock_images/professional_tech_te_94bc93e3.jpg";
+import portrait1 from "@assets/stock_images/professional_busines_6b734d32.jpg";
+import portrait2 from "@assets/stock_images/professional_busines_4baa14f6.jpg";
+import portrait3 from "@assets/stock_images/professional_busines_8a8f9418.jpg";
+import portrait4 from "@assets/stock_images/professional_busines_18064b64.jpg";
 
 const About = () => {
   const { isRTL } = useLanguage();
@@ -81,9 +86,12 @@ const About = () => {
             <div className="relative">
               <div className="absolute -right-6 -bottom-6 w-full h-full bg-primary-100 dark:bg-primary-900/30 rounded-xl"></div>
               <img 
-                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+                src={teamImage} 
                 alt="Core Tech Team" 
                 className="w-full h-auto rounded-xl shadow-xl relative z-10"
+                loading="lazy"
+                width="600"
+                height="400"
               />
             </div>
           </motion.div>
@@ -147,9 +155,12 @@ const About = () => {
               >
                 <div className="relative overflow-hidden">
                   <img 
-                    src="https://randomuser.me/api/portraits/men/32.jpg"
+                    src={portrait1}
                     alt="Team Member" 
                     className="w-full h-64 object-cover object-center transition duration-500 group-hover:scale-110"
+                    loading="lazy"
+                    width="256"
+                    height="256"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end">
                     <div className="p-4 w-full">
@@ -189,9 +200,12 @@ const About = () => {
               >
                 <div className="relative overflow-hidden">
                   <img 
-                    src="https://randomuser.me/api/portraits/women/44.jpg"
+                    src={portrait2}
                     alt="Team Member" 
                     className="w-full h-64 object-cover object-center transition duration-500 group-hover:scale-110"
+                    loading="lazy"
+                    width="256"
+                    height="256"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end">
                     <div className="p-4 w-full">
@@ -231,9 +245,12 @@ const About = () => {
               >
                 <div className="relative overflow-hidden">
                   <img 
-                    src="https://randomuser.me/api/portraits/men/75.jpg"
+                    src={portrait3}
                     alt="Team Member" 
                     className="w-full h-64 object-cover object-center transition duration-500 group-hover:scale-110"
+                    loading="lazy"
+                    width="256"
+                    height="256"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end">
                     <div className="p-4 w-full">
@@ -273,9 +290,12 @@ const About = () => {
               >
                 <div className="relative overflow-hidden">
                   <img 
-                    src="https://randomuser.me/api/portraits/women/68.jpg"
+                    src={portrait4}
                     alt="Team Member" 
                     className="w-full h-64 object-cover object-center transition duration-500 group-hover:scale-110"
+                    loading="lazy"
+                    width="256"
+                    height="256"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end">
                     <div className="p-4 w-full">

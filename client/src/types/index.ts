@@ -29,6 +29,9 @@ export interface PortfolioItem {
     value: string;
     label: string;
   };
+  client?: string;
+  images?: string[];
+  testimonial?: string;
 }
 
 // Testimonial type from testimonials.json

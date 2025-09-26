@@ -4,6 +4,7 @@ import { useTranslation } from "@/hooks/useTranslation";
 import { motion } from "framer-motion";
 import { useQuery } from "@tanstack/react-query";
 import { SiteConfig } from "@/types";
+import teamImage from "@assets/stock_images/professional_tech_te_94bc93e3.jpg";
 
 const AboutSection = () => {
   const { isRTL } = useLanguage();
@@ -38,9 +39,12 @@ const AboutSection = () => {
             transition={{ duration: 0.5 }}
           >
             <img 
-              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+              src={teamImage} 
               alt="Core Tech Team" 
               className="w-full h-auto rounded-xl shadow-xl"
+              loading="lazy"
+              width="600"
+              height="400"
             />
           </motion.div>
           
