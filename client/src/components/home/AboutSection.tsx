@@ -2,10 +2,26 @@ import { Link } from "wouter";
 import { useLanguage } from "@/context/LanguageContext";
 import { useTranslation } from "@/hooks/useTranslation";
 import { motion } from "framer-motion";
+import { useQuery } from "@tanstack/react-query";
+import { SiteConfig } from "@/types";
 
 const AboutSection = () => {
   const { isRTL } = useLanguage();
   const { t } = useTranslation();
+  
+  const { data: siteConfig } = useQuery<SiteConfig>({
+    queryKey: ['/data/site-config.json'],
+    initialData: {
+      company: {
+        name: "كور تك",
+        tagline: "تحويل الأفكار إلى نجاح رقمي",
+        email: "info@coretech.com",
+        phone: "+966123456789",
+        address: "المملكة العربية السعودية"
+      },
+      stats: { projects: 150, clients: 89, experience: 5, satisfaction: 98 }
+    }
+  });
 
   return (
     <section 
@@ -47,13 +63,21 @@ const AboutSection = () => {
               {t("about.mission_description")}
             </p>
             
-            <div className="grid grid-cols-2 gap-6 mb-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
               <div className="flex flex-col items-center">
-                <div className="text-4xl font-bold text-primary-600 dark:text-primary-400 mb-2">100+</div>
+                <div className="text-4xl font-bold text-primary-600 dark:text-primary-400 mb-2">{siteConfig?.stats.projects ?? 150}+</div>
                 <div className="text-gray-600 dark:text-gray-400 text-center">{t("about.projects_completed")}</div>
               </div>
               <div className="flex flex-col items-center">
-                <div className="text-4xl font-bold text-primary-600 dark:text-primary-400 mb-2">92%</div>
+                <div className="text-4xl font-bold text-primary-600 dark:text-primary-400 mb-2">{siteConfig?.stats.clients ?? 89}+</div>
+                <div className="text-gray-600 dark:text-gray-400 text-center">{t("about.clients_served")}</div>
+              </div>
+              <div className="flex flex-col items-center">
+                <div className="text-4xl font-bold text-primary-600 dark:text-primary-400 mb-2">{siteConfig?.stats.experience ?? 5}+</div>
+                <div className="text-gray-600 dark:text-gray-400 text-center">{t("about.years_experience")}</div>
+              </div>
+              <div className="flex flex-col items-center">
+                <div className="text-4xl font-bold text-primary-600 dark:text-primary-400 mb-2">{siteConfig?.stats.satisfaction ?? 98}%</div>
                 <div className="text-gray-600 dark:text-gray-400 text-center">{t("about.client_satisfaction")}</div>
               </div>
             </div>
