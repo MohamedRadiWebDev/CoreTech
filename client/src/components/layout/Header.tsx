@@ -73,6 +73,11 @@ const Header = () => {
                 {t("nav.portfolio")}
               </a>
             </Link>
+            <Link href="/testimonials">
+                <a className={`font-medium transition-colors ${isActive("/testimonials") ? "text-primary-600 dark:text-primary-400" : "text-gray-700 hover:text-primary-600 dark:text-gray-300 dark:hover:text-white"}`}>
+                  {t("nav.testimonials")}
+                </a>
+              </Link>
             <Link href="/blog">
               <a className={`font-medium transition-colors ${isActive("/blog") ? "text-primary-600 dark:text-primary-400" : "text-gray-700 hover:text-primary-600 dark:text-gray-300 dark:hover:text-white"}`}>
                 {t("nav.blog")}
@@ -143,6 +148,14 @@ const Header = () => {
               {t("nav.portfolio")}
             </a>
           </Link>
+          <Link href="/testimonials">
+                <a 
+                  className={`block py-2 font-medium ${isActive("/testimonials") ? "text-primary-600 dark:text-primary-400" : "text-gray-700 hover:text-primary-600 dark:text-gray-300 dark:hover:text-white"}`}
+                  onClick={handleMenuItemClick}
+                >
+                  {t("nav.testimonials")}
+                </a>
+              </Link>
           <Link href="/blog">
             <a 
               className={`block py-2 font-medium ${isActive("/blog") ? "text-primary-600 dark:text-primary-400" : "text-gray-700 hover:text-primary-600 dark:text-gray-300 dark:hover:text-white"}`}

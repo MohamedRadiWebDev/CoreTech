@@ -152,6 +152,9 @@ const PortfolioSection = () => {
                     src={item.image} 
                     alt={item.title} 
                     className="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500"
+                    loading="lazy"
+                    width="400"
+                    height="256"
                   />
                   <div className="absolute inset-0 bg-primary-600 bg-opacity-0 group-hover:bg-opacity-70 flex items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100">
                     {item.category === 'web-design' ? (
