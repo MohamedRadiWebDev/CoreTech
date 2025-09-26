@@ -1,13 +1,20 @@
 import { useTheme } from "@/context/ThemeContext";
+import { useKeyboardNavigation } from "@/hooks/useKeyboardNavigation";
 
 const ThemeToggle = () => {
   const { isDark, toggleTheme } = useTheme();
   
+  const keyboardRef = useKeyboardNavigation({
+    onEnter: toggleTheme
+  });
+  
   return (
     <button 
+      ref={keyboardRef as React.RefObject<HTMLButtonElement>}
       onClick={toggleTheme}
-      className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-white transition-colors p-2 rounded-md"
+      className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-white transition-colors p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
       aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+      title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
     >
       {isDark ? (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
