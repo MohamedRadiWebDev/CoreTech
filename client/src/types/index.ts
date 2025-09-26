@@ -18,8 +18,10 @@ export interface PortfolioItem {
   categoryName: string;
   image: string;
   shortDescription: string;
+  shortDescription_ar: string;
   fullDescription: string;
-  client: string;
+  fullDescription_ar: string;
+  website: string;
   year: string;
   services: string[];
   technologies: string[];
@@ -27,8 +29,6 @@ export interface PortfolioItem {
     value: string;
     label: string;
   };
-  testimonial: string;
-  images: string[];
 }
 
 // Testimonial type from testimonials.json
@@ -91,4 +91,37 @@ export interface ContactFormData {
   email: string;
   service: string;
   message: string;
+}
+
+// Site configuration type
+export interface SiteConfig {
+  company: {
+    name: string;
+    tagline: string;
+    email: string;
+    phone: string;
+    address: string;
+  };
+  stats: {
+    projects: number;
+    clients: number;
+    experience: number;
+    satisfaction: number;
+  };
+}
+
+// Social links configuration
+export interface SocialLinks {
+  facebook?: string;
+  instagram?: string;
+  twitter?: string;
+  youtube?: string;
+  linkedin?: string;
+}
+
+// Service option for contact forms
+export interface ServiceOption {
+  id: string;
+  name: string;
+  name_ar: string;
 }

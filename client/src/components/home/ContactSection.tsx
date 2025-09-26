@@ -2,10 +2,17 @@ import { useLanguage } from "@/context/LanguageContext";
 import { useTranslation } from "@/hooks/useTranslation";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useQuery } from "@tanstack/react-query";
+import { ServiceOption } from "@/types";
 
 const ContactSection = () => {
   const { isRTL } = useLanguage();
   const { t } = useTranslation();
+  
+  const { data: serviceOptions = [] } = useQuery<ServiceOption[]>({
+    queryKey: ['/data/service-options.json'],
+    initialData: []
+  });
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -110,12 +117,11 @@ const ContactSection = () => {
                     className="w-full px-4 py-3 rounded-lg bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 transition-colors"
                   >
                     <option value="">{t("contact.service_placeholder")}</option>
-                    <option value="web">{t("services.website_design")}</option>
-                    <option value="marketing">{t("services.digital_marketing")}</option>
-                    <option value="motion">{t("services.motion_graphics")}</option>
-                    <option value="editing">{t("services.video_editing")}</option>
-                    <option value="youtube">{t("services.youtube_monetization")}</option>
-                    <option value="facebook">{t("services.facebook_engagement")}</option>
+                    {serviceOptions.map((service) => (
+                      <option key={service.id} value={service.id}>
+                        {isRTL ? service.name_ar : service.name}
+                      </option>
+                    ))}
                   </select>
                 </div>
                 

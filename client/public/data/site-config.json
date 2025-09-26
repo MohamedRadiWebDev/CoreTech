@@ -1,0 +1,19 @@
+{
+  "company": {
+    "name": "كور تك",
+    "tagline": "تحويل الأفكار إلى نجاح رقمي",
+    "email": "info@coretech.com",
+    "phone": "+966123456789",
+    "address": "المملكة العربية السعودية"
+  },
+  "stats": {
+    "projects": 150,
+    "clients": 89,
+    "experience": 5,
+    "satisfaction": 98
+  },
+  "hero": {
+    "image": "/images/hero-bg.webp",
+    "video": "/videos/hero-video.mp4"
+  }
+}

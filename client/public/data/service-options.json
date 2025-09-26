@@ -1,0 +1,32 @@
+[
+  {
+    "id": "web-design",
+    "name": "Website Design & Development",
+    "name_ar": "تصميم وتطوير المواقع"
+  },
+  {
+    "id": "digital-marketing",
+    "name": "Digital Marketing",
+    "name_ar": "التسويق الرقمي"
+  },
+  {
+    "id": "motion-graphics",
+    "name": "Motion Graphics & Promotional Videos",
+    "name_ar": "الرسوم المتحركة والفيديوهات الترويجية"
+  },
+  {
+    "id": "video-editing",
+    "name": "Video Editing & Montage",
+    "name_ar": "تحرير ومونتاج الفيديو"
+  },
+  {
+    "id": "youtube-monetization",
+    "name": "YouTube Monetization Support",
+    "name_ar": "دعم تحقيق الدخل من يوتيوب"
+  },
+  {
+    "id": "facebook-engagement",
+    "name": "Facebook Engagement Boost",
+    "name_ar": "تعزيز التفاعل على فيسبوك"
+  }
+]
