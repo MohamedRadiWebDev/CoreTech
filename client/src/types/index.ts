@@ -192,6 +192,10 @@ export interface SiteConfigRecord {
     experience: number;
     satisfaction: number;
   };
+  hero?: {
+    image?: string;
+    video?: string;
+  };
 }
 
 export interface SiteConfig {
