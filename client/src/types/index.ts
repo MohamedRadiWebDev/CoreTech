@@ -193,6 +193,21 @@ export interface SiteConfigRecord {
     experience: number;
     satisfaction: number;
   };
+  hero?: {
+    image?: string;
+    video?: string;
+  };
+}
+
+export interface SiteConfig {
+  company: {
+    name: string;
+    tagline: string;
+    email: string;
+    phone: string;
+    address: string;
+  };
+  stats: SiteConfigRecord['stats'];
 }
 
 export interface SiteConfig {
