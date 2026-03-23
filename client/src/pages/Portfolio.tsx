@@ -1,258 +1,64 @@
-import { useEffect, useState } from "react";
-import { Helmet } from "react-helmet";
-import { motion } from "framer-motion";
-import { useLanguage } from "@/context/LanguageContext";
-import { useTranslation } from "@/hooks/useTranslation";
-import { initializeAnimations } from "@/lib/animate";
-import { PortfolioItem } from "@/types";
-import { Link, useLocation } from "wouter";
+import { useMemo, useState } from 'react';
+import { Link, useLocation } from 'wouter';
+import { ArrowRight } from 'lucide-react';
+import { Container, PageHero, Section } from '@/components/common/section';
+import { EmptyState, ErrorState, LoadingState } from '@/components/common/states';
+import { SeoHead } from '@/components/seo/SeoHead';
+import { breadcrumbSchema } from '@/lib/seo';
+import { usePortfolio } from '@/hooks/use-site-data';
+import { cn } from '@/lib/utils';
+import { useTranslation } from '@/hooks/useTranslation';
 
-const Portfolio = () => {
-  const { isRTL } = useLanguage();
+const filters = ['all', 'web-design', 'digital-marketing', 'video-production'];
+
+export default function Portfolio() {
   const { t } = useTranslation();
-  const [portfolioItems, setPortfolioItems] = useState<PortfolioItem[]>([]);
-  const [filteredItems, setFilteredItems] = useState<PortfolioItem[]>([]);
-  const [activeFilter, setActiveFilter] = useState("all");
+  const portfolio = usePortfolio();
   const [location] = useLocation();
+  const paramFilter = new URLSearchParams(location.split('?')[1] ?? '').get('filter') ?? 'all';
+  const [activeFilter, setActiveFilter] = useState(paramFilter);
 
-  useEffect(() => {
-    // Initialize scroll animations
-    initializeAnimations();
-    
-    // Scroll to top on page load
-    window.scrollTo(0, 0);
-    
-    // Load portfolio data
-    fetch('/data/portfolio.json')
-      .then(response => response.json())
-      .then(data => {
-        setPortfolioItems(data);
-        
-        // Check for URL filter parameter
-        const urlParams = new URLSearchParams(location.split('?')[1]);
-        const filterParam = urlParams.get('filter');
-        
-        if (filterParam) {
-          setActiveFilter(filterParam);
-          setFilteredItems(data.filter((item: PortfolioItem) => item.category === filterParam));
-        } else {
-          setFilteredItems(data);
-        }
-      })
-      .catch(error => console.error('Error loading portfolio items:', error));
-  }, [location]);
-
-  // Handle filter change
-  const handleFilterChange = (filter: string) => {
-    setActiveFilter(filter);
-    
-    if (filter === "all") {
-      setFilteredItems(portfolioItems);
-    } else {
-      setFilteredItems(portfolioItems.filter(item => item.category === filter));
-    }
-  };
-
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5 }
-    }
-  };
+  const items = useMemo(() => {
+    if (!portfolio.data) return [];
+    if (activeFilter === 'all') return portfolio.data;
+    return portfolio.data.filter((item) => item.category === activeFilter || item.id === activeFilter);
+  }, [portfolio.data, activeFilter]);
 
   return (
     <>
-      <Helmet>
-        <title>{t("meta.portfolio_title")} | Core Tech</title>
-        <meta name="description" content={t("meta.portfolio_description")} />
-      </Helmet>
-      
-      <main className="pt-32 pb-20 min-h-screen" data-rtl={isRTL}>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">{t("portfolio_page.title")}</h1>
-            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-              {t("portfolio_page.description")}
-            </p>
-          </motion.div>
-          
-          {/* Portfolio Filter */}
-          <motion.div 
-            className="flex flex-wrap justify-center gap-4 mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <button 
-              className={`px-6 py-2 rounded-full font-medium ${
-                activeFilter === "all" 
-                  ? "bg-primary-600 text-white" 
-                  : "bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 hover:bg-primary-600 hover:text-white"
-              } transition-colors`}
-              onClick={() => handleFilterChange("all")}
-            >
-              {t("portfolio.filter_all")}
-            </button>
-            <button 
-              className={`px-6 py-2 rounded-full font-medium ${
-                activeFilter === "web-design" 
-                  ? "bg-primary-600 text-white" 
-                  : "bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 hover:bg-primary-600 hover:text-white"
-              } transition-colors`}
-              onClick={() => handleFilterChange("web-design")}
-            >
-              {t("portfolio.filter_web")}
-            </button>
-            <button 
-              className={`px-6 py-2 rounded-full font-medium ${
-                activeFilter === "digital-marketing" 
-                  ? "bg-primary-600 text-white" 
-                  : "bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 hover:bg-primary-600 hover:text-white"
-              } transition-colors`}
-              onClick={() => handleFilterChange("digital-marketing")}
-            >
-              {t("portfolio.filter_marketing")}
-            </button>
-            <button 
-              className={`px-6 py-2 rounded-full font-medium ${
-                activeFilter === "video-production" 
-                  ? "bg-primary-600 text-white" 
-                  : "bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 hover:bg-primary-600 hover:text-white"
-              } transition-colors`}
-              onClick={() => handleFilterChange("video-production")}
-            >
-              {t("portfolio.filter_video")}
-            </button>
-          </motion.div>
-          
-          {/* Portfolio Grid */}
-          <motion.div 
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            {filteredItems.length > 0 ? (
-              filteredItems.map((item) => (
-                <motion.div 
-                  key={item.id}
-                  className="portfolio-item bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg group"
-                  variants={itemVariants}
-                >
-                  <div className="relative overflow-hidden">
-                    <img 
-                      src={item.image} 
-                      alt={item.title} 
-                      className="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-primary-600 bg-opacity-0 group-hover:bg-opacity-70 flex items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100">
-                      {item.category === 'web-design' ? (
-                        <a 
-                          href={item.website}
-                          target="_blank"
-                          rel="noopener noreferrer" 
-                          className="px-6 py-2 bg-white text-primary-600 font-medium rounded-lg transform -translate-y-10 group-hover:translate-y-0 transition-all duration-300">
-                          {t("portfolio.view_website")}
-                        </a>
-                      ) : (
-                        <Link href={`/portfolio/${item.id}`}>
-                          <a className="px-6 py-2 bg-white text-primary-600 font-medium rounded-lg transform -translate-y-10 group-hover:translate-y-0 transition-all duration-300">
-                            {t("portfolio.view_details")}
-                          </a>
-                        </Link>
-                      )}
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <span className="text-sm text-primary-600 dark:text-primary-400 font-semibold">{item.categoryName}</span>
-                    <h3 className="text-xl font-bold mt-2 mb-3">{item.title}</h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      {item.shortDescription}
-                    </p>
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                        </svg>
-                        {item.year}
-                      </div>
-                      <div className="text-sm font-medium text-primary-600 dark:text-primary-400">
-                        <span className="mr-1">{item.impact.value}</span> {item.impact.label}
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              ))
-            ) : (
-              <div className="col-span-3 text-center py-12">
-                {portfolioItems.length === 0 ? (
-                  <div>
-                    <div className="inline-block p-4 rounded-full bg-blue-100 dark:bg-blue-900 mb-4">
-                      <svg className="w-8 h-8 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    </div>
-                    <h2 className="text-2xl font-bold mb-2">{t("portfolio_page.loading")}</h2>
-                    <p className="text-gray-600 dark:text-gray-400">
-                      {t("portfolio_page.loading_message")}
-                    </p>
-                  </div>
-                ) : (
-                  <div>
-                    <div className="inline-block p-4 rounded-full bg-gray-100 dark:bg-gray-700 mb-4">
-                      <svg className="w-8 h-8 text-gray-600 dark:text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                      </svg>
-                    </div>
-                    <h2 className="text-2xl font-bold mb-2">{t("portfolio_page.no_results")}</h2>
-                    <p className="text-gray-600 dark:text-gray-400 mb-6">
-                      {t("portfolio_page.no_results_message")}
-                    </p>
-                    <button
-                      onClick={() => handleFilterChange("all")}
-                      className="px-6 py-2 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors"
-                    >
-                      {t("portfolio_page.show_all")}
-                    </button>
-                  </div>
-                )}
-              </div>
-            )}
-          </motion.div>
-          
-          <div className="mt-16 bg-gray-100 dark:bg-gray-800 rounded-xl p-8 text-center">
-            <h2 className="text-2xl font-bold mb-4">{t("portfolio_page.cta_title")}</h2>
-            <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 max-w-3xl mx-auto">
-              {t("portfolio_page.cta_description")}
-            </p>
-            <Link href="/contact">
-              <a className="inline-block px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-                {t("portfolio_page.cta_button")}
-              </a>
-            </Link>
+      <SeoHead title={t('meta.portfolio_title')} description={t('meta.portfolio_description')} canonicalPath="/portfolio" jsonLd={breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Portfolio', path: '/portfolio' }])} />
+      <PageHero eyebrow="Portfolio" title={t('portfolio_page.title')} description={t('portfolio_page.description')} />
+      <Section>
+        <Container>
+          <div className="flex flex-wrap gap-3">
+            {filters.map((filter) => (
+              <button key={filter} onClick={() => setActiveFilter(filter)} className={cn('rounded-full border px-5 py-2 text-sm font-medium transition', activeFilter === filter ? 'border-primary bg-primary text-primary-foreground' : 'border-border bg-card text-muted-foreground hover:text-foreground')}>
+                {filter === 'all' ? t('portfolio.filter_all') : filter === 'web-design' ? t('portfolio.filter_web') : filter === 'digital-marketing' ? t('portfolio.filter_marketing') : t('portfolio.filter_video')}
+              </button>
+            ))}
           </div>
-        </div>
-      </main>
+
+          {portfolio.isLoading ? <div className="mt-10"><LoadingState /></div> : portfolio.isError ? <div className="mt-10"><ErrorState /></div> : items.length === 0 ? <div className="mt-10"><EmptyState title="No matching case studies" description="Try another category or browse all work." /></div> : (
+            <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+              {items.map((item) => (
+                <article key={item.id} className="overflow-hidden rounded-[1.75rem] border border-border/60 bg-card shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+                  <img src={item.image} alt={item.title} className="h-60 w-full object-cover" loading="lazy" decoding="async" />
+                  <div className="p-6">
+                    <p className="text-sm font-medium text-primary">{item.categoryName}</p>
+                    <h2 className="mt-3 text-2xl font-semibold tracking-tight">{item.title}</h2>
+                    <p className="mt-3 text-sm leading-7 text-muted-foreground">{item.shortDescription}</p>
+                    <div className="mt-5 flex items-center justify-between text-sm text-muted-foreground">
+                      <span>{item.impact.value} {item.impact.label}</span>
+                      <span>{item.year}</span>
+                    </div>
+                    <Link href={`/portfolio/${item.id}`}><a className="mt-5 inline-flex items-center gap-2 font-medium text-primary">Explore case study <ArrowRight className="h-4 w-4" /></a></Link>
+                  </div>
+                </article>
+              ))}
+            </div>
+          )}
+        </Container>
+      </Section>
     </>
   );
-};
-
-export default Portfolio;
+}

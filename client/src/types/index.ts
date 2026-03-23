@@ -1,6 +1,3 @@
-// Type definitions for the application
-
-// Service type from services.json
 export interface Service {
   id: string;
   title: string;
@@ -10,7 +7,6 @@ export interface Service {
   image: string;
 }
 
-// Portfolio item type from portfolio.json
 export interface PortfolioItem {
   id: string;
   title: string;
@@ -34,7 +30,6 @@ export interface PortfolioItem {
   testimonial?: string;
 }
 
-// Testimonial type from testimonials.json
 export interface Testimonial {
   id: string;
   name: string;
@@ -47,7 +42,6 @@ export interface Testimonial {
   projectName?: string;
 }
 
-// Blog post type from blog.json
 export interface BlogPost {
   id: string;
   title: string;
@@ -62,7 +56,6 @@ export interface BlogPost {
   tags: string[];
 }
 
-// Pricing plan type from pricing.json
 export interface PricingPlan {
   id: string;
   name: string;
@@ -75,7 +68,6 @@ export interface PricingPlan {
   }>;
 }
 
-// Team member type
 export interface TeamMember {
   name: string;
   role: string;
@@ -88,7 +80,6 @@ export interface TeamMember {
   };
 }
 
-// Contact form data type
 export interface ContactFormData {
   name: string;
   email: string;
@@ -96,7 +87,6 @@ export interface ContactFormData {
   message: string;
 }
 
-// Site configuration type
 export interface SiteConfig {
   company: {
     name: string;
@@ -111,18 +101,21 @@ export interface SiteConfig {
     experience: number;
     satisfaction: number;
   };
+  hero?: {
+    image?: string;
+    video?: string;
+  };
 }
 
-// Social links configuration
 export interface SocialLinks {
   facebook?: string;
   instagram?: string;
   twitter?: string;
   youtube?: string;
   linkedin?: string;
+  whatsapp?: string;
 }
 
-// Service option for contact forms
 export interface ServiceOption {
   id: string;
   name: string;
