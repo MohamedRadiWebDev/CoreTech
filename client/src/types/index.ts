@@ -119,6 +119,7 @@ export interface LocalizedBlogPost {
   title: string;
   excerpt: string;
   content: string;
+  categoryKey: string;
   category: string;
   author: string;
   authorRole: string;
@@ -196,6 +197,17 @@ export interface SiteConfigRecord {
     image?: string;
     video?: string;
   };
+}
+
+export interface SiteConfig {
+  company: {
+    name: string;
+    tagline: string;
+    email: string;
+    phone: string;
+    address: string;
+  };
+  stats: SiteConfigRecord['stats'];
 }
 
 export interface SiteConfig {

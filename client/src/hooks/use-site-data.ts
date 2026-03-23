@@ -65,6 +65,7 @@ function localizeBlog(record: BlogPostRecord, language: Language): LocalizedBlog
     title: getLocalizedField(record, 'title', language),
     excerpt: getLocalizedField(record, 'excerpt', language),
     content: getLocalizedField(record, 'content', language),
+    categoryKey: record.category ?? '',
     category: getLocalizedField(record, 'category', language),
     author: language === 'ar' ? record.author_ar : record.author,
     authorRole: language === 'ar' ? record.authorRole_ar : record.authorRole,
@@ -145,7 +146,7 @@ export function useBlogPosts() {
 export function useBlogPost(idOrSlug?: string) {
   const query = useBlogPosts();
   const post = useMemo(() => query.data?.find((record) => record.id === idOrSlug || record.slug === idOrSlug) ?? null, [query.data, idOrSlug]);
-  const related = useMemo(() => query.data?.filter((record) => post && record.category === post.category && record.id !== post.id).slice(0, 3) ?? [], [query.data, post]);
+  const related = useMemo(() => query.data?.filter((record) => post && record.categoryKey === post.categoryKey && record.id !== post.id).slice(0, 3) ?? [], [query.data, post]);
   return { ...query, post, related };
 }
 

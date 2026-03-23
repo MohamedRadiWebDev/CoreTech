@@ -17,6 +17,15 @@
     "not_found_title": "الصفحة غير موجودة",
     "not_found_description": "تعذّر العثور على الصفحة المطلوبة."
   },
+  "nav": {
+    "home": "الرئيسية",
+    "services": "الخدمات",
+    "portfolio": "الأعمال",
+    "testimonials": "آراء العملاء",
+    "blog": "المدونة",
+    "about": "من نحن",
+    "contact": "تواصل معنا"
+  },
   "common": {
     "company_name": "كور تك",
     "company_short": "كور تك",

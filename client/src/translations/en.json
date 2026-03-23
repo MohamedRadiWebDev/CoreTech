@@ -17,6 +17,15 @@
     "not_found_title": "Page not found",
     "not_found_description": "The page you requested could not be found."
   },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "testimonials": "Testimonials",
+    "blog": "Blog",
+    "about": "About",
+    "contact": "Contact"
+  },
   "common": {
     "company_name": "Core Tech",
     "company_short": "Core Tech",
