@@ -1,19 +1,14 @@
 import { Link } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { SeoHead } from '@/components/seo/SeoHead';
+import { useTranslation } from '@/hooks/useTranslation';
 
 export default function NotFound() {
+  const { t } = useTranslation();
   return (
     <>
-      <SeoHead title="Page not found" description="The page you requested could not be found." robots="noindex,nofollow" canonicalPath="/404" />
-      <div className="flex min-h-screen items-center justify-center px-4 pt-24">
-        <div className="max-w-lg rounded-[2rem] border border-border/60 bg-card p-10 text-center shadow-sm">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">404</p>
-          <h1 className="mt-4 text-4xl font-semibold tracking-tight">This page doesn’t exist.</h1>
-          <p className="mt-4 text-muted-foreground">The route may have changed, the content may have moved, or the URL may be incorrect.</p>
-          <Link href="/"><a className="mt-8 inline-block"><Button className="rounded-full px-7">Back to home</Button></a></Link>
-        </div>
-      </div>
+      <SeoHead title={t('meta.not_found_title')} description={t('meta.not_found_description')} robots="noindex,nofollow" canonicalPath="/404" />
+      <div className="flex min-h-screen items-center justify-center px-4 pt-24"><div className="max-w-lg rounded-[2rem] border border-border/60 bg-card p-10 text-center shadow-sm"><p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">{t('not_found.eyebrow')}</p><h1 className="mt-4 text-4xl font-semibold tracking-tight">{t('not_found.title')}</h1><p className="mt-4 text-muted-foreground">{t('not_found.description')}</p><Link href="/"><a className="mt-8 inline-block"><Button className="rounded-full px-7">{t('not_found.button')}</Button></a></Link></div></div>
     </>
   );
 }
