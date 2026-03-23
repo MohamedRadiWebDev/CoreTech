@@ -1,24 +1,22 @@
-import { useLanguage } from "@/context/LanguageContext";
-import { useKeyboardNavigation } from "@/hooks/useKeyboardNavigation";
+import { useLanguage } from '@/context/LanguageContext';
+import { useKeyboardNavigation } from '@/hooks/useKeyboardNavigation';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const LanguageToggle = () => {
   const { language, toggleLanguage } = useLanguage();
-  
-  const keyboardRef = useKeyboardNavigation({
-    onEnter: toggleLanguage
-  });
-  
+  const { t } = useTranslation();
+  const keyboardRef = useKeyboardNavigation({ onEnter: toggleLanguage });
+  const label = language === 'en' ? t('common.toggles.switch_to_arabic') : t('common.toggles.switch_to_english');
+
   return (
-    <button 
+    <button
       ref={keyboardRef as React.RefObject<HTMLButtonElement>}
       onClick={toggleLanguage}
-      className="transition-colors p-2 rounded-md text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-      aria-label={language === 'en' ? 'Switch to Arabic' : 'Switch to English'}
-      title={language === 'en' ? 'Switch to Arabic' : 'Switch to English'}
+      className="rounded-md p-2 text-gray-500 transition-colors hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:text-gray-400 dark:hover:text-white"
+      aria-label={label}
+      title={label}
     >
-      <span className="font-medium text-sm">
-        {language === 'en' ? 'EN' : 'AR'}
-      </span>
+      <span className="font-medium text-sm">{language === 'en' ? 'EN' : 'AR'}</span>
     </button>
   );
 };
