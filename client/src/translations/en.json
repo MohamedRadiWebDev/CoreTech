@@ -293,7 +293,10 @@
       "reset_all": "Reset all",
       "new": "New",
       "save": "Save item",
-      "reset_collection": "Reset collection"
+      "reset_collection": "Reset collection",
+      "confirm": "Confirm",
+      "cancel": "Cancel",
+      "delete": "Delete"
     },
     "overview": {
       "blog": "Blog posts",
@@ -366,13 +369,21 @@
       "rating": "Rating",
       "project_id": "Project id",
       "project_name_en": "Project name (EN)",
-      "project_name_ar": "Project name (AR)"
+      "project_name_ar": "Project name (AR)",
+      "gallery": "Gallery images (one per line)",
+      "id": "ID",
+      "slug": "Slug"
     },
     "validation": {
       "unique_slug": "Slug must be unique."
     },
     "messages": {
-      "import_failed": "Import failed. Check the bundle format."
+      "import_failed": "Import failed. Check the bundle format.",
+      "import_success": "Content bundle imported.",
+      "export_success": "Content bundle exported.",
+      "reset_success": "Local changes reset.",
+      "save_success": "Item saved.",
+      "delete_success": "Item deleted."
     },
     "confirm_delete": "Delete this item?",
     "confirm_reset_all": "Reset all local overrides?",

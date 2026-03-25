@@ -7,6 +7,7 @@ import { blogRecordSchema, portfolioRecordSchema, serviceIconKeys, serviceRecord
 import type { BlogPostRecord, PortfolioRecord, ServiceRecord, TestimonialRecord } from '@/types';
 import { useTranslation } from '@/hooks/useTranslation';
 import { useLanguage } from '@/context/LanguageContext';
+import { useToast } from '@/hooks/use-toast';
 import { Container, PageHero, Section } from '@/components/common/section';
 import { SeoHead } from '@/components/seo/SeoHead';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -20,6 +21,17 @@ import { Label } from '@/components/ui/label';
 import { Switch } from '@/components/ui/switch';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Separator } from '@/components/ui/separator';
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from '@/components/ui/alert-dialog';
 
 function splitList(value: string) {
   return value.split('\n').map((item) => item.trim()).filter(Boolean);
@@ -48,18 +60,23 @@ type TabKey = 'overview' | 'blog' | 'portfolio' | 'services' | 'testimonials';
 export default function StudioPage() {
   const { t } = useTranslation();
   const { isRTL } = useLanguage();
+  const { toast } = useToast();
   const store = useContentStore();
   const [activeTab, setActiveTab] = useState<TabKey>('overview');
   const fileRef = useRef<HTMLInputElement>(null);
 
   const modifiedCount = useMemo(() => (['blog', 'portfolio', 'services', 'testimonials'] as const).filter((key) => store.hasOverride(key)).length, [store]);
 
-  const handleExport = () => downloadJson(`content-bundle-${new Date().toISOString().slice(0, 10)}.json`, store.exportBundle());
+  const handleExport = () => {
+    downloadJson(`content-bundle-${new Date().toISOString().slice(0, 10)}.json`, store.exportBundle());
+    toast({ title: t('studio.messages.export_success') });
+  };
 
   const handleImport = async (file: File) => {
     const text = await file.text();
     const payload = JSON.parse(text) as unknown;
     store.importBundle(payload);
+    toast({ title: t('studio.messages.import_success') });
   };
 
   return (
@@ -71,17 +88,33 @@ export default function StudioPage() {
           <div className="mb-5 flex flex-wrap items-center gap-3">
             <Button onClick={handleExport}><Download className="mr-2 h-4 w-4" />{t('studio.actions.export')}</Button>
             <Button variant="secondary" onClick={() => fileRef.current?.click()}><FileUp className="mr-2 h-4 w-4" />{t('studio.actions.import')}</Button>
-            <Button variant="outline" onClick={() => { if (window.confirm(t('studio.confirm_reset_all'))) store.resetAll(); }}><RotateCcw className="mr-2 h-4 w-4" />{t('studio.actions.reset_all')}</Button>
-            <input ref={fileRef} type="file" accept="application/json" className="hidden" onChange={async (event) => {
-              const file = event.target.files?.[0];
-              if (!file) return;
-              try {
-                await handleImport(file);
-              } catch (error) {
-                window.alert(error instanceof Error ? error.message : t('studio.messages.import_failed'));
-              }
-              event.currentTarget.value = '';
-            }} />
+            <ConfirmAction
+              title={t('studio.actions.reset_all')}
+              description={t('studio.confirm_reset_all')}
+              confirmLabel={t('studio.actions.confirm')}
+              cancelLabel={t('studio.actions.cancel')}
+              onConfirm={() => {
+                store.resetAll();
+                toast({ title: t('studio.messages.reset_success') });
+              }}
+              trigger={<Button variant="outline"><RotateCcw className="mr-2 h-4 w-4" />{t('studio.actions.reset_all')}</Button>}
+            />
+            <input
+              ref={fileRef}
+              type="file"
+              accept="application/json"
+              className="hidden"
+              onChange={async (event) => {
+                const file = event.target.files?.[0];
+                if (!file) return;
+                try {
+                  await handleImport(file);
+                } catch (error) {
+                  toast({ variant: 'destructive', title: t('studio.messages.import_failed'), description: error instanceof Error ? error.message : undefined });
+                }
+                event.currentTarget.value = '';
+              }}
+            />
           </div>
 
           <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value as TabKey)}>
@@ -131,70 +164,96 @@ function MetricCard({ title, value }: { title: string; value: string }) {
 
 function BlogEditor() {
   const { t } = useTranslation();
+  const { toast } = useToast();
   const store = useContentStore();
   const [query, setQuery] = useState('');
   const [selectedId, setSelectedId] = useState<string>(store.collections.blog[0]?.id ?? '');
 
   const list = useMemo(() => store.collections.blog.filter((item) => (item.title ?? '').toLowerCase().includes(query.toLowerCase()) || item.slug.includes(query.toLowerCase())), [store.collections.blog, query]);
   const selected = store.collections.blog.find((item) => item.id === selectedId) ?? null;
-
   const form = useForm<BlogPostRecord>({ resolver: zodResolver(blogRecordSchema), values: selected ?? createBlog() });
 
   const save = (values: BlogPostRecord) => {
     const next = store.collections.blog.map((item) => item.id === selectedId ? values : item);
     if (!next.some((item) => item.id === selectedId)) next.push(values);
-    const duplicateSlug = next.some((item) => item.id !== values.id && item.slug === values.slug);
-    if (duplicateSlug) return window.alert(t('studio.validation.unique_slug'));
+    if (next.some((item) => item.id !== values.id && item.slug === values.slug)) {
+      toast({ variant: 'destructive', title: t('studio.validation.unique_slug') });
+      return;
+    }
     store.setCollection('blog', next);
     setSelectedId(values.id);
+    toast({ title: t('studio.messages.save_success') });
   };
 
-  return <CollectionLayout title={t('studio.tabs.blog')} query={query} onQuery={setQuery} onNew={() => {
-    const item = createBlog();
-    store.setCollection('blog', [item, ...store.collections.blog]);
-    setSelectedId(item.id);
-  }} onReset={() => store.resetCollection('blog')} hasOverride={store.hasOverride('blog')} list={list.map((item) => ({ id: item.id, title: item.title ?? item.id, subtitle: item.slug, featured: Boolean(item.featured), onSelect: () => setSelectedId(item.id), selected: item.id === selectedId, onDuplicate: () => {
-    const dupe = { ...item, id: `${item.id}-copy-${Date.now()}`, slug: `${item.slug}-copy` };
-    store.setCollection('blog', [dupe, ...store.collections.blog]);
-    setSelectedId(dupe.id);
-  }, onDelete: () => {
-    if (!window.confirm(t('studio.confirm_delete'))) return;
-    store.setCollection('blog', store.collections.blog.filter((entry) => entry.id !== item.id));
-    if (selectedId === item.id) setSelectedId('');
-  } }))}>
-    {selected ? (
-      <form onSubmit={form.handleSubmit(save)} className="space-y-4">
-        <Field label="ID"><Input {...form.register('id')} /></Field>
-        <Field label="Slug"><Input {...form.register('slug')} /></Field>
-        <Field label={t('studio.fields.title_en')}><Input {...form.register('title')} /></Field>
-        <Field label={t('studio.fields.title_ar')}><Input {...form.register('title_ar')} /></Field>
-        <Field label={t('studio.fields.excerpt_en')}><Textarea {...form.register('excerpt')} /></Field>
-        <Field label={t('studio.fields.excerpt_ar')}><Textarea {...form.register('excerpt_ar')} /></Field>
-        <Field label={t('studio.fields.content_en')}><Textarea rows={6} {...form.register('content')} /></Field>
-        <Field label={t('studio.fields.content_ar')}><Textarea rows={6} {...form.register('content_ar')} /></Field>
-        <Field label={t('studio.fields.category_key')}><Input {...form.register('category')} /></Field>
-        <Field label={t('studio.fields.category_ar')}><Input {...form.register('category_ar')} /></Field>
-        <div className="grid gap-4 md:grid-cols-2">
-          <Field label={t('studio.fields.author_en')}><Input {...form.register('author')} /></Field>
-          <Field label={t('studio.fields.author_ar')}><Input {...form.register('author_ar')} /></Field>
-          <Field label={t('studio.fields.author_role_en')}><Input {...form.register('authorRole')} /></Field>
-          <Field label={t('studio.fields.author_role_ar')}><Input {...form.register('authorRole_ar')} /></Field>
-          <Field label={t('studio.fields.author_image')}><Input {...form.register('authorImage')} /></Field>
-          <Field label={t('studio.fields.date')}><Input type="date" {...form.register('date')} /></Field>
-        </div>
-        <Field label={t('studio.fields.image')}><Input {...form.register('image')} /></Field>
-        <Field label={t('studio.fields.tags_en')}><Textarea value={joinList(form.watch('tags') ?? [])} onChange={(event) => form.setValue('tags', splitList(event.target.value), { shouldValidate: true })} /></Field>
-        <Field label={t('studio.fields.tags_ar')}><Textarea value={joinList(form.watch('tags_ar') ?? [])} onChange={(event) => form.setValue('tags_ar', splitList(event.target.value), { shouldValidate: true })} /></Field>
-        <ToggleField label={t('studio.fields.featured')} checked={Boolean(form.watch('featured'))} onCheckedChange={(value) => form.setValue('featured', value)} />
-        <FormErrors errors={form.formState.errors} />
-        <Button type="submit"><Save className="mr-2 h-4 w-4" />{t('studio.actions.save')}</Button>
-      </form>
-    ) : <p className="text-sm text-muted-foreground">{t('studio.empty_select')}</p>}
-  </CollectionLayout>;
+  return (
+    <CollectionLayout
+      title={t('studio.tabs.blog')}
+      query={query}
+      onQuery={setQuery}
+      onNew={() => {
+        const item = createBlog();
+        store.setCollection('blog', [item, ...store.collections.blog]);
+        setSelectedId(item.id);
+      }}
+      onReset={() => {
+        store.resetCollection('blog');
+        toast({ title: t('studio.messages.reset_success') });
+      }}
+      hasOverride={store.hasOverride('blog')}
+      list={list.map((item) => ({
+        id: item.id,
+        title: item.title ?? item.id,
+        subtitle: item.slug,
+        featured: Boolean(item.featured),
+        onSelect: () => setSelectedId(item.id),
+        selected: item.id === selectedId,
+        onDuplicate: () => {
+          const dupe = { ...item, id: `${item.id}-copy-${Date.now()}`, slug: `${item.slug}-copy` };
+          store.setCollection('blog', [dupe, ...store.collections.blog]);
+          setSelectedId(dupe.id);
+        },
+        onDelete: () => {
+          store.setCollection('blog', store.collections.blog.filter((entry) => entry.id !== item.id));
+          if (selectedId === item.id) setSelectedId('');
+          toast({ title: t('studio.messages.delete_success') });
+        },
+      }))}
+    >
+      {selected ? (
+        <form onSubmit={form.handleSubmit(save)} className="space-y-4">
+          <Field label={t('studio.fields.id')}><Input {...form.register('id')} /></Field>
+          <Field label={t('studio.fields.slug')}><Input {...form.register('slug')} /></Field>
+          <Field label={t('studio.fields.title_en')}><Input {...form.register('title')} /></Field>
+          <Field label={t('studio.fields.title_ar')}><Input {...form.register('title_ar')} /></Field>
+          <Field label={t('studio.fields.excerpt_en')}><Textarea {...form.register('excerpt')} /></Field>
+          <Field label={t('studio.fields.excerpt_ar')}><Textarea {...form.register('excerpt_ar')} /></Field>
+          <Field label={t('studio.fields.content_en')}><Textarea rows={6} {...form.register('content')} /></Field>
+          <Field label={t('studio.fields.content_ar')}><Textarea rows={6} {...form.register('content_ar')} /></Field>
+          <Field label={t('studio.fields.category_key')}><Input {...form.register('category')} /></Field>
+          <Field label={t('studio.fields.category_ar')}><Input {...form.register('category_ar')} /></Field>
+          <div className="grid gap-4 md:grid-cols-2">
+            <Field label={t('studio.fields.author_en')}><Input {...form.register('author')} /></Field>
+            <Field label={t('studio.fields.author_ar')}><Input {...form.register('author_ar')} /></Field>
+            <Field label={t('studio.fields.author_role_en')}><Input {...form.register('authorRole')} /></Field>
+            <Field label={t('studio.fields.author_role_ar')}><Input {...form.register('authorRole_ar')} /></Field>
+            <Field label={t('studio.fields.author_image')}><Input {...form.register('authorImage')} /></Field>
+            <Field label={t('studio.fields.date')}><Input type="date" {...form.register('date')} /></Field>
+          </div>
+          <Field label={t('studio.fields.image')}><Input {...form.register('image')} /></Field>
+          <Field label={t('studio.fields.tags_en')}><Textarea value={joinList(form.watch('tags') ?? [])} onChange={(event) => form.setValue('tags', splitList(event.target.value), { shouldValidate: true })} /></Field>
+          <Field label={t('studio.fields.tags_ar')}><Textarea value={joinList(form.watch('tags_ar') ?? [])} onChange={(event) => form.setValue('tags_ar', splitList(event.target.value), { shouldValidate: true })} /></Field>
+          <ToggleField label={t('studio.fields.featured')} checked={Boolean(form.watch('featured'))} onCheckedChange={(value) => form.setValue('featured', value)} />
+          <FormErrors errors={form.formState.errors as Record<string, unknown>} />
+          <Button type="submit"><Save className="mr-2 h-4 w-4" />{t('studio.actions.save')}</Button>
+        </form>
+      ) : <p className="text-sm text-muted-foreground">{t('studio.empty_select')}</p>}
+    </CollectionLayout>
+  );
 }
 
 function PortfolioEditor() {
   const { t } = useTranslation();
+  const { toast } = useToast();
   const store = useContentStore();
   const [query, setQuery] = useState('');
   const [selectedId, setSelectedId] = useState<string>(store.collections.portfolio[0]?.id ?? '');
@@ -205,68 +264,94 @@ function PortfolioEditor() {
   const save = (values: PortfolioRecord) => {
     const next = store.collections.portfolio.map((item) => item.id === selectedId ? values : item);
     if (!next.some((item) => item.id === selectedId)) next.push(values);
-    const duplicateSlug = next.some((item) => item.id !== values.id && item.slug === values.slug);
-    if (duplicateSlug) return window.alert(t('studio.validation.unique_slug'));
+    if (next.some((item) => item.id !== values.id && item.slug === values.slug)) {
+      toast({ variant: 'destructive', title: t('studio.validation.unique_slug') });
+      return;
+    }
     store.setCollection('portfolio', next);
     setSelectedId(values.id);
+    toast({ title: t('studio.messages.save_success') });
   };
 
-  return <CollectionLayout title={t('studio.tabs.portfolio')} query={query} onQuery={setQuery} onNew={() => {
-    const item = createPortfolio();
-    store.setCollection('portfolio', [item, ...store.collections.portfolio]);
-    setSelectedId(item.id);
-  }} onReset={() => store.resetCollection('portfolio')} hasOverride={store.hasOverride('portfolio')} list={list.map((item) => ({ id: item.id, title: item.title ?? item.id, subtitle: item.slug, featured: Boolean(item.featured), onSelect: () => setSelectedId(item.id), selected: item.id === selectedId, onDuplicate: () => {
-    const dupe = { ...item, id: `${item.id}-copy-${Date.now()}`, slug: `${item.slug}-copy` };
-    store.setCollection('portfolio', [dupe, ...store.collections.portfolio]);
-    setSelectedId(dupe.id);
-  }, onDelete: () => {
-    if (!window.confirm(t('studio.confirm_delete'))) return;
-    store.setCollection('portfolio', store.collections.portfolio.filter((entry) => entry.id !== item.id));
-    if (selectedId === item.id) setSelectedId('');
-  } }))}>
-    {selected ? <form onSubmit={form.handleSubmit(save)} className="space-y-4">
-      <div className="grid gap-4 md:grid-cols-2">
-        <Field label="ID"><Input {...form.register('id')} /></Field>
-        <Field label="Slug"><Input {...form.register('slug')} /></Field>
-        <Field label={t('studio.fields.title_en')}><Input {...form.register('title')} /></Field>
-        <Field label={t('studio.fields.title_ar')}><Input {...form.register('title_ar')} /></Field>
-      </div>
-      <div className="grid gap-4 md:grid-cols-2">
-        <Field label={t('studio.fields.category_key')}><Input {...form.register('category')} /></Field>
-        <Field label={t('studio.fields.category_ar')}><Input {...form.register('category_ar')} /></Field>
-        <Field label={t('studio.fields.category_name_en')}><Input {...form.register('categoryName')} /></Field>
-        <Field label={t('studio.fields.category_name_ar')}><Input {...form.register('categoryName_ar')} /></Field>
-      </div>
-      <Field label={t('studio.fields.image')}><Input {...form.register('image')} /></Field>
-      <Field label={t('studio.fields.gallery')}><Textarea value={joinList(form.watch('gallery') ?? [])} onChange={(event) => form.setValue('gallery', splitList(event.target.value), { shouldValidate: true })} /></Field>
-      <Field label={t('studio.fields.short_description_en')}><Textarea {...form.register('shortDescription')} /></Field>
-      <Field label={t('studio.fields.short_description_ar')}><Textarea {...form.register('shortDescription_ar')} /></Field>
-      <Field label={t('studio.fields.full_description_en')}><Textarea rows={5} {...form.register('fullDescription')} /></Field>
-      <Field label={t('studio.fields.full_description_ar')}><Textarea rows={5} {...form.register('fullDescription_ar')} /></Field>
-      <div className="grid gap-4 md:grid-cols-2">
-        <Field label={t('studio.fields.client_en')}><Input {...form.register('client')} /></Field>
-        <Field label={t('studio.fields.client_ar')}><Input {...form.register('client_ar')} /></Field>
-        <Field label={t('studio.fields.website')}><Input {...form.register('website')} /></Field>
-        <Field label={t('studio.fields.year')}><Input {...form.register('year')} /></Field>
-      </div>
-      <Field label={t('studio.fields.services_en')}><Textarea value={joinList(form.watch('services') ?? [])} onChange={(event) => form.setValue('services', splitList(event.target.value), { shouldValidate: true })} /></Field>
-      <Field label={t('studio.fields.services_ar')}><Textarea value={joinList(form.watch('services_ar') ?? [])} onChange={(event) => form.setValue('services_ar', splitList(event.target.value), { shouldValidate: true })} /></Field>
-      <Field label={t('studio.fields.technologies_en')}><Textarea value={joinList(form.watch('technologies') ?? [])} onChange={(event) => form.setValue('technologies', splitList(event.target.value), { shouldValidate: true })} /></Field>
-      <Field label={t('studio.fields.technologies_ar')}><Textarea value={joinList(form.watch('technologies_ar') ?? [])} onChange={(event) => form.setValue('technologies_ar', splitList(event.target.value), { shouldValidate: true })} /></Field>
-      <div className="grid gap-4 md:grid-cols-3">
-        <Field label={t('studio.fields.impact_value')}><Input {...form.register('impact.value')} /></Field>
-        <Field label={t('studio.fields.impact_label_en')}><Input {...form.register('impact.label')} /></Field>
-        <Field label={t('studio.fields.impact_label_ar')}><Input {...form.register('impact.label_ar')} /></Field>
-      </div>
-      <ToggleField label={t('studio.fields.featured')} checked={Boolean(form.watch('featured'))} onCheckedChange={(value) => form.setValue('featured', value)} />
-      <FormErrors errors={form.formState.errors} />
-      <Button type="submit"><Save className="mr-2 h-4 w-4" />{t('studio.actions.save')}</Button>
-    </form> : <p className="text-sm text-muted-foreground">{t('studio.empty_select')}</p>}
-  </CollectionLayout>;
+  return (
+    <CollectionLayout
+      title={t('studio.tabs.portfolio')}
+      query={query}
+      onQuery={setQuery}
+      onNew={() => {
+        const item = createPortfolio();
+        store.setCollection('portfolio', [item, ...store.collections.portfolio]);
+        setSelectedId(item.id);
+      }}
+      onReset={() => {
+        store.resetCollection('portfolio');
+        toast({ title: t('studio.messages.reset_success') });
+      }}
+      hasOverride={store.hasOverride('portfolio')}
+      list={list.map((item) => ({
+        id: item.id,
+        title: item.title ?? item.id,
+        subtitle: item.slug,
+        featured: Boolean(item.featured),
+        onSelect: () => setSelectedId(item.id),
+        selected: item.id === selectedId,
+        onDuplicate: () => {
+          const dupe = { ...item, id: `${item.id}-copy-${Date.now()}`, slug: `${item.slug}-copy` };
+          store.setCollection('portfolio', [dupe, ...store.collections.portfolio]);
+          setSelectedId(dupe.id);
+        },
+        onDelete: () => {
+          store.setCollection('portfolio', store.collections.portfolio.filter((entry) => entry.id !== item.id));
+          if (selectedId === item.id) setSelectedId('');
+          toast({ title: t('studio.messages.delete_success') });
+        },
+      }))}
+    >
+      {selected ? <form onSubmit={form.handleSubmit(save)} className="space-y-4">
+        <div className="grid gap-4 md:grid-cols-2">
+          <Field label={t('studio.fields.id')}><Input {...form.register('id')} /></Field>
+          <Field label={t('studio.fields.slug')}><Input {...form.register('slug')} /></Field>
+          <Field label={t('studio.fields.title_en')}><Input {...form.register('title')} /></Field>
+          <Field label={t('studio.fields.title_ar')}><Input {...form.register('title_ar')} /></Field>
+        </div>
+        <div className="grid gap-4 md:grid-cols-2">
+          <Field label={t('studio.fields.category_key')}><Input {...form.register('category')} /></Field>
+          <Field label={t('studio.fields.category_ar')}><Input {...form.register('category_ar')} /></Field>
+          <Field label={t('studio.fields.category_name_en')}><Input {...form.register('categoryName')} /></Field>
+          <Field label={t('studio.fields.category_name_ar')}><Input {...form.register('categoryName_ar')} /></Field>
+        </div>
+        <Field label={t('studio.fields.image')}><Input {...form.register('image')} /></Field>
+        <Field label={t('studio.fields.gallery')}><Textarea value={joinList(form.watch('gallery') ?? [])} onChange={(event) => form.setValue('gallery', splitList(event.target.value), { shouldValidate: true })} /></Field>
+        <Field label={t('studio.fields.short_description_en')}><Textarea {...form.register('shortDescription')} /></Field>
+        <Field label={t('studio.fields.short_description_ar')}><Textarea {...form.register('shortDescription_ar')} /></Field>
+        <Field label={t('studio.fields.full_description_en')}><Textarea rows={5} {...form.register('fullDescription')} /></Field>
+        <Field label={t('studio.fields.full_description_ar')}><Textarea rows={5} {...form.register('fullDescription_ar')} /></Field>
+        <div className="grid gap-4 md:grid-cols-2">
+          <Field label={t('studio.fields.client_en')}><Input {...form.register('client')} /></Field>
+          <Field label={t('studio.fields.client_ar')}><Input {...form.register('client_ar')} /></Field>
+          <Field label={t('studio.fields.website')}><Input {...form.register('website')} /></Field>
+          <Field label={t('studio.fields.year')}><Input {...form.register('year')} /></Field>
+        </div>
+        <Field label={t('studio.fields.services_en')}><Textarea value={joinList(form.watch('services') ?? [])} onChange={(event) => form.setValue('services', splitList(event.target.value), { shouldValidate: true })} /></Field>
+        <Field label={t('studio.fields.services_ar')}><Textarea value={joinList(form.watch('services_ar') ?? [])} onChange={(event) => form.setValue('services_ar', splitList(event.target.value), { shouldValidate: true })} /></Field>
+        <Field label={t('studio.fields.technologies_en')}><Textarea value={joinList(form.watch('technologies') ?? [])} onChange={(event) => form.setValue('technologies', splitList(event.target.value), { shouldValidate: true })} /></Field>
+        <Field label={t('studio.fields.technologies_ar')}><Textarea value={joinList(form.watch('technologies_ar') ?? [])} onChange={(event) => form.setValue('technologies_ar', splitList(event.target.value), { shouldValidate: true })} /></Field>
+        <div className="grid gap-4 md:grid-cols-3">
+          <Field label={t('studio.fields.impact_value')}><Input {...form.register('impact.value')} /></Field>
+          <Field label={t('studio.fields.impact_label_en')}><Input {...form.register('impact.label')} /></Field>
+          <Field label={t('studio.fields.impact_label_ar')}><Input {...form.register('impact.label_ar')} /></Field>
+        </div>
+        <ToggleField label={t('studio.fields.featured')} checked={Boolean(form.watch('featured'))} onCheckedChange={(value) => form.setValue('featured', value)} />
+        <FormErrors errors={form.formState.errors as Record<string, unknown>} />
+        <Button type="submit"><Save className="mr-2 h-4 w-4" />{t('studio.actions.save')}</Button>
+      </form> : <p className="text-sm text-muted-foreground">{t('studio.empty_select')}</p>}
+    </CollectionLayout>
+  );
 }
 
 function ServicesEditor() {
   const { t } = useTranslation();
+  const { toast } = useToast();
   const store = useContentStore();
   const [query, setQuery] = useState('');
   const [selectedId, setSelectedId] = useState<string>(store.collections.services[0]?.id ?? '');
@@ -277,52 +362,79 @@ function ServicesEditor() {
   const save = (values: ServiceRecord) => {
     const next = store.collections.services.map((item) => item.id === selectedId ? values : item);
     if (!next.some((item) => item.id === selectedId)) next.push(values);
-    if (next.some((item) => item.id !== values.id && item.slug === values.slug)) return window.alert(t('studio.validation.unique_slug'));
+    if (next.some((item) => item.id !== values.id && item.slug === values.slug)) {
+      toast({ variant: 'destructive', title: t('studio.validation.unique_slug') });
+      return;
+    }
     store.setCollection('services', next.sort((a, b) => (a.order ?? 999) - (b.order ?? 999)));
     setSelectedId(values.id);
+    toast({ title: t('studio.messages.save_success') });
   };
 
-  return <CollectionLayout title={t('studio.tabs.services')} query={query} onQuery={setQuery} onNew={() => {
-    const item = createService();
-    store.setCollection('services', [item, ...store.collections.services]);
-    setSelectedId(item.id);
-  }} onReset={() => store.resetCollection('services')} hasOverride={store.hasOverride('services')} list={list.map((item) => ({ id: item.id, title: item.title ?? item.id, subtitle: item.slug, featured: Boolean(item.featured), onSelect: () => setSelectedId(item.id), selected: item.id === selectedId, onDuplicate: () => {
-    const dupe = { ...item, id: `${item.id}-copy-${Date.now()}`, slug: `${item.slug}-copy` };
-    store.setCollection('services', [dupe, ...store.collections.services]);
-    setSelectedId(dupe.id);
-  }, onDelete: () => {
-    if (!window.confirm(t('studio.confirm_delete'))) return;
-    store.setCollection('services', store.collections.services.filter((entry) => entry.id !== item.id));
-    if (selectedId === item.id) setSelectedId('');
-  } }))}>
-    {selected ? <form onSubmit={form.handleSubmit(save)} className="space-y-4">
-      <div className="grid gap-4 md:grid-cols-2">
-        <Field label="ID"><Input {...form.register('id')} /></Field>
-        <Field label="Slug"><Input {...form.register('slug')} /></Field>
-        <Field label={t('studio.fields.title_en')}><Input {...form.register('title')} /></Field>
-        <Field label={t('studio.fields.title_ar')}><Input {...form.register('title_ar')} /></Field>
-      </div>
-      <Field label={t('studio.fields.description_en')}><Textarea {...form.register('description')} /></Field>
-      <Field label={t('studio.fields.description_ar')}><Textarea {...form.register('description_ar')} /></Field>
-      <Field label={t('studio.fields.features_en')}><Textarea value={joinList(form.watch('features') ?? [])} onChange={(event) => form.setValue('features', splitList(event.target.value), { shouldValidate: true })} /></Field>
-      <Field label={t('studio.fields.features_ar')}><Textarea value={joinList(form.watch('features_ar') ?? [])} onChange={(event) => form.setValue('features_ar', splitList(event.target.value), { shouldValidate: true })} /></Field>
-      <Field label={t('studio.fields.image')}><Input {...form.register('image')} /></Field>
-      <Field label={t('studio.fields.icon_key')}>
-        <Select value={form.watch('iconKey')} onValueChange={(value) => form.setValue('iconKey', value as ServiceRecord['iconKey'], { shouldValidate: true })}>
-          <SelectTrigger><SelectValue /></SelectTrigger>
-          <SelectContent>{serviceIconKeys.map((key) => <SelectItem key={key} value={key}>{key}</SelectItem>)}</SelectContent>
-        </Select>
-      </Field>
-      <Field label={t('studio.fields.order')}><Input type="number" {...form.register('order', { valueAsNumber: true })} /></Field>
-      <ToggleField label={t('studio.fields.featured')} checked={Boolean(form.watch('featured'))} onCheckedChange={(value) => form.setValue('featured', value)} />
-      <FormErrors errors={form.formState.errors} />
-      <Button type="submit"><Save className="mr-2 h-4 w-4" />{t('studio.actions.save')}</Button>
-    </form> : <p className="text-sm text-muted-foreground">{t('studio.empty_select')}</p>}
-  </CollectionLayout>;
+  return (
+    <CollectionLayout
+      title={t('studio.tabs.services')}
+      query={query}
+      onQuery={setQuery}
+      onNew={() => {
+        const item = createService();
+        store.setCollection('services', [item, ...store.collections.services]);
+        setSelectedId(item.id);
+      }}
+      onReset={() => {
+        store.resetCollection('services');
+        toast({ title: t('studio.messages.reset_success') });
+      }}
+      hasOverride={store.hasOverride('services')}
+      list={list.map((item) => ({
+        id: item.id,
+        title: item.title ?? item.id,
+        subtitle: item.slug,
+        featured: Boolean(item.featured),
+        onSelect: () => setSelectedId(item.id),
+        selected: item.id === selectedId,
+        onDuplicate: () => {
+          const dupe = { ...item, id: `${item.id}-copy-${Date.now()}`, slug: `${item.slug}-copy` };
+          store.setCollection('services', [dupe, ...store.collections.services]);
+          setSelectedId(dupe.id);
+        },
+        onDelete: () => {
+          store.setCollection('services', store.collections.services.filter((entry) => entry.id !== item.id));
+          if (selectedId === item.id) setSelectedId('');
+          toast({ title: t('studio.messages.delete_success') });
+        },
+      }))}
+    >
+      {selected ? <form onSubmit={form.handleSubmit(save)} className="space-y-4">
+        <div className="grid gap-4 md:grid-cols-2">
+          <Field label={t('studio.fields.id')}><Input {...form.register('id')} /></Field>
+          <Field label={t('studio.fields.slug')}><Input {...form.register('slug')} /></Field>
+          <Field label={t('studio.fields.title_en')}><Input {...form.register('title')} /></Field>
+          <Field label={t('studio.fields.title_ar')}><Input {...form.register('title_ar')} /></Field>
+        </div>
+        <Field label={t('studio.fields.description_en')}><Textarea {...form.register('description')} /></Field>
+        <Field label={t('studio.fields.description_ar')}><Textarea {...form.register('description_ar')} /></Field>
+        <Field label={t('studio.fields.features_en')}><Textarea value={joinList(form.watch('features') ?? [])} onChange={(event) => form.setValue('features', splitList(event.target.value), { shouldValidate: true })} /></Field>
+        <Field label={t('studio.fields.features_ar')}><Textarea value={joinList(form.watch('features_ar') ?? [])} onChange={(event) => form.setValue('features_ar', splitList(event.target.value), { shouldValidate: true })} /></Field>
+        <Field label={t('studio.fields.image')}><Input {...form.register('image')} /></Field>
+        <Field label={t('studio.fields.icon_key')}>
+          <Select value={form.watch('iconKey')} onValueChange={(value) => form.setValue('iconKey', value as ServiceRecord['iconKey'], { shouldValidate: true })}>
+            <SelectTrigger><SelectValue /></SelectTrigger>
+            <SelectContent>{serviceIconKeys.map((key) => <SelectItem key={key} value={key}>{key}</SelectItem>)}</SelectContent>
+          </Select>
+        </Field>
+        <Field label={t('studio.fields.order')}><Input type="number" {...form.register('order', { valueAsNumber: true })} /></Field>
+        <ToggleField label={t('studio.fields.featured')} checked={Boolean(form.watch('featured'))} onCheckedChange={(value) => form.setValue('featured', value)} />
+        <FormErrors errors={form.formState.errors as Record<string, unknown>} />
+        <Button type="submit"><Save className="mr-2 h-4 w-4" />{t('studio.actions.save')}</Button>
+      </form> : <p className="text-sm text-muted-foreground">{t('studio.empty_select')}</p>}
+    </CollectionLayout>
+  );
 }
 
 function TestimonialsEditor() {
   const { t } = useTranslation();
+  const { toast } = useToast();
   const store = useContentStore();
   const [query, setQuery] = useState('');
   const [selectedId, setSelectedId] = useState<string>(store.collections.testimonials[0]?.id ?? '');
@@ -335,46 +447,69 @@ function TestimonialsEditor() {
     if (!next.some((item) => item.id === selectedId)) next.push(values);
     store.setCollection('testimonials', next);
     setSelectedId(values.id);
+    toast({ title: t('studio.messages.save_success') });
   };
 
-  return <CollectionLayout title={t('studio.tabs.testimonials')} query={query} onQuery={setQuery} onNew={() => {
-    const item = createTestimonial();
-    store.setCollection('testimonials', [item, ...store.collections.testimonials]);
-    setSelectedId(item.id);
-  }} onReset={() => store.resetCollection('testimonials')} hasOverride={store.hasOverride('testimonials')} list={list.map((item) => ({ id: item.id, title: item.name, subtitle: item.company, featured: Boolean(item.featured), onSelect: () => setSelectedId(item.id), selected: item.id === selectedId, onDuplicate: () => {
-    const dupe = { ...item, id: `${item.id}-copy-${Date.now()}` };
-    store.setCollection('testimonials', [dupe, ...store.collections.testimonials]);
-    setSelectedId(dupe.id);
-  }, onDelete: () => {
-    if (!window.confirm(t('studio.confirm_delete'))) return;
-    store.setCollection('testimonials', store.collections.testimonials.filter((entry) => entry.id !== item.id));
-    if (selectedId === item.id) setSelectedId('');
-  } }))}>
-    {selected ? <form onSubmit={form.handleSubmit(save)} className="space-y-4">
-      <Field label="ID"><Input {...form.register('id')} /></Field>
-      <div className="grid gap-4 md:grid-cols-2">
-        <Field label={t('studio.fields.name_en')}><Input {...form.register('name')} /></Field>
-        <Field label={t('studio.fields.name_ar')}><Input {...form.register('name_ar')} /></Field>
-        <Field label={t('studio.fields.role_en')}><Input {...form.register('role')} /></Field>
-        <Field label={t('studio.fields.role_ar')}><Input {...form.register('role_ar')} /></Field>
-        <Field label={t('studio.fields.company_en')}><Input {...form.register('company')} /></Field>
-        <Field label={t('studio.fields.company_ar')}><Input {...form.register('company_ar')} /></Field>
-      </div>
-      <Field label={t('studio.fields.image')}><Input {...form.register('image')} /></Field>
-      <Field label={t('studio.fields.text_en')}><Textarea rows={4} {...form.register('text')} /></Field>
-      <Field label={t('studio.fields.text_ar')}><Textarea rows={4} {...form.register('text_ar')} /></Field>
-      <div className="grid gap-4 md:grid-cols-2">
-        <Field label={t('studio.fields.rating')}><Input type="number" step="0.5" min={0} max={5} {...form.register('rating', { valueAsNumber: true })} /></Field>
-        <Field label={t('studio.fields.date')}><Input type="date" {...form.register('date')} /></Field>
-        <Field label={t('studio.fields.project_id')}><Input {...form.register('projectId')} /></Field>
-        <Field label={t('studio.fields.project_name_en')}><Input {...form.register('projectName')} /></Field>
-        <Field label={t('studio.fields.project_name_ar')}><Input {...form.register('projectName_ar')} /></Field>
-      </div>
-      <ToggleField label={t('studio.fields.featured')} checked={Boolean(form.watch('featured'))} onCheckedChange={(value) => form.setValue('featured', value)} />
-      <FormErrors errors={form.formState.errors} />
-      <Button type="submit"><Save className="mr-2 h-4 w-4" />{t('studio.actions.save')}</Button>
-    </form> : <p className="text-sm text-muted-foreground">{t('studio.empty_select')}</p>}
-  </CollectionLayout>;
+  return (
+    <CollectionLayout
+      title={t('studio.tabs.testimonials')}
+      query={query}
+      onQuery={setQuery}
+      onNew={() => {
+        const item = createTestimonial();
+        store.setCollection('testimonials', [item, ...store.collections.testimonials]);
+        setSelectedId(item.id);
+      }}
+      onReset={() => {
+        store.resetCollection('testimonials');
+        toast({ title: t('studio.messages.reset_success') });
+      }}
+      hasOverride={store.hasOverride('testimonials')}
+      list={list.map((item) => ({
+        id: item.id,
+        title: item.name,
+        subtitle: item.company,
+        featured: Boolean(item.featured),
+        onSelect: () => setSelectedId(item.id),
+        selected: item.id === selectedId,
+        onDuplicate: () => {
+          const dupe = { ...item, id: `${item.id}-copy-${Date.now()}` };
+          store.setCollection('testimonials', [dupe, ...store.collections.testimonials]);
+          setSelectedId(dupe.id);
+        },
+        onDelete: () => {
+          store.setCollection('testimonials', store.collections.testimonials.filter((entry) => entry.id !== item.id));
+          if (selectedId === item.id) setSelectedId('');
+          toast({ title: t('studio.messages.delete_success') });
+        },
+      }))}
+    >
+      {selected ? <form onSubmit={form.handleSubmit(save)} className="space-y-4">
+        <Field label={t('studio.fields.id')}><Input {...form.register('id')} /></Field>
+        <div className="grid gap-4 md:grid-cols-2">
+          <Field label={t('studio.fields.name_en')}><Input {...form.register('name')} /></Field>
+          <Field label={t('studio.fields.name_ar')}><Input {...form.register('name_ar')} /></Field>
+          <Field label={t('studio.fields.role_en')}><Input {...form.register('role')} /></Field>
+          <Field label={t('studio.fields.role_ar')}><Input {...form.register('role_ar')} /></Field>
+          <Field label={t('studio.fields.company_en')}><Input {...form.register('company')} /></Field>
+          <Field label={t('studio.fields.company_ar')}><Input {...form.register('company_ar')} /></Field>
+        </div>
+        <Field label={t('studio.fields.image')}><Input {...form.register('image')} /></Field>
+        <Field label={t('studio.fields.text_en')}><Textarea rows={4} {...form.register('text')} /></Field>
+        <Field label={t('studio.fields.text_ar')}><Textarea rows={4} {...form.register('text_ar')} /></Field>
+        <div className="grid gap-4 md:grid-cols-2">
+          <Field label={t('studio.fields.rating')}><Input type="number" step="0.5" min={0} max={5} {...form.register('rating', { valueAsNumber: true })} /></Field>
+          <Field label={t('studio.fields.date')}><Input type="date" {...form.register('date')} /></Field>
+          <Field label={t('studio.fields.project_id')}><Input {...form.register('projectId')} /></Field>
+          <Field label={t('studio.fields.project_name_en')}><Input {...form.register('projectName')} /></Field>
+          <Field label={t('studio.fields.project_name_ar')}><Input {...form.register('projectName_ar')} /></Field>
+        </div>
+        <ToggleField label={t('studio.fields.featured')} checked={Boolean(form.watch('featured'))} onCheckedChange={(value) => form.setValue('featured', value)} />
+        <FormErrors errors={form.formState.errors as Record<string, unknown>} />
+        <Button type="submit"><Save className="mr-2 h-4 w-4" />{t('studio.actions.save')}</Button>
+      </form> : <p className="text-sm text-muted-foreground">{t('studio.empty_select')}</p>}
+    </CollectionLayout>
+  );
 }
 
 function CollectionLayout({
@@ -414,9 +549,14 @@ function CollectionLayout({
           <CardDescription>{t('studio.search_hint')}</CardDescription>
           <div className="flex gap-2">
             <Button size="sm" onClick={onNew}><Plus className="mr-1 h-4 w-4" />{t('studio.actions.new')}</Button>
-            <Button size="sm" variant="outline" disabled={!hasOverride} onClick={() => {
-              if (window.confirm(t('studio.confirm_reset_collection'))) onReset();
-            }}><RotateCcw className="mr-1 h-4 w-4" />{t('studio.actions.reset_collection')}</Button>
+            <ConfirmAction
+              title={t('studio.actions.reset_collection')}
+              description={t('studio.confirm_reset_collection')}
+              confirmLabel={t('studio.actions.confirm')}
+              cancelLabel={t('studio.actions.cancel')}
+              onConfirm={onReset}
+              trigger={<Button size="sm" variant="outline" disabled={!hasOverride}><RotateCcw className="mr-1 h-4 w-4" />{t('studio.actions.reset_collection')}</Button>}
+            />
           </div>
           <Input value={query} onChange={(event) => onQuery(event.target.value)} placeholder={t('studio.search_placeholder')} />
         </CardHeader>
@@ -433,7 +573,14 @@ function CollectionLayout({
                   <Separator className="my-2" />
                   <div className="flex gap-2">
                     <Button size="sm" variant="ghost" type="button" onClick={(event) => { event.stopPropagation(); item.onDuplicate(); }}><Copy className="h-4 w-4" /></Button>
-                    <Button size="sm" variant="ghost" type="button" onClick={(event) => { event.stopPropagation(); item.onDelete(); }}><Trash2 className="h-4 w-4" /></Button>
+                    <ConfirmAction
+                      title={t('studio.actions.delete')}
+                      description={t('studio.confirm_delete')}
+                      confirmLabel={t('studio.actions.confirm')}
+                      cancelLabel={t('studio.actions.cancel')}
+                      onConfirm={item.onDelete}
+                      trigger={<Button size="sm" variant="ghost" type="button" onClick={(event) => event.stopPropagation()}><Trash2 className="h-4 w-4" /></Button>}
+                    />
                   </div>
                 </button>
               ))}
@@ -450,6 +597,38 @@ function CollectionLayout({
         <CardContent>{children}</CardContent>
       </Card>
     </div>
+  );
+}
+
+function ConfirmAction({
+  title,
+  description,
+  confirmLabel,
+  cancelLabel,
+  onConfirm,
+  trigger,
+}: {
+  title: string;
+  description: string;
+  confirmLabel: string;
+  cancelLabel: string;
+  onConfirm: () => void;
+  trigger: React.ReactNode;
+}) {
+  return (
+    <AlertDialog>
+      <AlertDialogTrigger asChild>{trigger}</AlertDialogTrigger>
+      <AlertDialogContent>
+        <AlertDialogHeader>
+          <AlertDialogTitle>{title}</AlertDialogTitle>
+          <AlertDialogDescription>{description}</AlertDialogDescription>
+        </AlertDialogHeader>
+        <AlertDialogFooter>
+          <AlertDialogCancel>{cancelLabel}</AlertDialogCancel>
+          <AlertDialogAction onClick={onConfirm}>{confirmLabel}</AlertDialogAction>
+        </AlertDialogFooter>
+      </AlertDialogContent>
+    </AlertDialog>
   );
 }
 

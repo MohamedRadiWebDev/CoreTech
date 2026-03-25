@@ -293,7 +293,10 @@
       "reset_all": "إعادة ضبط الكل",
       "new": "عنصر جديد",
       "save": "حفظ العنصر",
-      "reset_collection": "إعادة ضبط القسم"
+      "reset_collection": "إعادة ضبط القسم",
+      "confirm": "تأكيد",
+      "cancel": "إلغاء",
+      "delete": "حذف"
     },
     "overview": {
       "blog": "مقالات المدونة",
@@ -366,13 +369,21 @@
       "rating": "التقييم",
       "project_id": "معرف المشروع",
       "project_name_en": "اسم المشروع (EN)",
-      "project_name_ar": "اسم المشروع (AR)"
+      "project_name_ar": "اسم المشروع (AR)",
+      "gallery": "صور المعرض (كل سطر صورة)",
+      "id": "المعرف",
+      "slug": "الرابط"
     },
     "validation": {
       "unique_slug": "يجب أن يكون الرابط فريدًا."
     },
     "messages": {
-      "import_failed": "فشل الاستيراد. تحقق من بنية الحزمة."
+      "import_failed": "فشل الاستيراد. تحقق من بنية الحزمة.",
+      "import_success": "تم استيراد حزمة المحتوى.",
+      "export_success": "تم تصدير حزمة المحتوى.",
+      "reset_success": "تمت إعادة ضبط التعديلات المحلية.",
+      "save_success": "تم حفظ العنصر.",
+      "delete_success": "تم حذف العنصر."
     },
     "confirm_delete": "حذف هذا العنصر؟",
     "confirm_reset_all": "إعادة ضبط كل التعديلات المحلية؟",

@@ -232,6 +232,17 @@ export interface SiteConfig {
   stats: SiteConfigRecord['stats'];
 }
 
+export interface SiteConfig {
+  company: {
+    name: string;
+    tagline: string;
+    email: string;
+    phone: string;
+    address: string;
+  };
+  stats: SiteConfigRecord['stats'];
+}
+
 export interface SocialLinks {
   facebook?: string;
   instagram?: string;
