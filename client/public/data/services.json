@@ -1,92 +1,170 @@
 [
   {
     "id": "web-design",
-    "title": "Website Design & Development",
-    "icon": "<path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z' />",
-    "description": "Custom, responsive websites that perfectly represent your brand and convert visitors into customers.",
+    "slug": "web-design-development",
+    "title": "Website design & development",
+    "title_ar": "تصميم وتطوير المواقع",
+    "description": "Premium multilingual websites and landing pages built to convert, scale, and load fast.",
+    "description_ar": "مواقع وصفحات هبوط احترافية متعددة اللغات مصممة للتحويل والتوسع والتحميل السريع.",
     "features": [
-      "Custom responsive design",
-      "User experience optimization",
-      "Content management system",
-      "Search engine optimization",
-      "E-commerce functionality",
-      "Website maintenance"
+      "Custom UX architecture",
+      "Responsive frontend systems",
+      "Conversion-focused landing pages",
+      "Technical SEO foundations",
+      "CMS-ready implementation",
+      "Performance optimization"
     ],
-    "image": "https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    "features_ar": [
+      "هيكل تجربة مستخدم مخصص",
+      "أنظمة واجهات متجاوبة",
+      "صفحات هبوط موجهة للتحويل",
+      "أسس سيو تقنية",
+      "تنفيذ جاهز لأنظمة إدارة المحتوى",
+      "تحسين الأداء"
+    ],
+    "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
+    "iconKey": "monitor",
+    "featured": true,
+    "order": 1,
+    "seoTitle": "Premium website design and development",
+    "seoTitle_ar": "تصميم وتطوير مواقع احترافية",
+    "seoDescription": "Custom multilingual websites with premium UI, fast performance, and SEO-ready foundations.",
+    "seoDescription_ar": "مواقع متعددة اللغات بواجهة احترافية وأداء سريع وبنية جاهزة للسيو."
   },
   {
     "id": "digital-marketing",
-    "title": "Digital Marketing",
-    "icon": "<path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z' />",
-    "description": "Strategic campaigns across ads, social media, and content to increase reach and engagement.",
+    "slug": "digital-growth-marketing",
+    "title": "Digital growth marketing",
+    "title_ar": "التسويق الرقمي للنمو",
+    "description": "Integrated campaigns that connect content, paid distribution, analytics, and conversion strategy.",
+    "description_ar": "حملات متكاملة تربط بين المحتوى والتوزيع المدفوع والتحليلات واستراتيجية التحويل.",
     "features": [
-      "Search engine marketing (SEM)",
-      "Social media marketing",
-      "Content marketing strategy",
-      "Email marketing campaigns",
-      "Pay-per-click (PPC) advertising",
-      "Analytics and reporting"
+      "Campaign strategy",
+      "Content calendars",
+      "Paid media direction",
+      "Analytics dashboards",
+      "Conversion reporting",
+      "Cross-channel optimization"
     ],
-    "image": "https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    "features_ar": [
+      "استراتيجية الحملات",
+      "خطط محتوى شهرية",
+      "توجيه الإعلانات المدفوعة",
+      "لوحات تحليل الأداء",
+      "تقارير التحويل",
+      "تحسين عبر القنوات"
+    ],
+    "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80",
+    "iconKey": "rocket",
+    "featured": true,
+    "order": 2
   },
   {
     "id": "motion-graphics",
-    "title": "Motion Graphics & Promotional Videos",
-    "icon": "<path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z' />",
-    "description": "Captivating animations and videos that tell your story and engage your audience.",
+    "slug": "motion-graphics-videos",
+    "title": "Motion graphics & launch videos",
+    "title_ar": "الموشن جرافيك وفيديوهات الإطلاق",
+    "description": "Branded motion assets and product storytelling built to support launches, ads, and awareness campaigns.",
+    "description_ar": "مواد موشن جرافيك وسرد بصري للمنتجات يدعم الإطلاقات والإعلانات وحملات الوعي.",
     "features": [
-      "2D and 3D animations",
-      "Logo animations",
-      "Explainer videos",
-      "Product demonstrations",
-      "Corporate videos",
-      "Social media video content"
+      "Animated explainers",
+      "Product launch edits",
+      "Storyboard planning",
+      "Social cutdowns",
+      "Brand motion kits",
+      "Campaign variants"
     ],
-    "image": "https://images.unsplash.com/photo-1551817958-d9d86fb29431?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    "features_ar": [
+      "فيديوهات شرح متحركة",
+      "مونتاج إطلاق المنتجات",
+      "تخطيط القصص المصورة",
+      "نسخ قصيرة للسوشيال",
+      "حزم موشن للهوية",
+      "نسخ متعددة للحملات"
+    ],
+    "image": "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1200&q=80",
+    "iconKey": "video",
+    "order": 3
   },
   {
     "id": "video-editing",
-    "title": "Video Editing & Montage",
-    "icon": "<path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z' />",
-    "description": "Professional editing services that transform raw footage into polished, compelling content.",
+    "slug": "video-editing-post-production",
+    "title": "Video editing & post-production",
+    "title_ar": "تحرير الفيديو وما بعد الإنتاج",
+    "description": "Clean, polished edits for interviews, campaigns, reels, explainers, and brand storytelling.",
+    "description_ar": "مونتاج احترافي مصقول للمقابلات والحملات والريلز وفيديوهات الشرح وسرد العلامة.",
     "features": [
-      "Video post-production",
-      "Color grading and correction",
-      "Sound design and mixing",
-      "Special effects and transitions",
-      "Interview editing",
-      "Event highlight reels"
+      "Narrative editing",
+      "Audio cleanup",
+      "Color correction",
+      "Subtitle workflows",
+      "Social-first exports",
+      "Versioning for channels"
     ],
-    "image": "https://images.unsplash.com/photo-1574717024453-354056afd6fc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    "features_ar": [
+      "تحرير قصصي",
+      "تنقية الصوت",
+      "تصحيح الألوان",
+      "سير عمل للترجمة النصية",
+      "نسخ مهيأة للسوشيال",
+      "تجهيز نسخ مختلفة للقنوات"
+    ],
+    "image": "https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=1200&q=80",
+    "iconKey": "film",
+    "order": 4
   },
   {
-    "id": "youtube",
-    "title": "YouTube Monetization Support",
-    "icon": "<path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z' /><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M21 12a9 9 0 11-18 0 9 9 0 0118 0z' />",
-    "description": "Strategic guidance and optimization to help creators meet monetization requirements and maximize revenue.",
+    "id": "youtube-strategy",
+    "slug": "youtube-strategy-monetization",
+    "title": "YouTube strategy & monetization",
+    "title_ar": "استراتيجية يوتيوب وتحقيق الدخل",
+    "description": "Channel positioning, publishing systems, and monetization planning for creators and media brands.",
+    "description_ar": "تموضع القنوات وأنظمة النشر وخطط تحقيق الدخل للمبدعين والعلامات الإعلامية.",
     "features": [
-      "Channel optimization",
-      "Content strategy development",
-      "Audience growth tactics",
-      "Monetization requirement support",
-      "Ad revenue optimization",
-      "Analytics and performance tracking"
+      "Channel positioning",
+      "Publishing cadence",
+      "Thumbnail & title direction",
+      "Growth analytics",
+      "Monetization roadmap",
+      "Retention optimization"
     ],
-    "image": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    "features_ar": [
+      "تموضع القناة",
+      "إيقاع النشر",
+      "توجيه الصور المصغرة والعناوين",
+      "تحليلات النمو",
+      "خارطة طريق الربح",
+      "تحسين الاحتفاظ بالمشاهدين"
+    ],
+    "image": "https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?auto=format&fit=crop&w=1200&q=80",
+    "iconKey": "play",
+    "order": 5
   },
   {
-    "id": "facebook",
-    "title": "Facebook Page Engagement",
-    "icon": "<path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z' />",
-    "description": "Boost your presence with targeted campaigns that increase likes, shares, and meaningful interactions.",
+    "id": "social-engagement",
+    "slug": "social-community-engagement",
+    "title": "Social community engagement",
+    "title_ar": "إدارة المجتمعات والتفاعل الاجتماعي",
+    "description": "Hands-on support for community management, response frameworks, and audience engagement growth.",
+    "description_ar": "دعم عملي لإدارة المجتمع الرقمي وأطر الردود وزيادة التفاعل مع الجمهور.",
     "features": [
-      "Content calendar creation",
-      "Post design and copywriting",
-      "Community management",
+      "Community playbooks",
+      "Response guidelines",
       "Engagement campaigns",
-      "Facebook ads management",
-      "Competitor analysis and reporting"
+      "Content moderation",
+      "Audience reporting",
+      "Monthly optimization"
     ],
-    "image": "https://images.unsplash.com/photo-1566125882500-87e10f726cdc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    "features_ar": [
+      "أدلة إدارة المجتمع",
+      "إرشادات الردود",
+      "حملات التفاعل",
+      "إدارة التعليقات",
+      "تقارير الجمهور",
+      "تحسين شهري"
+    ],
+    "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+    "iconKey": "messages-square",
+    "order": 6
   }
 ]

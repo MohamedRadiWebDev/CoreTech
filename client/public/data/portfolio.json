@@ -1,211 +1,284 @@
 [
   {
     "id": "halal-food",
+    "slug": "halal-food-store",
     "title": "Halal Food Store",
+    "title_ar": "متجر الأغذية الحلال",
     "category": "web-design",
-    "categoryName": "Web Design",
+    "category_ar": "تجارب الويب",
+    "categoryName": "Web experiences",
+    "categoryName_ar": "تجارب الويب",
     "image": "/images/portfolio/halalfood_coretechde_2025-05-09_06-55-20_2569.webp",
-    "shortDescription": "Online store for organic products and fresh Halal food",
-    "shortDescription_ar": "متجر إلكتروني للمنتجات العضوية والأطعمة الطازجة",
-    "fullDescription": "Online store for organic products and fresh food, offering an easy and secure shopping experience for Halal products.",
-    "fullDescription_ar": "متجر إلكتروني للمنتجات العضوية والأطعمة الطازجة، يوفر تجربة تسوق سهلة وآمنة للمنتجات الحلال.",
+    "gallery": [
+      "/images/portfolio/halalfood_coretechde_2025-05-09_06-55-20_2569.webp"
+    ],
+    "shortDescription": "A multilingual e-commerce storefront focused on trust, product clarity, and repeat ordering.",
+    "shortDescription_ar": "متجر إلكتروني متعدد اللغات يركز على الثقة ووضوح المنتجات وتكرار الطلبات.",
+    "fullDescription": "We designed a clear commerce journey for a food retailer that needed stronger trust signals, faster browsing, and a better mobile checkout experience.",
+    "fullDescription_ar": "صممنا تجربة شراء واضحة لمتجر أغذية احتاج إلى تعزيز الثقة وتسريع التصفح وتحسين تجربة الدفع على الجوال.",
+    "client": "Halal Food",
+    "client_ar": "حلال فود",
     "website": "https://halalfood.coretechdevo.com/",
     "year": "2024",
-    "services": ["Web Design", "E-commerce Development", "UI/UX Design"],
-    "technologies": ["React", "Node.js", "MongoDB", "Express"],
+    "services": [
+      "Website design",
+      "E-commerce UX",
+      "Technical SEO"
+    ],
+    "services_ar": [
+      "تصميم الموقع",
+      "تجربة المستخدم للمتجر",
+      "السيو التقني"
+    ],
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "technologies_ar": [
+      "ريأكت",
+      "تايب سكريبت",
+      "تايلويند"
+    ],
     "impact": {
       "value": "5K+",
-      "label": "monthly users"
-    }
+      "label": "monthly users",
+      "label_ar": "مستخدم شهريًا"
+    },
+    "featured": true
   },
-    {
+  {
     "id": "oragino",
+    "slug": "oragino-grocery",
     "title": "Oragino Grocery",
+    "title_ar": "متجر أوراجينو",
     "category": "web-design",
-    "categoryName": "Web Design",
+    "category_ar": "تجارب الويب",
+    "categoryName": "Web experiences",
+    "categoryName_ar": "تجارب الويب",
     "image": "/images/portfolio/oragino_coretechdevo_2025-05-09_06-55-35_6008.webp",
-    "shortDescription": "Online grocery store specializing in fresh and organic products",
-    "shortDescription_ar": "متجر بقالة إلكتروني متخصص في المنتجات الطازجة والعضوية",
-    "fullDescription": "Online grocery store specializing in fresh and organic products, focusing on providing a healthy shopping experience.",
-    "fullDescription_ar": "متجر بقالة إلكتروني متخصص في المنتجات الطازجة والعضوية، يركز على توفير تجربة تسوق صحية.",
+    "gallery": [
+      "/images/portfolio/oragino_coretechdevo_2025-05-09_06-55-35_6008.webp"
+    ],
+    "shortDescription": "A grocery experience designed around product discovery, healthy lifestyle positioning, and easier navigation.",
+    "shortDescription_ar": "تجربة بقالة رقمية تركز على اكتشاف المنتجات وتموضع نمط الحياة الصحي وسهولة التنقل.",
+    "fullDescription": "We reorganized catalog structure, simplified search paths, and framed the store around convenience and freshness to support better conversion on mobile devices.",
+    "fullDescription_ar": "أعدنا تنظيم بنية المتجر وبسطنا مسارات البحث وبنينا التجربة حول الراحة والمنتجات الطازجة لدعم التحويل على الأجهزة المحمولة.",
+    "client": "Oragino",
+    "client_ar": "أوراجينو",
     "website": "https://oragino.coretechdevo.com/",
     "year": "2024",
-    "services": ["Web Design", "E-commerce Development"],
-    "technologies": ["React", "TypeScript", "Node.js"],
+    "services": [
+      "UX strategy",
+      "Responsive frontend",
+      "Content structure"
+    ],
+    "services_ar": [
+      "استراتيجية تجربة المستخدم",
+      "واجهة متجاوبة",
+      "هيكلة المحتوى"
+    ],
+    "technologies": [
+      "React",
+      "Node.js",
+      "Tailwind CSS"
+    ],
+    "technologies_ar": [
+      "ريأكت",
+      "نود",
+      "تايلويند"
+    ],
     "impact": {
       "value": "3K+",
-      "label": "products"
+      "label": "products organized",
+      "label_ar": "منتج منظم"
     }
   },
   {
     "id": "aroma-cafe",
+    "slug": "aroma-cafe-experience",
     "title": "Aroma Cafe",
+    "title_ar": "أروما كافيه",
     "category": "web-design",
-    "categoryName": "Web Design",
+    "category_ar": "تجارب الويب",
+    "categoryName": "Web experiences",
+    "categoryName_ar": "تجارب الويب",
     "image": "/images/portfolio/aromacafe_coretechde_2025-05-09_06-55-46_9019.webp",
-    "shortDescription": "A cafe website showcasing beverages and desserts",
-    "shortDescription_ar": "موقع لمقهى يعرض قائمة متنوعة من المشروبات والحلويات",
-    "fullDescription": "A cafe website showcasing a diverse menu of beverages like coffee, tea, and delicious desserts.",
-    "fullDescription_ar": "موقع لمقهى يعرض قائمة متنوعة من المشروبات مثل القهوة والشاي والحلويات اللذيذة.",
+    "gallery": [
+      "/images/portfolio/aromacafe_coretechde_2025-05-09_06-55-46_9019.webp"
+    ],
+    "shortDescription": "A hospitality website that makes menu browsing and ordering feel premium and fast.",
+    "shortDescription_ar": "موقع ضيافة يجعل تصفح القائمة والطلب تجربة أسرع وأكثر أناقة.",
+    "fullDescription": "The project focused on modern presentation, clearer menu hierarchy, and stronger calls to action for bookings and direct orders.",
+    "fullDescription_ar": "ركز المشروع على تقديم عصري للقائمة وترتيب أوضح للأقسام ودعوات إجراء أقوى للحجوزات والطلبات المباشرة.",
+    "client": "Aroma Cafe",
+    "client_ar": "أروما كافيه",
     "website": "https://aromacafe.coretechdevo.com/",
     "year": "2024",
-    "services": ["Web Design", "UI/UX Design"],
-    "technologies": ["React", "Tailwind CSS"],
+    "services": [
+      "Website design",
+      "Brand presentation",
+      "Conversion UX"
+    ],
+    "services_ar": [
+      "تصميم الموقع",
+      "عرض الهوية",
+      "تجربة تحويل"
+    ],
+    "technologies": [
+      "React",
+      "Tailwind CSS"
+    ],
+    "technologies_ar": [
+      "ريأكت",
+      "تايلويند"
+    ],
     "impact": {
       "value": "+45%",
-      "label": "orders"
-    }
-  },
-  {
-    "id": "restaurant",
-    "title": "Fine Dining Restaurant",
-    "category": "web-design",
-    "categoryName": "Web Design",
-    "image": "/images/portfolio/restaurant_coretechd_2025-05-09_06-55-57_6213.webp",
-    "shortDescription": "Elegant restaurant website with online reservations",
-    "shortDescription_ar": "موقع مطعم أنيق مع حجز الطاولات عبر الإنترنت",
-    "fullDescription": "An elegant restaurant website offering authentic cuisine and easy online table reservations.",
-    "fullDescription_ar": "موقع مطعم أنيق يقدم مأكولات أصيلة ويوفر إمكانية حجز الطاولات بسهولة عبر الإنترنت.",
-    "website": "https://restaurant.coretechdevo.com/",
-    "year": "2024",
-    "services": ["Web Design", "Reservation System"],
-    "technologies": ["React", "Node.js", "MongoDB"],
-    "impact": {
-      "value": "+60%",
-      "label": "bookings"
-    }
-  },
-  {
-    "id": "divisima",
-    "title": "Divisima Fashion",
-    "category": "web-design",
-    "categoryName": "Web Design",
-    "image": "/images/portfolio/divisima_coretechdev_2025-05-09_06-56-08_3316.webp",
-    "shortDescription": "E-commerce fashion template with modern design",
-    "shortDescription_ar": "قالب تجارة إلكترونية للأزياء بتصميم عصري",
-    "fullDescription": "An e-commerce fashion template showcasing the latest products and various categories for clothing and accessories.",
-    "fullDescription_ar": "قالب تجارة إلكترونية للأزياء، يعرض أحدث المنتجات وتصنيفات متنوعة للملابس والإكسسوارات.",
-    "website": "https://divisima.coretechdevo.com/",
-    "year": "2024",
-    "services": ["Web Design", "E-commerce Development"],
-    "technologies": ["React", "Redux", "Node.js"],
-    "impact": {
-      "value": "10K+",
-      "label": "products"
-    }
-  },
-  {
-    "id": "tech-fix",
-    "title": "Tech Fix",
-    "category": "web-design",
-    "categoryName": "Web Design",
-    "image": "/images/portfolio/tech-fix-six_vercel__2025-05-09_06-56-21_2495.webp",
-    "shortDescription": "Professional computer repair services platform",
-    "shortDescription_ar": "منصة خدمات احترافية لإصلاح أجهزة الكمبيوتر",
-    "fullDescription": "Professional computer repair services, including solutions for software, hardware issues, and data recovery.",
-    "fullDescription_ar": "خدمات احترافية لإصلاح أجهزة الكمبيوتر، تشمل حلولاً لمشاكل البرامج والأجهزة واستعادة البيانات.",
-    "website": "https://tech-fix-six.vercel.app/",
-    "year": "2024",
-    "services": ["Web Design", "Service Booking"],
-    "technologies": ["React", "Next.js", "Tailwind CSS"],
-    "impact": {
-      "value": "+80%",
-      "label": "service bookings"
-    }
-  },
-  {
-    "id": "camp-explorer",
-    "title": "Camp Explorer",
-    "category": "web-design",
-    "categoryName": "Web Design",
-    "image": "/images/portfolio/campexplorer_vercel__2025-05-09_06-56-33_8210.webp",
-    "shortDescription": "Camping and hiking app with offline capabilities",
-    "shortDescription_ar": "تطبيق للتخييم والمشي مع خرائط تعمل دون اتصال",
-    "fullDescription": "A camping and hiking app providing offline maps and features for scheduling adventures.",
-    "fullDescription_ar": "تطبيق للتخييم والمشي لمسافات طويلة، يوفر خرائط تعمل دون اتصال بالإنترنت وميزات لجدولة المغامرات.",
-    "website": "https://campexplorer.vercel.app/",
-    "year": "2024",
-    "services": ["Web Design", "Mobile-First Development"],
-    "technologies": ["React", "Next.js", "PWA"],
-    "impact": {
-      "value": "2K+",
-      "label": "active users"
+      "label": "direct orders",
+      "label_ar": "طلبات مباشرة"
     }
   },
   {
     "id": "social-media-campaign",
+    "slug": "social-media-growth-campaign",
     "title": "Social Media Growth Campaign",
+    "title_ar": "حملة نمو عبر وسائل التواصل",
     "category": "digital-marketing",
-    "categoryName": "Digital Marketing",
-    "image": "https://images.unsplash.com/photo-1551817958-d9d86fb29431?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    "shortDescription": "Comprehensive social media marketing campaign",
-    "shortDescription_ar": "حملة تسويق شاملة على وسائل التواصل الاجتماعي",
-    "fullDescription": "Strategic social media campaign that increased brand engagement by 300% across multiple platforms. Our team developed a comprehensive strategy that included content creation, community management, and paid advertising campaigns across multiple social media platforms. The campaign resulted in significant growth in followers, engagement, and conversions.",
-    "fullDescription_ar": "حملة استراتيجية على وسائل التواصل الاجتماعي أدت إلى زيادة التفاعل مع العلامة التجارية بنسبة 300٪",
+    "category_ar": "حملات النمو",
+    "categoryName": "Growth campaigns",
+    "categoryName_ar": "حملات النمو",
+    "image": "https://images.unsplash.com/photo-1551817958-d9d86fb29431?auto=format&fit=crop&w=1200&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1551817958-d9d86fb29431?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "shortDescription": "A cross-platform social system that improved engagement and content consistency for a retail brand.",
+    "shortDescription_ar": "نظام اجتماعي متعدد المنصات حسّن التفاعل واتساق المحتوى لعلامة تجزئة.",
+    "fullDescription": "We aligned content planning, paid support, and reporting into one campaign system to improve visibility and engagement across key channels.",
+    "fullDescription_ar": "وحدنا تخطيط المحتوى والدعم المدفوع والتقارير ضمن نظام حملة واحد لرفع الظهور والتفاعل عبر القنوات الأساسية.",
     "client": "Global Retail Brand",
+    "client_ar": "علامة تجزئة عالمية",
+    "website": "https://example.com/social-growth",
     "year": "2024",
-    "services": ["Social Media Marketing", "Content Strategy", "Analytics"],
-    "technologies": ["Meta Business Suite", "Google Analytics", "Hootsuite"],
+    "services": [
+      "Campaign strategy",
+      "Social content",
+      "Analytics"
+    ],
+    "services_ar": [
+      "استراتيجية الحملة",
+      "محتوى السوشيال",
+      "التحليلات"
+    ],
+    "technologies": [
+      "Meta Business Suite",
+      "Google Analytics",
+      "Looker Studio"
+    ],
+    "technologies_ar": [
+      "ميتا بيزنس سويت",
+      "جوجل أناليتكس",
+      "لوكر ستوديو"
+    ],
     "impact": {
       "value": "+300%",
-      "label": "engagement"
-    }
+      "label": "engagement lift",
+      "label_ar": "زيادة في التفاعل"
+    },
+    "featured": true
   },
   {
     "id": "seo-optimization",
+    "slug": "seo-performance-boost",
     "title": "SEO Performance Boost",
+    "title_ar": "تعزيز أداء السيو",
     "category": "digital-marketing",
-    "categoryName": "Digital Marketing",
-    "image": "https://images.unsplash.com/photo-1551817958-d9d86fb29431?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    "shortDescription": "SEO optimization campaign for e-commerce",
-    "shortDescription_ar": "حملة تحسين محركات البحث للتجارة الإلكترونية",
-    "fullDescription": "Complete SEO strategy that improved organic traffic by 200% and doubled conversion rates. Through comprehensive keyword research, technical SEO optimization, and content strategy, we helped our client achieve significant improvements in search engine rankings and organic traffic growth.",
-    "fullDescription_ar": "استراتيجية شاملة لتحسين محركات البحث أدت إلى تحسين حركة المرور العضوية بنسبة 200٪",
+    "category_ar": "حملات النمو",
+    "categoryName": "Growth campaigns",
+    "categoryName_ar": "حملات النمو",
+    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "shortDescription": "A technical and editorial SEO program that improved visibility and revenue quality for an e-commerce platform.",
+    "shortDescription_ar": "برنامج سيو تقني وتحريري حسّن الظهور وجودة الإيرادات لمنصة تجارة إلكترونية.",
+    "fullDescription": "Our work combined technical fixes, keyword-focused landing page planning, and measurement dashboards to support sustainable organic growth.",
+    "fullDescription_ar": "جمعنا بين الإصلاحات التقنية وتخطيط صفحات هبوط قائمة على الكلمات المفتاحية ولوحات قياس لدعم نمو عضوي مستدام.",
     "client": "E-commerce Platform",
+    "client_ar": "منصة تجارة إلكترونية",
+    "website": "https://example.com/seo-boost",
     "year": "2024",
-    "services": ["SEO", "Content Marketing", "Analytics"],
-    "technologies": ["SEMrush", "Ahrefs", "Google Search Console"],
+    "services": [
+      "Technical SEO",
+      "Content strategy",
+      "Performance reporting"
+    ],
+    "services_ar": [
+      "السيو التقني",
+      "استراتيجية المحتوى",
+      "تقارير الأداء"
+    ],
+    "technologies": [
+      "Search Console",
+      "Ahrefs",
+      "GA4"
+    ],
+    "technologies_ar": [
+      "سيرش كونسول",
+      "أهرفس",
+      "جي إيه 4"
+    ],
     "impact": {
       "value": "+200%",
-      "label": "organic traffic"
+      "label": "organic traffic",
+      "label_ar": "نمو في الزيارات العضوية"
     }
   },
   {
     "id": "product-launch-video",
+    "slug": "product-launch-video-campaign",
     "title": "Product Launch Campaign",
+    "title_ar": "حملة إطلاق منتج",
     "category": "video-production",
-    "categoryName": "Video Production",
-    "image": "https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    "shortDescription": "Cinematic product launch video campaign",
-    "shortDescription_ar": "حملة فيديو سينمائية لإطلاق المنتج",
-    "fullDescription": "High-end product launch video campaign that garnered over 1M views across social platforms.",
-    "fullDescription_ar": "حملة فيديو عالية الجودة لإطلاق المنتج حققت أكثر من مليون مشاهدة",
-    "website": "https://example.com/case-study-3",
+    "category_ar": "إنتاج المحتوى",
+    "categoryName": "Content production",
+    "categoryName_ar": "إنتاج المحتوى",
+    "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "shortDescription": "A launch film system tailored for paid ads, hero sections, and social cutdowns.",
+    "shortDescription_ar": "نظام أفلام إطلاق مخصص للإعلانات المدفوعة والواجهة الرئيسية والنسخ القصيرة للسوشيال.",
+    "fullDescription": "We produced a premium launch asset with multiple versions to support awareness, product explanation, and campaign rollout.",
+    "fullDescription_ar": "أنتجنا أصلًا بصريًا احترافيًا للإطلاق مع نسخ متعددة لدعم الوعي وشرح المنتج وخطة الحملة.",
+    "client": "Tech Product Team",
+    "client_ar": "فريق منتج تقني",
+    "website": "https://example.com/launch-campaign",
     "year": "2024",
-    "services": ["Video Production", "Motion Graphics", "Sound Design"],
-    "technologies": ["Adobe Premiere Pro", "After Effects", "DaVinci Resolve"],
+    "services": [
+      "Motion design",
+      "Video editing",
+      "Launch storytelling"
+    ],
+    "services_ar": [
+      "تصميم الحركة",
+      "تحرير الفيديو",
+      "سرد الإطلاق"
+    ],
+    "technologies": [
+      "After Effects",
+      "Premiere Pro",
+      "DaVinci Resolve"
+    ],
+    "technologies_ar": [
+      "أفتر إفكتس",
+      "بريمير برو",
+      "دافنشي ريزولف"
+    ],
     "impact": {
       "value": "1M+",
-      "label": "views"
-    }
-  },
-  {
-    "id": "corporate-documentary",
-    "title": "Corporate Documentary",
-    "category": "video-production",
-    "categoryName": "Video Production",
-    "image": "https://images.unsplash.com/photo-1468436139062-f60a71c5c892?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    "shortDescription": "Inspiring corporate documentary series",
-    "shortDescription_ar": "سلسلة وثائقية مؤسسية ملهمة",
-    "fullDescription": "A compelling documentary series showcasing company culture and success stories.",
-    "fullDescription_ar": "سلسلة وثائقية مقنعة تعرض ثقافة الشركة وقصص النجاح",
-    "website": "https://example.com/case-study-4",
-    "year": "2024",
-    "services": ["Video Production", "Storytelling", "Interviewing"],
-    "technologies": ["RED Cinema Camera", "Adobe Premiere", "Pro Tools"],
-    "impact": {
-      "value": "500K+",
-      "label": "impressions"
+      "label": "campaign views",
+      "label_ar": "مشاهدة للحملة"
     }
   }
 ]

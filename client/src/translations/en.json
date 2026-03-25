@@ -1,377 +1,384 @@
-
 {
   "meta": {
-    "home_title": "Digital Services & Solutions",
-    "home_description": "Professional digital services including web design, marketing, motion graphics and social media management",
-    "services_title": "Our Services",
-    "services_description": "Explore our range of digital services designed to help your business succeed online",
-    "portfolio_title": "Our Portfolio",
-    "portfolio_description": "View our recent projects and success stories across various industries",
-    "testimonials_title": "Client Testimonials",
-    "testimonials_description": "See what our clients say about working with Core Tech",
-    "pricing_title": "Pricing Plans",
-    "pricing_description": "Transparent pricing options for our digital services",
-    "blog_title": "Digital Marketing Blog",
-    "blog_description": "Insights, tips and trends in digital marketing, web design and content creation",
-    "about_title": "About Us",
-    "about_description": "Learn about Core Tech, our mission, vision and team",
-    "contact_title": "Contact Us",
-    "contact_description": "Get in touch with our team for inquiries, quotes or support"
+    "home_title": "Premium digital growth studio",
+    "home_description": "Core Tech designs multilingual websites, growth campaigns, and content systems for ambitious brands.",
+    "services_title": "Digital services",
+    "services_description": "Explore Core Tech services for web experiences, growth systems, content production, and launch support.",
+    "portfolio_title": "Portfolio",
+    "portfolio_description": "Explore premium case studies from Core Tech across websites, growth campaigns, and digital products.",
+    "testimonials_title": "Client stories",
+    "testimonials_description": "See how Core Tech helped clients improve performance, conversion, and brand perception.",
+    "blog_title": "Insights",
+    "blog_description": "Actionable articles on SEO, UX, performance, content, and digital growth.",
+    "about_title": "About Core Tech",
+    "about_description": "Meet the team, principles, and approach behind Core Tech’s premium digital delivery.",
+    "contact_title": "Contact Core Tech",
+    "contact_description": "Start a project, ask a question, or book a discovery conversation with Core Tech.",
+    "not_found_title": "Page not found",
+    "not_found_description": "The page you requested could not be found."
   },
   "nav": {
     "home": "Home",
     "services": "Services",
     "portfolio": "Portfolio",
+    "testimonials": "Testimonials",
     "blog": "Blog",
     "about": "About",
-    "contact": "Contact",
-    "pricing": "Pricing",
-    "testimonials": "Testimonials"
+    "contact": "Contact"
   },
   "common": {
     "company_name": "Core Tech",
-    "tagline": "Transforming Ideas Into Digital Success",
-    "get_started": "Get Started",
-    "learn_more": "Learn More",
-    "view_all": "View All",
-    "back_to_home": "Back to Home",
-    "read_more": "Read More",
-    "loading": "Loading...",
-    "error": "Error occurred. Please try again.",
-    "back": "Back"
-  },
-  "home": {
-    "hero_title": "Digital Solutions for Today's Business",
-    "hero_subtitle": "We help businesses thrive in the digital world with expert web design, marketing, and content creation services.",
-    "hero_cta": "Explore Our Services",
-    "services_title": "Our Services",
-    "services_subtitle": "Comprehensive digital solutions tailored to your business needs",
-    "portfolio_title": "Recent Projects",
-    "portfolio_subtitle": "Our work speaks for itself - explore our recent success stories",
-    "testimonials_title": "Client Feedback",
-    "testimonials_subtitle": "Don't just take our word for it - hear what our clients have to say",
-    "cta_title": "Ready to Get Started?",
-    "cta_text": "Let's discuss how we can help your business grow in the digital landscape.",
-    "cta_button": "Contact Us Today"
-  },
-  "services": {
-    "title": "Our Services",
-    "subtitle": "What We Do Best",
-    "description": "We offer a comprehensive range of digital services to help your business grow and succeed in the digital landscape",
-    "discuss_project": "Contact us to discuss your project",
-    "view_all": "View All Services",
-    "learn_more": "Learn More",
-    "web-design": {
-      "title": "Web Design & Development",
-      "description": "Custom, responsive websites that perfectly represent your brand and convert visitors into customers"
+    "company_short": "Core Tech",
+    "skip_to_content": "Skip to main content",
+    "actions": {
+      "start_project": "Start your project",
+      "book_call": "Book a discovery call",
+      "see_case_studies": "See case studies",
+      "see_proof": "See proof",
+      "learn_more": "Learn more",
+      "read_article": "Read article",
+      "view_project": "View project",
+      "view_live": "Visit live project",
+      "contact_us": "Contact us",
+      "back_to_portfolio": "Back to portfolio",
+      "back_to_blog": "Back to blog",
+      "explore_services": "Explore services",
+      "view_portfolio": "View portfolio"
     },
-    "digital-marketing": {
-      "title": "Digital Marketing",
-      "description": "Strategic campaigns across ads, social media, and content to increase reach and engagement"
+    "labels": {
+      "impact": "Impact",
+      "year": "Year",
+      "client": "Client",
+      "services_delivered": "Services delivered",
+      "technology_stack": "Technology stack",
+      "related_work": "Related work",
+      "related_insights": "Related insights",
+      "all": "All",
+      "featured": "Featured",
+      "service": "Service"
     },
-    "motion-graphics": {
-      "title": "Motion Graphics & Promotional Videos",
-      "description": "Engaging animations and videos that tell your story and captivate your audience"
+    "states": {
+      "loading_title": "Loading content",
+      "loading_description": "Preparing an optimized experience for you.",
+      "error_title": "Unable to load content",
+      "error_description": "Please refresh the page or try again shortly.",
+      "empty_title": "Nothing here yet",
+      "empty_description": "Check back soon for fresh updates."
     },
-    "video-editing": {
-      "title": "Video Editing",
-      "description": "Professional video editing services that transform raw footage into polished, engaging content"
+    "toggles": {
+      "switch_to_arabic": "Switch to Arabic",
+      "switch_to_english": "Switch to English",
+      "switch_to_light": "Switch to light mode",
+      "switch_to_dark": "Switch to dark mode"
     },
-    "youtube": {
-      "title": "YouTube Monetization Support",
-      "description": "Strategic guidance and optimization to help creators meet monetization requirements and increase revenue"
-    },
-    "facebook": {
-      "title": "Facebook Engagement",
-      "description": "Effective strategies to boost engagement and interaction on social media platforms"
-    },
-    "service1": {
-      "title": "Website Design",
-      "description": "Professional website design tailored to your business needs"
-    },
-    "service2": {
-      "title": "Digital Marketing",
-      "description": "Effective marketing strategies for business growth"
-    },
-    "service1_title": "Website Design",
-    "service1_description": "Professional website design tailored to your business needs",
-    "service2_title": "Digital Marketing",
-    "service2_description": "Effective marketing strategies for business growth",
-    "service3_title": "Motion Graphics",
-    "service3_description": "Engaging motion graphics and animations",
-    "service4_title": "Video Editing",
-    "service4_description": "Professional video editing services",
-    "service5_title": "YouTube Support",
-    "service5_description": "YouTube channel growth and monetization",
-    "service6_title": "Social Media",
-    "service6_description": "Social media management and growth",
-    "website_design": "Website Design",
-    "digital_marketing": "Digital Marketing",
-    "motion_graphics": "Motion Graphics",
-    "video_editing": "Video Editing",
-    "youtube_monetization": "YouTube Monetization",
-    "facebook_engagement": "Facebook Engagement"
+    "whatsapp": {
+      "chat_now": "Chat on WhatsApp"
+    }
   },
-  "portfolio_page": {
-    "title": "Our Portfolio",
-    "description": "Explore our recent projects and see how we've helped businesses achieve their digital goals",
-    "loading": "Loading Projects",
-    "loading_message": "Please wait while we load our portfolio projects",
-    "no_results": "No Projects Found",
-    "no_results_message": "Try changing your filter criteria",
-    "show_all": "Show All Projects",
-    "cta_title": "Ready to Start Your Project?",
-    "cta_description": "Let's create something amazing together",
-    "cta_button": "Contact Us Now"
-  },
-  "portfolio": {
-    "title": "Our Portfolio",
-    "description": "Explore our recent projects and see how we've helped businesses achieve their digital goals",
-    "filter_all": "All",
-    "filter_web": "Web Design",
-    "filter_marketing": "Marketing",
-    "filter_video": "Video",
-    "view_project": "View Project",
-    "view_website": "View Website",
-    "view_details": "View Details",
-    "category1": "Web Design",
-    "category2": "Digital Marketing",
-    "category3": "Video Production",
-    "project1_title": "E-commerce Website Redesign",
-    "project1_description": "Complete redesign of an e-commerce platform",
-    "project2_title": "Digital Marketing Campaign",
-    "project2_description": "Successful marketing campaign for retail brand",
-    "project3_title": "Corporate Video Production",
-    "project3_description": "Professional corporate video production",
-    "project4_title": "Social Media Growth",
-    "project4_description": "Social media strategy and execution",
-    "project5_title": "Brand Development",
-    "project5_description": "Complete brand identity development",
-    "project6_title": "Content Creation",
-    "project6_description": "Ongoing content creation and strategy",
-    "growth": "Growth",
-    "start_project": "Start Your Project"
-  },
-  "testimonials": {
-    "title": "Client Testimonials",
-    "description": "What our clients say about working with us",
-    "person1_name": "Ahmed",
-    "person1_role": "Owner of a Technology Company",
-    "quote1": "Their work made a big difference in my business.",
-    "person2_name": "Sara",
-    "person2_role": "Marketing Manager",
-    "quote2": "The results they achieved were better than I expected.",
-    "person3_name": "Mahmoud",
-    "person3_role": "Founder of a New Company",
-    "quote3": "Professional people with very good communication.",
-    "person4_name": "Nadia",
-    "person4_role": "Manager of an Online Store",
-    "quote4": "Excellent service and real results.",
-    "testimonial1_text": "Honestly, before I dealt with them, I was very confused about this internet stuff. But they completely sorted things out. The number of visitors to our website increased a lot, and our course bookings doubled since we launched the new website and their campaign.",
-    "testimonial2_text": "The video they made for us to advertise our restaurant got more than 50,000 views on social media! And this brought us many new customers who said they saw our video online.",
-    "testimonial3_text": "Working with them was easy and comfortable from the moment we started until we finished. They created a new design for our online store and developed an online marketing plan that significantly increased the percentage of people buying from us.",
-    "testimonial4_text": "They helped me meet YouTube's requirements to earn money from my channel in just 3 months! Also, the video editing they did for me made the quality of my content much better.",
-    "testimonial5_text": "These people went the extra mile to produce an amazing video for the launch of our tech product. The quality, creativity, and attention to every detail were fantastic, and the results were better than we could have imagined.",
-    "testimonial6_text": "Our bakery's page on social media became very popular because of them. The way they create content and interact with people gained us many online followers, and this led to many people coming to buy from our store.",
-    "testimonial1_name": "Mona",
-    "testimonial1_role": "Gym Owner",
-    "testimonial1_project": "Fitness Training Platform",
-    "testimonial2_name": "Ali",
-    "testimonial2_role": "Restaurant Owner",
-    "testimonial2_project": "Restaurant Marketing Campaign",
-    "testimonial3_name": "Iman",
-    "testimonial3_role": "Online Business Owner",
-    "testimonial3_project": "Online Clothing Store",
-    "testimonial4_name": "Youssef",
-    "testimonial4_role": "YouTuber",
-    "testimonial4_project": "Travel YouTube Channel Growth",
-    "testimonial5_name": "Nora",
-    "testimonial5_role": "Marketing Manager",
-    "testimonial5_project": "Tech Product Launch Video",
-    "testimonial6_name": "Tarek",
-    "testimonial6_role": "Bakery Owner",
-    "testimonial6_project": "Social Media Management for a Bakery"
-
-  },
-  "blog": {
-    "title": "Our Blog",
-    "description": "Latest insights and trends in digital marketing",
-    "category_seo": "SEO",
-    "category_social media": "Social Media",
-    "category_video": "Video",
-    "category_web design": "Web Design",
-    "loading": "Loading Posts...",
-    "loading_message": "Please wait while we load blog posts",
-    "social-media-strategies_title": "Social Media Marketing: Organic vs. Paid Strategies",
-    "social-media-strategies_excerpt": "Discover when to invest in paid social campaigns and when to focus on building organic engagement.",
-    "video-production-secrets_title": "Creating Viral Content: Video Production Secrets",
-    "video-production-secrets_excerpt": "Learn the techniques professional content creators use to make videos that capture attention and drive shares.",
-    "seo-strategies-2023_title": "Top SEO Strategies for 2023",
-    "seo-strategies-2023_excerpt": "Learn the latest search engine optimization techniques to improve your website's visibility.",
-    "website-conversion-optimization_title": "Boost Your Website Conversion Rate: Essential Tips",
-    "website-conversion-optimization_excerpt": "Proven strategies to transform your website visitors into loyal customers through thoughtful design and content optimization.",
-    "youtube-monetization-guide_title": "Complete Guide to YouTube Monetization in 2023",
-    "youtube-monetization-guide_excerpt": "A comprehensive roadmap to monetizing your YouTube channel and maximizing revenue through multiple income streams.",
-    "facebook-engagement-techniques_title": "7 Powerful Facebook Engagement Techniques for Business Pages",
-    "facebook-engagement-techniques_excerpt": "Practical strategies to increase likes, comments, and shares on your business Facebook page and build a thriving community.",
-    "seo-strategies-2023_content": "<p>Search engine optimization is constantly evolving, and what worked a few years ago might not yield the same results today. In this article, we'll explore ten proven SEO strategies that are driving real results in 2023.</p><h2>1. Focus on User Experience</h2><p>Google's algorithm updates have increasingly emphasized user experience as a ranking factor. This includes page speed, mobile-friendliness, and easy navigation. Ensuring your website provides a seamless experience across all devices is no longer optional.</p><h2>2. Optimize for Voice Search</h2><p>With the rise of voice assistants, optimizing for conversational queries is essential. Focus on natural language phrases and question-based keywords that match how people actually speak.</p>",
-    "tag_seo": "SEO",
-    "tag_digital marketing": "Digital Marketing",
-    "tag_search rankings": "Search Rankings",
-    "tag_content strategy": "Content Strategy",
-    "tag_social media": "Social Media",
-    "tag_video": "Video",
-    "tag_web design": "Web Design",
-    "read_more": "Read More",
-    "view_all": "View All Posts",
-    "back_to_blog": "Back to Blog",
-    "social-media-strategies_content": "<p>Social media strategies are constantly evolving, and staying ahead requires a deep understanding of the latest trends and algorithms. In this guide, we'll explore five powerful strategies to boost your social media presence and impact in 2024.</p><h2>1. Build a Genuine Community</h2><p>Instead of just accumulating followers, focus on building an interactive community around your brand. Encourage conversations, respond to comments and messages, and create content that encourages users to connect with each other and your brand.</p><h2>2. Leverage Short-Form Video Content</h2><p>Short-form videos like TikTok and Instagram Reels have become a significant force. Create engaging, concise, and shareable content to capture your audience's attention and spread your message quickly.</p>",
-    "video-production-secrets_content": "<p>Producing high-quality video doesn't have to be expensive or complicated. In this guide, we'll reveal some essential secrets to producing professional-looking videos that engage your audience and achieve your goals.</p><h2>1. Planning is Key</h2><p>Before you start filming, invest time in careful planning. Write a script or outline, define your shots, and consider lighting and sound. Good planning saves time and effort in the editing phase.</p><h2>2. Good Audio is More Important Than Perfect Visuals</h2><p>Clear and crisp audio is often more important than perfect image quality. Invest in a decent microphone and minimize background noise to ensure a pleasant viewing experience.</p>",
-    "website-conversion-optimization_content": "<p>Turning your website visitors into customers is the ultimate goal for any online business. In this guide, we'll explore five effective techniques to optimize your website's conversion rate and increase your sales.</p><h2>1. Simplify the Checkout Process</h2><p>Make the purchase or sign-up process as easy as possible. Reduce the number of required steps, offer multiple payment options, and ensure your forms are easy to fill out and error-free.</p><h2>2. Use Clear Calls to Action (CTAs)</h2><p>Clearly direct your visitors to what you want them to do. Use strong and clear call-to-action phrases, place them in prominent locations on your page, and make them visually appealing.</p>",
-    "youtube-monetization-guide_content": "<p>Monetizing your YouTube channel is a goal for many content creators. In this comprehensive guide, we'll explore the various ways to earn income from your videos and build a sustainable revenue stream.</p><h2>1. YouTube Partner Program (YPP)</h2><p>The most common way to monetize is through the YouTube Partner Program, which allows you to display ads on your videos and earn money based on views and clicks. Ensure you meet the eligibility criteria and follow the community guidelines and monetization policies.</p><h2>2. Channel Memberships</h2><p>Offer exclusive monthly memberships to your viewers in exchange for perks like custom badges, emojis, and exclusive content. This is a great way to build a loyal community and generate recurring revenue.</p>",
-    "facebook-engagement-techniques_content": "<p>Increasing engagement on your Facebook page is crucial for building a strong audience and expanding your reach. In this guide, we'll share five effective techniques to boost user interaction and encourage them to engage with your page's content.</p><h2>1. Ask Open-Ended Questions</h2><p>Encourage conversations by asking open-ended questions that prompt your audience to think and share their opinions and experiences in the comments section.</p><h2>2. Use Engaging Images and Videos</h2><p>Visual content grabs attention and encourages interaction. Share high-quality and relevant images and videos with your posts to capture your audience's attention and increase the chances of engagement.</p>",
-    "related_posts": "Related Posts"
-  },
-  "about": {
-    "title": "About Us",
-    "description_1": "We deliver innovative digital solutions",
-    "description_2": "Expert team specializing in digital transformation",
-    "mission_title": "Our Mission",
-    "mission_description": "Empowering businesses to succeed in the digital age",
-    "projects_completed": "Projects Completed",
-    "clients_served": "Clients Served",
-    "years_experience": "Years Experience",
-    "client_satisfaction": "Client Satisfaction",
-    "contact_button": "Contact Us Today"
-  },
-  "contact": {
-    "title": "Contact Us",
-    "description": "Get in touch with our team",
-    "form_title": "Send us a message",
-    "name_label": "Your Name",
-    "name_placeholder": "Enter your name",
-    "email_label": "Email Address",
-    "email_placeholder": "Enter your email",
-    "service_label": "Service Required",
-    "service_placeholder": "Select a service",
-    "message_label": "Your Message",
-    "message_placeholder": "Tell us about your project",
-    "submit_button": "Send Message",
-    "get_in_touch": "Get in Touch",
-    "get_in_touch_description": "Have a question or want to discuss a project? We're here to help!",
-    "email_us": "Email Us",
-    "call_us": "Call Us",
-    "visit_us": "Visit Us",
-    "connect_with_us": "Connect With Us",
-    "whatsapp_title": "WhatsApp Chat",
-    "whatsapp_description": "Get quick answers",
-    "whatsapp_button": "Start Chat"
+  "header": {
+    "tagline": "Premium digital growth studio",
+    "mobile_menu": "Open navigation menu",
+    "primary_navigation": "Primary navigation"
   },
   "footer": {
-    "company_description": "We create innovative digital solutions to help businesses grow",
-    "services_title": "Our Services",
-    "quick_links_title": "Quick Links",
-    "contact_info_title": "Contact Info",
-    "whatsapp_chat": "WhatsApp Chat",
-    "all_rights_reserved": "All Rights Reserved",
+    "description": "We build multilingual websites, high-converting landing pages, and growth-ready content systems for modern brands.",
+    "explore": "Explore",
+    "services": "Services",
+    "rights": "All rights reserved.",
     "privacy_policy": "Privacy Policy",
     "terms_of_service": "Terms of Service",
-    "sitemap": "Sitemap"
+    "sitemap": "Sitemap",
+    "social": {
+      "facebook": "Facebook",
+      "instagram": "Instagram",
+      "twitter": "Twitter",
+      "youtube": "YouTube",
+      "linkedin": "LinkedIn"
+    }
   },
-  "whatsapp": {
-    "chat_now": "Chat with us on WhatsApp"
-  },
-  "services_page": {
-    "title": "Our Services",
-    "description": "Explore our comprehensive range of digital services",
-    "loading": "Loading Services",
-    "loading_message": "Please wait while we load our services",
-    "what_we_offer": "What We Offer",
-    "request_service": "Request Service",
-    "see_work": "See Our Work",
-    "cta_title": "Ready to Get Started?",
-    "cta_description": "Let's discuss your project and create something amazing together",
-    "cta_button": "Contact Us Now"
-  },
-  "blog_page": {
-    "title": "Our Blog",
-    "description": "Latest insights and updates from our team",
-    "all_categories": "All Categories",
-    "loading": "Loading Posts",
-    "loading_message": "Please wait while we load our blog posts",
-    "newsletter_title": "Subscribe to Our Newsletter",
-    "newsletter_description": "Get the latest updates directly to your inbox",
-    "email_placeholder": "Enter your email",
-    "subscribe_button": "Subscribe",
-    "privacy_notice": "We respect your privacy. Your information is safe with us."
-  },
-  "about_page": {
-    "title": "About Us",
-    "subtitle": "Your Digital Transformation Partner",
-    "our_story": {
-      "title": "Our Story",
-      "paragraph1": "Founded with a vision to transform digital landscapes",
-      "paragraph2": "Growing through innovation and dedication",
-      "paragraph3": "Building success stories with our clients"
+  "home": {
+    "eyebrow": "Premium design, growth, and content systems",
+    "title": "We build premium digital experiences that turn attention into revenue.",
+    "description": "Core Tech helps ambitious brands launch faster, convert better, and scale through refined design, SEO-aware architecture, and strategic creative execution.",
+    "stats": {
+      "projects": "Projects launched",
+      "satisfaction": "Client satisfaction",
+      "experience": "Years refining systems"
     },
-    "mission": {
-      "title": "Our Mission",
-      "description": "To deliver innovative digital solutions that drive business growth"
-    },
-    "vision": {
-      "title": "Our Vision",
-      "description": "To be the leading digital transformation partner for businesses worldwide"
-    },
-    "team": {
-      "title": "Our Team",
-      "description": "Meet the experts behind our success",
-      "member1": {
-        "name": "John Smith",
-        "role": "CEO & Founder",
-        "bio": "Digital visionary with 15+ years of experience"
-      },
-      "member2": {
-        "name": "Sarah Johnson",
-        "role": "Creative Director",
-        "bio": "Award-winning designer and creative strategist"
-      },
-      "member3": {
-        "name": "Michael Brown",
-        "role": "Technical Lead",
-        "bio": "Expert in cutting-edge web technologies"
-      },
-      "member4": {
-        "name": "Lisa Chen",
-        "role": "Marketing Manager",
-        "bio": "Digital marketing specialist with proven results"
+    "dashboard": {
+      "title": "Design + SEO + performance",
+      "subtitle": "Growth dashboard",
+      "items": {
+        "vitals_title": "Core Web Vitals",
+        "vitals_description": "Optimized for fast, stable, responsive experiences.",
+        "seo_title": "SEO systems",
+        "seo_description": "Structured metadata, semantic content, and share-ready pages.",
+        "ui_title": "Reusable UI",
+        "ui_description": "Composable architecture for scalable delivery.",
+        "ux_title": "Conversion UX",
+        "ux_description": "Clear hierarchy, trust-building, and CTA clarity."
       }
     },
-    "stats": {
-      "projects": "Completed Projects",
-      "clients": "Happy Clients",
-      "years": "Years of Experience",
-      "satisfaction": "Client Satisfaction"
+    "services": {
+      "eyebrow": "Capabilities",
+      "title": "A premium service stack for modern growth teams.",
+      "description": "From launch strategy to performance refinement, every engagement is designed to look sharper, feel faster, and scale cleanly."
+    },
+    "portfolio": {
+      "eyebrow": "Selected work",
+      "title": "Case studies with measurable impact.",
+      "description": "Portfolio experiences designed to convert visitors, elevate brand perception, and support operational growth."
+    },
+    "testimonials": {
+      "eyebrow": "Client proof",
+      "title": "Trusted by businesses that care about quality and results.",
+      "description": "Strategic execution, clear communication, and premium outcomes across web, content, and campaigns."
+    },
+    "blog": {
+      "eyebrow": "Insights",
+      "title": "Actionable thinking on SEO, content, and digital growth.",
+      "description": "Publishing practical guidance that helps teams make better product, marketing, and performance decisions."
     },
     "cta": {
-      "title": "Ready to Work Together?",
-      "description": "Let's create something amazing for your business",
-      "contact_button": "Get in Touch",
-      "portfolio_button": "View Our Work"
+      "eyebrow": "Ready when you are",
+      "title": "Let’s turn your next launch into a premium growth asset.",
+      "description": "We combine refined UI, scalable frontend systems, and SEO-conscious execution so every page pulls its weight.",
+      "button": "Book a discovery call"
+    }
+  },
+  "services_page": {
+    "eyebrow": "Services",
+    "title": "Multilingual digital services built for growth.",
+    "description": "From premium websites to launch campaigns, every service is designed to scale, localize, and convert.",
+    "cta_button": "Start a project",
+    "secondary_button": "See proof",
+    "section_eyebrow": "Delivery model",
+    "section_title": "Flexible service lines grounded in strategy, craft, and measurable outcomes.",
+    "section_description": "Each offering is delivered through discovery, concepting, execution, launch support, and iteration.",
+    "request_service": "Request this service",
+    "see_work": "See related work"
+  },
+  "portfolio_page": {
+    "eyebrow": "Portfolio",
+    "title": "Proof that premium execution compounds.",
+    "description": "Explore selected Core Tech work across websites, content systems, and growth-focused launches.",
+    "filters": {
+      "all": "All",
+      "web-design": "Web experiences",
+      "digital-marketing": "Growth campaigns",
+      "video-production": "Content production"
+    },
+    "empty_title": "No matching case studies",
+    "empty_description": "Try another category or browse all work.",
+    "explore_case_study": "Explore case study"
+  },
+  "portfolio_detail": {
+    "overview_title": "Project overview",
+    "confidential_client": "Confidential / growth partner",
+    "cta_title": "Need something similar?",
+    "cta_description": "We can help you scope, design, and launch a premium digital product with a performance-ready frontend foundation."
+  },
+  "blog_page": {
+    "eyebrow": "Journal",
+    "title": "Insights for teams building better digital experiences.",
+    "description": "Browse practical articles on SEO, UX, performance, content systems, and growth strategy.",
+    "all_categories": "All topics",
+    "empty_title": "No articles found",
+    "empty_description": "Try another topic filter."
+  },
+  "blog_detail": {
+    "related_title": "Related insights"
+  },
+  "testimonials_page": {
+    "eyebrow": "Testimonials",
+    "title": "Client stories built on trust, clarity, and measurable results.",
+    "description": "Every engagement is built around thoughtful strategy, polished delivery, and dependable communication.",
+    "cta_title": "Ready to become our next success story?",
+    "cta_description": "We help brands move from inconsistent digital presence to polished, scalable, multilingual experiences.",
+    "cta_button": "Start your project",
+    "view_portfolio": "View portfolio"
+  },
+  "about_page": {
+    "eyebrow": "About",
+    "title": "A premium partner for ambitious multilingual brands.",
+    "subtitle": "Core Tech combines strategy, design, and technical delivery to build digital experiences that perform across markets.",
+    "story": {
+      "eyebrow": "Our story",
+      "title": "Built to align brand clarity with delivery quality.",
+      "paragraph_1": "We started Core Tech to close the gap between beautiful brand presentation and practical business performance.",
+      "paragraph_2": "Our work blends polished UI, SEO-ready structure, bilingual content systems, and scalable frontend foundations.",
+      "paragraph_3": "The result is a delivery model that helps teams launch faster, communicate more clearly, and grow with confidence."
+    },
+    "mission": {
+      "title": "Mission",
+      "description": "Help brands scale with premium multilingual experiences that are strategically clear, technically reliable, and commercially effective."
+    },
+    "vision": {
+      "title": "Vision",
+      "description": "Set a higher standard for digital delivery in the region through refined execution, sustainable systems, and measurable impact."
+    },
+    "team": {
+      "eyebrow": "Team",
+      "title": "A focused cross-functional team.",
+      "description": "Strategy, design, content, and engineering specialists working as one delivery unit.",
+      "members": {
+        "m1": {
+          "name": "Omar Hassan",
+          "role": "Creative Director",
+          "bio": "Shapes positioning, visual systems, and launch-ready brand narratives."
+        },
+        "m2": {
+          "name": "Maya Adel",
+          "role": "SEO & Content Lead",
+          "bio": "Builds multilingual content architecture that supports visibility and conversion."
+        },
+        "m3": {
+          "name": "Karim Nassar",
+          "role": "Frontend Architect",
+          "bio": "Designs scalable UI systems with strong performance and maintainability."
+        },
+        "m4": {
+          "name": "Lina Samir",
+          "role": "Client Success Lead",
+          "bio": "Keeps collaboration clear, responsive, and aligned with business goals."
+        }
+      }
     }
   },
   "contact_page": {
-    "title": "Contact Us",
-    "subtitle": "We'd Love to Hear from You",
-    "faq": {
-      "title": "Frequently Asked Questions",
-      "q1": "What services do you offer?",
-      "a1": "We offer web design, digital marketing, motion graphics, and more.",
-      "q2": "How long does a typical project take?",
-      "a2": "Project timelines vary based on complexity, typically 2-8 weeks.",
-      "q3": "What are your payment terms?",
-      "a3": "We offer flexible payment plans tailored to your project.",
-      "q4": "Do you offer support after project completion?",
-      "a4": "Yes, we provide ongoing support and maintenance services."
-    }
+    "eyebrow": "Contact",
+    "title": "Let’s scope your next launch with clarity.",
+    "subtitle": "Tell us about your goals, timeline, and current challenges. We’ll respond with a focused recommendation.",
+    "form_title": "Start the conversation",
+    "form_description": "Share your brief and we’ll come back with the right next step.",
+    "success_title": "Message sent successfully",
+    "success_message": "Thanks for reaching out. We’ll review your request and get back to you soon.",
+    "name_label": "Full name",
+    "name_placeholder": "Enter your name",
+    "email_label": "Email address",
+    "email_placeholder": "Enter your email",
+    "service_label": "Service interest",
+    "service_placeholder": "Select a service",
+    "message_label": "Project brief",
+    "message_placeholder": "Tell us about your goals, timing, and any references.",
+    "submit_button": "Send message",
+    "contact_title": "Get in touch",
+    "contact_description": "Prefer email, phone, or WhatsApp? Choose the channel that works best for your team.",
+    "whatsapp_title": "Quick WhatsApp support",
+    "whatsapp_description": "Use WhatsApp for quick clarifications, brief follow-ups, or an initial introduction.",
+    "whatsapp_button": "Start WhatsApp chat"
+  },
+  "not_found": {
+    "eyebrow": "404",
+    "title": "This page doesn’t exist.",
+    "description": "The route may have changed, the content may have moved, or the URL may be incorrect.",
+    "button": "Back to home"
+  },
+  "studio": {
+    "meta_title": "Content Studio",
+    "meta_description": "Manage local bilingual content for blog, portfolio, services, and testimonials.",
+    "eyebrow": "Content Studio",
+    "title": "Manage your website content locally",
+    "description": "Edit, preview, import, export, and reset bilingual content with instant local updates.",
+    "tabs": {
+      "overview": "Overview",
+      "blog": "Blog",
+      "portfolio": "Portfolio",
+      "services": "Services",
+      "testimonials": "Testimonials"
+    },
+    "actions": {
+      "export": "Export bundle",
+      "import": "Import bundle",
+      "reset_all": "Reset all",
+      "new": "New",
+      "save": "Save item",
+      "reset_collection": "Reset collection"
+    },
+    "overview": {
+      "blog": "Blog posts",
+      "portfolio": "Portfolio projects",
+      "services": "Services",
+      "testimonials": "Testimonials",
+      "local_state": "Local override status",
+      "local_state_description": "These edits are stored in this browser only.",
+      "modified_count": "Modified collections: {count}",
+      "last_saved": "Last saved",
+      "never_saved": "No local save yet"
+    },
+    "search_hint": "Search, select, and edit records.",
+    "search_placeholder": "Search by title, slug, or company",
+    "editor": "Editor",
+    "editor_description": "Update English and Arabic fields, then save.",
+    "badges": {
+      "featured": "Featured"
+    },
+    "fields": {
+      "title_en": "Title (EN)",
+      "title_ar": "Title (AR)",
+      "excerpt_en": "Excerpt (EN)",
+      "excerpt_ar": "Excerpt (AR)",
+      "content_en": "Content (EN)",
+      "content_ar": "Content (AR)",
+      "category_key": "Category key",
+      "category_ar": "Category (AR)",
+      "category_name_en": "Category name (EN)",
+      "category_name_ar": "Category name (AR)",
+      "author_en": "Author (EN)",
+      "author_ar": "Author (AR)",
+      "author_role_en": "Author role (EN)",
+      "author_role_ar": "Author role (AR)",
+      "author_image": "Author image",
+      "date": "Date",
+      "image": "Image URL or path",
+      "tags_en": "Tags (EN, one per line)",
+      "tags_ar": "Tags (AR, one per line)",
+      "short_description_en": "Short description (EN)",
+      "short_description_ar": "Short description (AR)",
+      "full_description_en": "Full description (EN)",
+      "full_description_ar": "Full description (AR)",
+      "client_en": "Client (EN)",
+      "client_ar": "Client (AR)",
+      "website": "Website URL",
+      "year": "Year",
+      "services_en": "Services (EN, one per line)",
+      "services_ar": "Services (AR, one per line)",
+      "technologies_en": "Technologies (EN, one per line)",
+      "technologies_ar": "Technologies (AR, one per line)",
+      "impact_value": "Impact value",
+      "impact_label_en": "Impact label (EN)",
+      "impact_label_ar": "Impact label (AR)",
+      "description_en": "Description (EN)",
+      "description_ar": "Description (AR)",
+      "features_en": "Features (EN, one per line)",
+      "features_ar": "Features (AR, one per line)",
+      "icon_key": "Icon key",
+      "order": "Display order",
+      "featured": "Featured",
+      "name_en": "Name (EN)",
+      "name_ar": "Name (AR)",
+      "role_en": "Role (EN)",
+      "role_ar": "Role (AR)",
+      "company_en": "Company (EN)",
+      "company_ar": "Company (AR)",
+      "text_en": "Testimonial text (EN)",
+      "text_ar": "Testimonial text (AR)",
+      "rating": "Rating",
+      "project_id": "Project id",
+      "project_name_en": "Project name (EN)",
+      "project_name_ar": "Project name (AR)"
+    },
+    "validation": {
+      "unique_slug": "Slug must be unique."
+    },
+    "messages": {
+      "import_failed": "Import failed. Check the bundle format."
+    },
+    "confirm_delete": "Delete this item?",
+    "confirm_reset_all": "Reset all local overrides?",
+    "confirm_reset_collection": "Reset local changes for this collection?",
+    "empty_list": "No items found.",
+    "empty_select": "Select an item from the list or create a new one.",
+    "local_notice": "Note: this studio is frontend-only. Changes are saved in this browser until you export/import elsewhere."
   }
 }
