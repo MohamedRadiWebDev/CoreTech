@@ -1,159 +1,37 @@
-import { useEffect, useState } from "react";
-import { Helmet } from "react-helmet";
-import { motion } from "framer-motion";
-import { useLanguage } from "@/context/LanguageContext";
-import { useTranslation } from "@/hooks/useTranslation";
-import { initializeAnimations } from "@/lib/animate";
-import { Service } from "@/types";
-import { Link } from "wouter";
+import { ArrowRight, CheckCircle2, Film, MonitorSmartphone, MessagesSquare, PlayCircle, Rocket, Video } from 'lucide-react';
+import { Link } from 'wouter';
+import { PageHero, Container, Section, SectionHeader } from '@/components/common/section';
+import { ErrorState, LoadingState } from '@/components/common/states';
+import { Stagger, StaggerItem } from '@/components/motion/reveal';
+import { SeoHead } from '@/components/seo/SeoHead';
+import { breadcrumbSchema } from '@/lib/seo';
+import { useServices } from '@/hooks/use-site-data';
+import { Button } from '@/components/ui/button';
+import { useTranslation } from '@/hooks/useTranslation';
 
-const Services = () => {
-  const { isRTL } = useLanguage();
-  const { t } = useTranslation();
-  const [services, setServices] = useState<Service[]>([]);
-
-  useEffect(() => {
-    // Initialize scroll animations
-    initializeAnimations();
-    
-    // Scroll to top on page load
-    window.scrollTo(0, 0);
-    
-    // Load services data
-    fetch('/data/services.json')
-      .then(response => response.json())
-      .then(data => setServices(data))
-      .catch(error => console.error('Error loading services:', error));
-  }, []);
-
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5 }
-    }
-  };
-
-  return (
-    <>
-      <Helmet>
-        <title>{t("meta.services_title")} | Core Tech</title>
-        <meta name="description" content={t("meta.services_description")} />
-      </Helmet>
-      
-      <main className="pt-32 pb-20 min-h-screen" data-rtl={isRTL}>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">{t("services_page.title")}</h1>
-            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-              {t("services_page.description")}
-            </p>
-          </motion.div>
-          
-          <motion.div 
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            className="space-y-20"
-          >
-            {services.length > 0 ? (
-              services.map((service, index) => (
-                <motion.div 
-                  key={service.id}
-                  id={service.id}
-                  variants={itemVariants}
-                  className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-12 items-center`}
-                >
-                  <div className="md:w-1/2">
-                    <img 
-                      src={service.image} 
-                      alt={service.title} 
-                      className="rounded-xl shadow-lg w-full h-auto"
-                    />
-                  </div>
-                  <div className="md:w-1/2">
-                    <div className="h-16 w-16 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center mb-6">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-primary-600 dark:text-primary-400" dangerouslySetInnerHTML={{ __html: service.icon }} />
-                    </div>
-                    <h2 className="text-3xl font-bold mb-4">{service.title}</h2>
-                    <p className="text-gray-700 dark:text-gray-300 mb-6">
-                      {service.description}
-                    </p>
-                    <div className="mb-8">
-                      <h3 className="text-xl font-semibold mb-4">{t("services_page.what_we_offer")}:</h3>
-                      <ul className="space-y-3">
-                        {service.features.map((feature, featureIndex) => (
-                          <li key={featureIndex} className="flex items-start">
-                            <svg className="w-5 h-5 text-primary-600 dark:text-primary-400 mr-3 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div className="flex flex-wrap gap-4">
-                      <Link href="/contact">
-                        <a className="px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-                          {t("services_page.request_service")}
-                        </a>
-                      </Link>
-                      <Link href={`/portfolio?filter=${service.id}`}>
-                        <a className="px-6 py-3 bg-white dark:bg-gray-800 text-primary-600 dark:text-primary-400 border border-primary-600 dark:border-primary-400 font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-                          {t("services_page.see_work")}
-                        </a>
-                      </Link>
-                    </div>
-                  </div>
-                </motion.div>
-              ))
-            ) : (
-              <div className="text-center py-12">
-                <div className="inline-block p-4 rounded-full bg-blue-100 dark:bg-blue-900 mb-4">
-                  <svg className="w-8 h-8 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <h2 className="text-2xl font-bold mb-2">{t("services_page.loading")}</h2>
-                <p className="text-gray-600 dark:text-gray-400">
-                  {t("services_page.loading_message")}
-                </p>
-              </div>
-            )}
-          </motion.div>
-          
-          <div className="mt-20 bg-gray-100 dark:bg-gray-800 rounded-xl p-8 text-center">
-            <h2 className="text-2xl font-bold mb-4">{t("services_page.cta_title")}</h2>
-            <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 max-w-3xl mx-auto">
-              {t("services_page.cta_description")}
-            </p>
-            <Link href="/contact">
-              <a className="inline-block px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-                {t("services_page.cta_button")}
-              </a>
-            </Link>
-          </div>
-        </div>
-      </main>
-    </>
-  );
+const icons = { monitor: MonitorSmartphone, rocket: Rocket, video: Video, film: Film, play: PlayCircle, 'messages-square': MessagesSquare } as const;
+const portfolioFilterByServiceId: Record<string, string> = {
+  'web-design': 'web-design',
+  'digital-marketing': 'digital-marketing',
+  'motion-graphics': 'video-production',
+  'video-editing': 'video-production',
+  'youtube-strategy': 'video-production',
+  'social-engagement': 'digital-marketing',
 };
 
-export default Services;
+export default function Services() {
+  const { t } = useTranslation();
+  const services = useServices();
+  return (
+    <>
+      <SeoHead title={t('meta.services_title')} description={t('meta.services_description')} canonicalPath="/services" jsonLd={breadcrumbSchema([{ name: t('nav.home'), path: '/' }, { name: t('nav.services'), path: '/services' }])} />
+      <PageHero eyebrow={t('services_page.eyebrow')} title={t('services_page.title')} description={t('services_page.description')}><div className="flex flex-wrap gap-4"><Link href="/contact"><a><Button className="rounded-full">{t('services_page.cta_button')}</Button></a></Link><Link href="/portfolio"><a><Button variant="secondary" className="rounded-full">{t('services_page.secondary_button')}</Button></a></Link></div></PageHero>
+      <Section>
+        <Container>
+          <SectionHeader eyebrow={t('services_page.section_eyebrow')} title={t('services_page.section_title')} description={t('services_page.section_description')} />
+          {services.isLoading ? <LoadingState /> : services.isError ? <ErrorState /> : <Stagger className="mt-12 space-y-8">{services.data?.map((service) => { const Icon = icons[service.iconKey] ?? MonitorSmartphone; const filter = portfolioFilterByServiceId[service.id] ?? 'all'; return <StaggerItem key={service.id}><article id={service.id} className="grid gap-8 overflow-hidden rounded-[2rem] border border-border/60 bg-card p-6 shadow-sm lg:grid-cols-[0.95fr,1.05fr] lg:p-8"><img src={service.image} alt={service.title} className="h-full min-h-[260px] w-full rounded-[1.5rem] object-cover" loading="lazy" decoding="async" /><div className="flex flex-col justify-center"><div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary"><Icon className="h-6 w-6" /></div><h2 className="mt-5 text-3xl font-semibold tracking-tight">{service.title}</h2><p className="mt-4 text-base leading-8 text-muted-foreground">{service.description}</p><ul className="mt-6 grid gap-3 sm:grid-cols-2">{service.features.map((feature) => <li key={feature} className="flex gap-3 rounded-2xl bg-muted/50 p-4 text-sm text-muted-foreground"><CheckCircle2 className="mt-0.5 h-4 w-4 text-primary" />{feature}</li>)}</ul><div className="mt-8 flex flex-wrap gap-4"><Link href="/contact"><a><Button className="rounded-full">{t('services_page.request_service')}</Button></a></Link><Link href={`/portfolio?filter=${filter}`}><a className="inline-flex items-center gap-2 font-medium text-primary">{t('services_page.see_work')} <ArrowRight className="h-4 w-4" /></a></Link></div></div></article></StaggerItem>; })}</Stagger>}
+        </Container>
+      </Section>
+    </>
+  );
+}

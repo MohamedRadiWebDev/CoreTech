@@ -1,19 +1,18 @@
 {
   "company": {
-    "name": "كور تك",
-    "tagline": "تحويل الأفكار إلى نجاح رقمي",
+    "name": "Core Tech",
+    "name_ar": "كور تك",
+    "tagline": "Scaling ambitious brands with premium digital experiences.",
+    "tagline_ar": "نساعد العلامات الطموحة على التوسع عبر تجارب رقمية احترافية.",
     "email": "info@coretech.com",
     "phone": "+966123456789",
-    "address": "المملكة العربية السعودية"
+    "address": "Riyadh, Saudi Arabia",
+    "address_ar": "الرياض، المملكة العربية السعودية"
   },
   "stats": {
     "projects": 150,
     "clients": 89,
     "experience": 5,
     "satisfaction": 98
-  },
-  "hero": {
-    "image": "/images/hero-bg.webp",
-    "video": "/videos/hero-video.mp4"
   }
 }
