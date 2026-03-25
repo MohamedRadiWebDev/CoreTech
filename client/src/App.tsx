@@ -2,6 +2,7 @@ import { Suspense, lazy } from 'react';
 import { Route, Switch } from 'wouter';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { queryClient } from './lib/queryClient';
+import { ContentStoreProvider } from '@/lib/content/content-store';
 import { ThemeProvider } from './context/ThemeContext';
 import { LanguageProvider } from './context/LanguageContext';
 import { TooltipProvider } from '@/components/ui/tooltip';
@@ -23,6 +24,7 @@ const BlogPostDetail = lazy(() => import('@/pages/BlogPostDetail'));
 const About = lazy(() => import('@/pages/About'));
 const Contact = lazy(() => import('@/pages/Contact'));
 const NotFound = lazy(() => import('@/pages/not-found'));
+const Studio = lazy(() => import('@/pages/Studio'));
 
 function AppShell() {
   useRouteScroll();
@@ -43,6 +45,7 @@ function AppShell() {
             <Route path="/blog/:id" component={BlogPostDetail} />
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
+            <Route path="/studio" component={Studio} />
             <Route component={NotFound} />
           </Switch>
         </Suspense>
@@ -59,9 +62,11 @@ export default function App() {
     <LanguageProvider>
       <ThemeProvider>
         <QueryClientProvider client={queryClient}>
-          <TooltipProvider>
-            <AppShell />
-          </TooltipProvider>
+          <ContentStoreProvider>
+            <TooltipProvider>
+              <AppShell />
+            </TooltipProvider>
+          </ContentStoreProvider>
         </QueryClientProvider>
       </ThemeProvider>
     </LanguageProvider>

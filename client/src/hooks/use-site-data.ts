@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { useJsonQuery } from '@/lib/fetcher';
 import { getLocalizedArray, getLocalizedField } from '@/lib/localization';
+import { useContentStore } from '@/lib/content/content-store';
 import type {
   BlogPostRecord,
   Language,
@@ -18,6 +19,13 @@ import type {
   SocialLinks,
   TestimonialRecord,
 } from '@/types';
+
+type DataResult<T> = {
+  data: T;
+  isLoading: boolean;
+  isError: boolean;
+  error: Error | null;
+};
 
 function localizeService(record: ServiceRecord, language: Language): LocalizedService {
   return {
@@ -112,50 +120,66 @@ function localizeSiteConfig(record: SiteConfigRecord, language: Language): SiteC
   };
 }
 
-export function useServices() {
+export function useServices(): DataResult<LocalizedService[]> {
   const { language } = useLanguage();
-  return useJsonQuery<ServiceRecord[], LocalizedService[]>(['services'], '/data/services.json', {
-    initialData: [],
-    select: (records) => records.map((record) => localizeService(record, language)).sort((a, b) => a.order - b.order),
-  });
+  const store = useContentStore();
+
+  return {
+    data: store.collections.services.map((record) => localizeService(record, language)).sort((a, b) => a.order - b.order),
+    isLoading: store.loading,
+    isError: Boolean(store.error),
+    error: store.error,
+  };
 }
 
-export function usePortfolio() {
+export function usePortfolio(): DataResult<LocalizedPortfolioItem[]> {
   const { language } = useLanguage();
-  return useJsonQuery<PortfolioRecord[], LocalizedPortfolioItem[]>(['portfolio'], '/data/portfolio.json', {
-    initialData: [],
-    select: (records) => records.map((record) => localizePortfolio(record, language)),
-  });
+  const store = useContentStore();
+
+  return {
+    data: store.collections.portfolio.map((record) => localizePortfolio(record, language)),
+    isLoading: store.loading,
+    isError: Boolean(store.error),
+    error: store.error,
+  };
 }
 
 export function usePortfolioItem(idOrSlug?: string) {
   const query = usePortfolio();
-  const item = useMemo(() => query.data?.find((record) => record.id === idOrSlug || record.slug === idOrSlug) ?? null, [query.data, idOrSlug]);
-  const related = useMemo(() => query.data?.filter((record) => item && record.category === item.category && record.id !== item.id).slice(0, 3) ?? [], [query.data, item]);
+  const item = useMemo(() => query.data.find((record) => record.id === idOrSlug || record.slug === idOrSlug) ?? null, [query.data, idOrSlug]);
+  const related = useMemo(() => query.data.filter((record) => item && record.category === item.category && record.id !== item.id).slice(0, 3), [query.data, item]);
   return { ...query, item, related };
 }
 
-export function useBlogPosts() {
+export function useBlogPosts(): DataResult<LocalizedBlogPost[]> {
   const { language } = useLanguage();
-  return useJsonQuery<BlogPostRecord[], LocalizedBlogPost[]>(['blog-posts'], '/data/blog.json', {
-    initialData: [],
-    select: (records) => records.map((record) => localizeBlog(record, language)),
-  });
+  const store = useContentStore();
+
+  return {
+    data: store.collections.blog.map((record) => localizeBlog(record, language)),
+    isLoading: store.loading,
+    isError: Boolean(store.error),
+    error: store.error,
+  };
 }
 
 export function useBlogPost(idOrSlug?: string) {
   const query = useBlogPosts();
-  const post = useMemo(() => query.data?.find((record) => record.id === idOrSlug || record.slug === idOrSlug) ?? null, [query.data, idOrSlug]);
-  const related = useMemo(() => query.data?.filter((record) => post && record.categoryKey === post.categoryKey && record.id !== post.id).slice(0, 3) ?? [], [query.data, post]);
+  const post = useMemo(() => query.data.find((record) => record.id === idOrSlug || record.slug === idOrSlug) ?? null, [query.data, idOrSlug]);
+  const related = useMemo(() => query.data.filter((record) => post && record.categoryKey === post.categoryKey && record.id !== post.id).slice(0, 3), [query.data, post]);
   return { ...query, post, related };
 }
 
-export function useTestimonials() {
+export function useTestimonials(): DataResult<LocalizedTestimonial[]> {
   const { language } = useLanguage();
-  return useJsonQuery<TestimonialRecord[], LocalizedTestimonial[]>(['testimonials'], '/data/testimonials.json', {
-    initialData: [],
-    select: (records) => records.map((record) => localizeTestimonial(record, language)),
-  });
+  const store = useContentStore();
+
+  return {
+    data: store.collections.testimonials.map((record) => localizeTestimonial(record, language)),
+    isLoading: store.loading,
+    isError: Boolean(store.error),
+    error: store.error,
+  };
 }
 
 export function useServiceOptions() {
