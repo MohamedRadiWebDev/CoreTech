@@ -40,17 +40,22 @@ async function seedFromLocal<T extends { id: string; slug?: string }>(table: Tab
 async function getCollection<T extends { id: string; slug?: string }>(table: TableName): Promise<T[]> {
   if (!supabase) return readLocal<T>(table);
 
-  const { data, error } = await supabase.from<ContentRow<T>>(table).select('*');
-  if (error) throw error;
+  try {
+    const { data, error } = await supabase.from<ContentRow<T>>(table).select('*');
+    if (error) throw error;
 
-  if (!data || data.length === 0) {
-    await seedFromLocal<T>(table);
-    const seeded = await supabase.from<ContentRow<T>>(table).select('*');
-    if (seeded.error) throw seeded.error;
-    return (seeded.data ?? []).map((item) => item.content);
+    if (!data || data.length === 0) {
+      await seedFromLocal<T>(table);
+      const seeded = await supabase.from<ContentRow<T>>(table).select('*');
+      if (seeded.error) throw seeded.error;
+      return (seeded.data ?? []).map((item) => item.content);
+    }
+
+    return data.map((item) => item.content);
+  } catch (error) {
+    console.error(`[content-api] Failed reading "${table}" from Supabase; using local JSON fallback.`, error);
+    return readLocal<T>(table);
   }
-
-  return data.map((item) => item.content);
 }
 
 async function createItem<T extends { id: string; slug?: string }>(table: TableName, item: T): Promise<T> {

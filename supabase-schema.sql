@@ -28,6 +28,7 @@ alter table portfolio enable row level security;
 alter table services enable row level security;
 alter table testimonials enable row level security;
 
+-- Public read policies
 create policy if not exists "Public read blog_posts"
 on blog_posts for select using (true);
 
@@ -39,3 +40,17 @@ on services for select using (true);
 
 create policy if not exists "Public read testimonials"
 on testimonials for select using (true);
+
+-- Temporary public write policies for integration testing only.
+-- Replace with authenticated/role-based policies before production.
+create policy if not exists "Public write blog_posts"
+on blog_posts for all using (true) with check (true);
+
+create policy if not exists "Public write portfolio"
+on portfolio for all using (true) with check (true);
+
+create policy if not exists "Public write services"
+on services for all using (true) with check (true);
+
+create policy if not exists "Public write testimonials"
+on testimonials for all using (true) with check (true);
