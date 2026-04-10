@@ -1,7 +1,19 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import { fetchJson } from '@/lib/fetcher';
+import type { RealtimeChannel } from '@supabase/supabase-js';
 import type { BlogPostRecord, PortfolioRecord, ServiceRecord, TestimonialRecord } from '@/types';
+import {
+  getBlogPosts,
+  getPortfolioItems,
+  getServices,
+  getTestimonials,
+  syncBlogPosts,
+  syncPortfolioItems,
+  syncServices,
+  syncTestimonials,
+} from '@/lib/content-api';
+import { supabase } from '@/lib/supabase';
+import { queryClient } from '@/lib/queryClient';
 import { studioBundleSchema, type StudioBundle } from './studio-schemas';
 
 type CollectionKey = 'blog' | 'portfolio' | 'services' | 'testimonials';
@@ -62,14 +74,40 @@ function clone<T>(value: T): T {
   return JSON.parse(JSON.stringify(value)) as T;
 }
 
+function queryKeyForCollection(key: CollectionKey) {
+  switch (key) {
+    case 'blog':
+      return ['defaults-blog'] as const;
+    case 'portfolio':
+      return ['defaults-portfolio'] as const;
+    case 'services':
+      return ['defaults-services'] as const;
+    case 'testimonials':
+      return ['defaults-testimonials'] as const;
+  }
+}
+
+function syncCollection(key: CollectionKey, value: StudioCollections[CollectionKey]) {
+  switch (key) {
+    case 'blog':
+      return syncBlogPosts(value as BlogPostRecord[]);
+    case 'portfolio':
+      return syncPortfolioItems(value as PortfolioRecord[]);
+    case 'services':
+      return syncServices(value as ServiceRecord[]);
+    case 'testimonials':
+      return syncTestimonials(value as TestimonialRecord[]);
+  }
+}
+
 export function ContentStoreProvider({ children }: { children: React.ReactNode }) {
   const [overrides, setOverrides] = useState<StudioOverrides>(() => readStoredOverrides());
   const [lastSavedAt, setLastSavedAt] = useState<string | null>(() => readStoredLastSavedAt());
 
-  const blogQuery = useQuery({ queryKey: ['defaults-blog'], queryFn: () => fetchJson<BlogPostRecord[]>('/data/blog.json'), initialData: [] as BlogPostRecord[] });
-  const portfolioQuery = useQuery({ queryKey: ['defaults-portfolio'], queryFn: () => fetchJson<PortfolioRecord[]>('/data/portfolio.json'), initialData: [] as PortfolioRecord[] });
-  const servicesQuery = useQuery({ queryKey: ['defaults-services'], queryFn: () => fetchJson<ServiceRecord[]>('/data/services.json'), initialData: [] as ServiceRecord[] });
-  const testimonialsQuery = useQuery({ queryKey: ['defaults-testimonials'], queryFn: () => fetchJson<TestimonialRecord[]>('/data/testimonials.json'), initialData: [] as TestimonialRecord[] });
+  const blogQuery = useQuery({ queryKey: ['defaults-blog'], queryFn: getBlogPosts, initialData: [] as BlogPostRecord[] });
+  const portfolioQuery = useQuery({ queryKey: ['defaults-portfolio'], queryFn: getPortfolioItems, initialData: [] as PortfolioRecord[] });
+  const servicesQuery = useQuery({ queryKey: ['defaults-services'], queryFn: getServices, initialData: [] as ServiceRecord[] });
+  const testimonialsQuery = useQuery({ queryKey: ['defaults-testimonials'], queryFn: getTestimonials, initialData: [] as TestimonialRecord[] });
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -78,22 +116,69 @@ export function ContentStoreProvider({ children }: { children: React.ReactNode }
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
-    if (lastSavedAt) window.localStorage.setItem(STORAGE_META_KEY, lastSavedAt);
+    if (lastSavedAt) {
+      window.localStorage.setItem(STORAGE_META_KEY, lastSavedAt);
+    }
   }, [lastSavedAt]);
 
-  const collections = useMemo<StudioCollections>(() => ({
-    blog: overrides.blog ?? blogQuery.data,
-    portfolio: overrides.portfolio ?? portfolioQuery.data,
-    services: overrides.services ?? servicesQuery.data,
-    testimonials: overrides.testimonials ?? testimonialsQuery.data,
-  }), [overrides, blogQuery.data, portfolioQuery.data, servicesQuery.data, testimonialsQuery.data]);
+  useEffect(() => {
+    const client = supabase;
+    if (!client) return;
+
+    const tableMappings: Array<{ table: string; key: CollectionKey }> = [
+      { table: 'blog_posts', key: 'blog' },
+      { table: 'portfolio', key: 'portfolio' },
+      { table: 'services', key: 'services' },
+      { table: 'testimonials', key: 'testimonials' },
+    ];
+
+    const channels: RealtimeChannel[] = tableMappings.map(({ table, key }) =>
+      client
+        .channel(`${table}_changes`)
+        .on('postgres_changes', { event: '*', schema: 'public', table }, () => {
+          queryClient.invalidateQueries({ queryKey: queryKeyForCollection(key) });
+          setOverrides((prev) => {
+            if (!(key in prev)) return prev;
+            const next = { ...prev };
+            delete next[key];
+            return next;
+          });
+        })
+        .subscribe(),
+    );
+
+    return () => {
+      channels.forEach((channel) => {
+        void client.removeChannel(channel);
+      });
+    };
+  }, []);
+
+  const collections = useMemo<StudioCollections>(
+    () => ({
+      blog: overrides.blog ?? blogQuery.data,
+      portfolio: overrides.portfolio ?? portfolioQuery.data,
+      services: overrides.services ?? servicesQuery.data,
+      testimonials: overrides.testimonials ?? testimonialsQuery.data,
+    }),
+    [overrides, blogQuery.data, portfolioQuery.data, servicesQuery.data, testimonialsQuery.data],
+  );
 
   const loading = blogQuery.isLoading || portfolioQuery.isLoading || servicesQuery.isLoading || testimonialsQuery.isLoading;
   const error = (blogQuery.error ?? portfolioQuery.error ?? servicesQuery.error ?? testimonialsQuery.error ?? null) as Error | null;
 
   const setCollection = useCallback(<K extends CollectionKey>(key: K, value: StudioCollections[K]) => {
-    setOverrides((prev) => ({ ...prev, [key]: clone(value) }));
+    const cloned = clone(value);
+    setOverrides((prev) => ({ ...prev, [key]: cloned }));
     setLastSavedAt(new Date().toISOString());
+
+    void syncCollection(key, cloned)
+      .then(() => {
+        queryClient.setQueryData(queryKeyForCollection(key), cloned);
+      })
+      .catch((syncError) => {
+        console.error(`Failed syncing ${key} with Supabase`, syncError);
+      });
   }, []);
 
   const resetCollection = useCallback((key: CollectionKey) => {
@@ -103,45 +188,61 @@ export function ContentStoreProvider({ children }: { children: React.ReactNode }
       return next;
     });
     setLastSavedAt(new Date().toISOString());
+    queryClient.invalidateQueries({ queryKey: queryKeyForCollection(key) });
   }, []);
 
   const resetAll = useCallback(() => {
     setOverrides({});
     setLastSavedAt(new Date().toISOString());
+    queryClient.invalidateQueries({ queryKey: ['defaults-blog'] });
+    queryClient.invalidateQueries({ queryKey: ['defaults-portfolio'] });
+    queryClient.invalidateQueries({ queryKey: ['defaults-services'] });
+    queryClient.invalidateQueries({ queryKey: ['defaults-testimonials'] });
   }, []);
 
   const hasOverride = useCallback((key: CollectionKey) => key in overrides, [overrides]);
 
-  const exportBundle = useCallback((): StudioBundle => studioBundleSchema.parse({
-    version: 1,
-    exportedAt: new Date().toISOString(),
-    data: {
-      blog: clone(collections.blog),
-      portfolio: clone(collections.portfolio),
-      services: clone(collections.services),
-      testimonials: clone(collections.testimonials),
-    },
-  }), [collections]);
+  const exportBundle = useCallback(
+    (): StudioBundle =>
+      studioBundleSchema.parse({
+        version: 1,
+        exportedAt: new Date().toISOString(),
+        data: {
+          blog: clone(collections.blog),
+          portfolio: clone(collections.portfolio),
+          services: clone(collections.services),
+          testimonials: clone(collections.testimonials),
+        },
+      }),
+    [collections],
+  );
 
   const importBundle = useCallback((bundle: unknown) => {
     const parsed = parseBundle(bundle);
     setOverrides(parsed.data as StudioOverrides);
     setLastSavedAt(new Date().toISOString());
+    void syncBlogPosts(parsed.data.blog);
+    void syncPortfolioItems(parsed.data.portfolio);
+    void syncServices(parsed.data.services);
+    void syncTestimonials(parsed.data.testimonials);
   }, []);
 
-  const value = useMemo<ContentStoreValue>(() => ({
-    collections,
-    overrides,
-    loading,
-    error,
-    hasOverride,
-    setCollection,
-    resetCollection,
-    resetAll,
-    exportBundle,
-    importBundle,
-    lastSavedAt,
-  }), [collections, overrides, loading, error, hasOverride, setCollection, resetCollection, resetAll, exportBundle, importBundle, lastSavedAt]);
+  const value = useMemo<ContentStoreValue>(
+    () => ({
+      collections,
+      overrides,
+      loading,
+      error,
+      hasOverride,
+      setCollection,
+      resetCollection,
+      resetAll,
+      exportBundle,
+      importBundle,
+      lastSavedAt,
+    }),
+    [collections, overrides, loading, error, hasOverride, setCollection, resetCollection, resetAll, exportBundle, importBundle, lastSavedAt],
+  );
 
   return <ContentStoreContext.Provider value={value}>{children}</ContentStoreContext.Provider>;
 }
